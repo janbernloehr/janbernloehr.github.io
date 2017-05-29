@@ -4,8 +4,6 @@ title: Academia
 ---
 {% include JB/setup %}
 
-### About me
-
 I received my PhD from the [I-MATH](http://math.uzh.ch) of the [University of Zurich](http://www.uzh.ch) under supervision of [T. Kappeler](https://www.math.uzh.ch/index.php?id=professur&L=&key1=113&key2=&key3=&keySemId=).
 
 My primary research interests
