@@ -3,15 +3,15 @@
 permalink: /:categories/:year/:month/:day/:title 
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-highlighter: pygments
+highlighter: rouge
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : Jekyll Bootstrap
-tagline: Site Tagline
+title : janbernloehr.de
+tagline: Things are only impossible until they're not
 author :
-  name : Jan Bernlöhr
+  name : "Jan BernlÃ¶hr"
   email : jan@bernloehrs.de
   github : janbernloehr
   twitter : janm_net
