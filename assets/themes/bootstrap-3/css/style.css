@@ -13,15 +13,17 @@
 /*.navbar .nav {
   float: right; }*/
 
-/* Jekyll Bootstrap Colors */
-h1, h2, h3, h4 {
-  color: #f22430;
-}
+  body {
+    padding-top: 50px;
+  }
+
+  #jb-navbar-collapse {
+    padding-right: 5px;
+  }
+
 #footer {
   background-color: #fdcd60;
 }
-
-
 
 /* posts index */
 .post > h3.title {
