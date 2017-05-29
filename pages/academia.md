@@ -21,6 +21,6 @@ In the last two decades mostly the self-adjoint cases were studied, such as for 
 
 ### Links
 - [Publications](publications.html)
-- [Talks and Seminars](Home/WhereToFindMe)
+- [Talks and Seminars](seminars.html)
 - [Teaching](teaching.html)
 - [Notes](notes.html)
