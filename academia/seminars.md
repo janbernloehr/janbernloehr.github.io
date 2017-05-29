@@ -1,7 +1,6 @@
 ---
 layout: page
-title: Talks and Seminars
-permalink: seminars.html
+title: Academia >> Talks and Seminars
 ---
 {% include JB/setup %}
 

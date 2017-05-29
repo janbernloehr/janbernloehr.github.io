@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Academia
-permalink: academia.html
 ---
 {% include JB/setup %}
 
@@ -20,7 +19,7 @@ In the last two decades mostly the self-adjoint cases were studied, such as for 
 
 
 ### Links
-- [Publications](publications.html)
-- [Talks and Seminars](seminars.html)
-- [Teaching](teaching.html)
-- [Notes](notes.html)
+- [Publications](/academia/publications)
+- [Talks and Seminars](/academia/seminars)
+- [Teaching](/academia/teaching)
+- [Notes](/academia/notes)

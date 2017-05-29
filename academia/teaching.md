@@ -1,7 +1,6 @@
 ---
 layout: page
-title: Teaching
-permalink: teaching.html
+title: Academia >> Teaching
 ---
 {% include JB/setup %}
 

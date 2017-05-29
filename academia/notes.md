@@ -1,7 +1,6 @@
 ---
 layout: page
-title: Lecture Notes
-permalink: notes.html
+title: Academia >> Lecture Notes
 ---
 {% include JB/setup %}
 

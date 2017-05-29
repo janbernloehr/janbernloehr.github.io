@@ -1,7 +1,6 @@
 ---
 layout: page
-title: Publications
-permalink: publications.html
+title: Academia >> Publications
 ---
 {% include JB/setup %}
 
