@@ -1,46 +1,23 @@
 ---
 layout: page
-title: Hello World!
-tagline: Supporting tagline
+title: Homepage of Jan Bernloehr
+tagline: Things are only impossible until they're not
 ---
 {% include JB/setup %}
 
-Read [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
+### About me
 
-Complete usage and documentation available at: [Jekyll Bootstrap](http://jekyllbootstrap.com)
-
-## Update Author Attributes
-
-In `_config.yml` remember to specify your own data:
-    
-    title : My Blog =)
-    
-    author :
-      name : Name Lastname
-      email : blah@email.test
-      github : username
-      twitter : username
-
-The theme should reference these variables whenever needed.
-    
-## Sample Posts
-
-This blog contains sample posts which help stage pages and blog data.
-When you don't need the samples anymore just delete the `_posts/core-samples` folder.
-
-    $ rm -rf _posts/core-samples
-
-Here's a sample "posts list".
-
-<ul class="posts">
-  {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
-
-## To-Do
-
-This theme is still unfinished. If you'd like to be added as a contributor, [please fork](http://github.com/plusjade/jekyll-bootstrap)!
-We need to clean up the themes, make theme usage guides with theme-specific markup examples.
+I work at Bosch on highly autonomous vehicles. Previously, I received my PhD from the [I-MATH](http://math.uzh.ch) of the [University of Zurich](http://www.uzh.ch) under supervision of [T. Kappeler](https://www.math.uzh.ch/index.php?id=professur&L=&key1=113&key2=&key3=&keySemId=).
 
 
+### Links
+- [Publications](Home/Publications)
+- [Talks and Seminars](Home/WhereToFindMe)
+- [Teaching](Home/Teaching)
+- [Notes](Home/Notes)
+
+### Where to find me
+- [GitHub](https://github.com/janbernloehr)
+- [arXiv.org](https://arxiv.org/a/molnar_j_1.html)
+- [researchgate](https://www.researchgate.net/profile/Jan_Cornelius_Molnar)
+- [Twitter](https://twitter.com/janmnet)
