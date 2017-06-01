@@ -11,14 +11,14 @@ tags: [.NET, ASP .NET, LINQ]
 Seit längerem beobachte ich das [LINQ Projekt](http://msdn.microsoft.com/data/ref/linq/) von Microsoft, das eine SQL-ähnliche Abfrage Syntax direkt in Visual Basic integriert. 
 
 Beispiel:
- <div class="wlWriterSmartContent" id="57F11A72-B0E5-49c7-9094-E3A15BD5B5E7:56e3440a-7d15-4e21-ac72-18007c302c61" contenteditable="false" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px">
 
-<div><span style="color: #0000FF; ">Dim</span><span style="color: #000000; "> data </span><span style="color: #000000; ">=</span><span style="color: #000000; "> From x </span><span style="color: #0000FF; ">In</span><span style="color: #000000; "> Northwind.Customers _ 
+````VB.NET
+    Dim data = From x In Northwind.Customers _ 
 
-    Where x.CustomerName.Startswith(</span><span style="color: #000000; ">"</span><span style="color: #000000; ">A</span><span style="color: #000000; ">"</span><span style="color: #000000; ">) _ 
+    Where x.CustomerName.Startswith("A") _ 
 
-    </span><span style="color: #0000FF; ">Select</span><span style="color: #000000; "> x.CustomerId </span></div>
-</div>
+    Select x.CustomerId
+````
 
 Dazu kommen noch sehr viele und interessante Neuerungen in [Visual Basic 9](http://msdn.microsoft.com/vbasic/future/). 
 
@@ -30,9 +30,8 @@ Zuletzt wollte ich meine Testanwendung auf einem WebServer testen. Da LINQ eigen
 
 Das Problem bei ASP .NET Anwendungen ist jedoch, dass die Seiten bei jedem Aufruf teilweise neu übersetzt werden. Da ich aber wie gesagt den LINQ Compiler nicht installieren konnte, musste das verhindert werden.Dies kann man mit dem Tool aspnet_compiler erreichen, welches sich im .NET Framework Verzeichnis befindet. Dieses Tool kann die WebSeite so vorkompilieren, dass sämtlicher Inhalt (auch die .aspx Seiten) in die Assembly intergiert werden. Somit muss die WebSeite beim Aufruf nicht neu erstellt werden und die LINQ Kommandos funktionieren problemlos. 
 
-<div class="wlWriterSmartContent" id="57F11A72-B0E5-49c7-9094-E3A15BD5B5E7:6e76b70b-7555-4a5d-bc3e-892154861042" contenteditable="false" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px">
+````
+aspnet_compiler -p PhysicalProjectLocation -v / ProjectPublishDirectory
+````
 
-<div><span style="color: #000000; ">aspnet_compiler </span><span style="color: #000000; ">-</span><span style="color: #000000; ">p PhysicalProjectLocation </span><span style="color: #000000; ">-</span><span style="color: #000000; ">v </span><span style="color: #000000; ">/</span><span style="color: #000000; "> ProjectPublishDirectory </span></div>
-</div><span style="font-size: 10px; font-family: courier new"><span style="color: black"></span></span>
-
-<span style="color: red">Hinweis: Für LINQ gibt es keine Go-Live Lizenz, weshalb es nicht möglich ist, LINQ in komerziellen Projekten einzusetzen.</span>
+Hinweis: Für LINQ gibt es keine Go-Live Lizenz, weshalb es nicht möglich ist, LINQ in komerziellen Projekten einzusetzen.

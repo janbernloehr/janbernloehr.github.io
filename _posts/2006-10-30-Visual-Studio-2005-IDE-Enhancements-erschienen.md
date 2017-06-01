@@ -21,6 +21,8 @@ Das Set besteht aus 5 Erweiterungen:
 
 **** 
 
-**Super Diff Utility**: The Super Diff Find tool is a Visual Studio extension that compares text files. It uses color coding and graphics to show the difference between the files in deleted text (red), changed text (blue), inserted text (green). 
+**Super Diff Utility**: The Super Diff Find tool is a Visual Studio extension that compares text files. It uses color coding and graphics to show the difference between the files in deleted text (red), changed text (blue), inserted text (green).
+
+****
 
 **Event Toaster Utility**: The Event Toaster tool is a Visual Studio extension that notifies users about specific events within the Visual Studio IDE.

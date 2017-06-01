@@ -99,7 +99,7 @@ End Sub
 
 Creating a Window with custom chrome in WPF is very easy. You can define any shape you want by combining regions and use every effect and animation feature you like.
 
-Our Window does not yet support __Sizing __and __Moving__ but I will continue this tutorial in a few days ;-)
+Our Window does not yet support __Sizing__ and __Moving__ but I will continue this tutorial in a few days ;-)
 
 __Read On:__
 

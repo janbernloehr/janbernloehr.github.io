@@ -10,13 +10,15 @@ Im .NET Framework setllen die RegularExpressions (zu deutsch reguläre Ausdrück
 
 Beispiel: Format einer Email Adresse überprüfen
 
-<font color="#808080">Dim text As String = </font>[<font color="#808080">someone@somecompany.com</font>](mailto:someone@somecompany.com)
+````vb
+Dim text As String = [someone@somecompany.com](mailto:someone@somecompany.com)
 
-<font color="#808080">If System.Text.RegularExpressions.RegEx.IsMatch(text, "\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*")  
+If System.Text.RegularExpressions.RegEx.IsMatch(text, "\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*")  
   ' Diese Email ist gültig  
 Else  
   ' Diese Email ist ungültig  
-End If</font>
+End If
+````
 
 Jedoch müsste bei jedem Aufruf des Codes der reguläre Ausdruck bei jedem Aufruf erst interpretiert und dann angewendet werden.
 
@@ -26,10 +28,14 @@ Wird die Validierung jedoch sehr häufig benötigt vielleicht sogar mehrmals in 
 
 Dazu sollte man den das RegEx in einer Variablen speichern:
 
-<font color="#808080">Private Shared ReadOnly emailregex As New System.Text.RegularExpressions.Regex("\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", System.Text.RegularExpressions.RegexOptions.Compiled)</font> 
+````vb
+Private Shared ReadOnly emailregex As New System.Text.RegularExpressions.Regex("\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", System.Text.RegularExpressions.RegexOptions.Compiled) 
+````
 
 Der Ausdruck wird nun kompiliert und ist nun viel perfomanter bei häufiger Ausführung. 
 
 Um zusätzlich noch Platz zu sparen und Übersichtlichkeit zu erhalten, kann man den Namespace System.Text.RegularExpressions importieren: 
 
-<font color="#808080">Private Shared ReadOnly emailregex As New Regex("\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", RegexOptions.Compiled)</font>
+````vb
+Private Shared ReadOnly emailregex As New Regex("\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", RegexOptions.Compiled)
+````

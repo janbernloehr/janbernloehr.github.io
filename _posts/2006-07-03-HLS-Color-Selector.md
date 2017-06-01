@@ -14,428 +14,430 @@ Since I didn’t find anything I thought about creating my own one.
 
 The most difficult task was to convert .NET Rgb Color Values to HLS values (the difference is explained [here](http://en.wikipedia.org/wiki/HLS_color_space)). In my opinion the HLS color system is superior to the RGB system. After hours of searching I found a VBA sample and ported it to WPF (the code can be found at the bottom of the article). 
 
-The next thing to do was to create a new slider for the <strong>Hue</strong> and a triangle for <strong>Lightness</strong> and <strong>Saturation</strong> values. 
+The next thing to do was to create a new slider for the __Hue__ and a triangle for __Lightness__ and __Saturation__ values. 
 
-<strong>The Slider </strong>
+__The Slider__
 
 It was easy to create a Color Slider since it is possible to override the default template. I created a gradient from hue 0 over hue 0.1, hue 0.2 … to hue 1.0 and put it into the background. At last I restyled the value selection thumb using Interactive Designer and the result looked like this. 
 
 ![](http://www.dev-jc-vb.de/dev-jc-vb/blog/images/070406_0011_HLSColorS2.png) 
 
-<strong>The Triangle </strong>
+__The Triangle__
 
 The triangle was a bit more complex than the slider since I had to start from scratch. I created the triangle shape using Paths and Interactive Designer. The I assigned 3 backgrounds with different opacity masks to it. 
 
-1.  <div>Background Black From lower left to upper right </div>
+1.  Background Black From lower left to upper right
 
-<div>Background White From upper left to lower right </div>
+Background White From upper left to lower right
 
-<div>Background Colored HLS(CurrentHue, 0.5, 1) from right to left </div>
+Background Colored HLS(CurrentHue, 0.5, 1) from right to left
 
 To show the current selected Lightness and Saturation I added an ellipse. 
 
 ![](http://www.dev-jc-vb.de/dev-jc-vb/blog/images/070406_0011_HLSColorS3.png) 
 
-The next step was to attach <em>MouseDown</em>, <em>MouseUp</em> and <em>MouseMove</em> event Handlers to the triangle. Whenever the mouse is moved over the triangle with the left button pressed the ellipse should follow. To ensure that the ellipse is moved correctly when you leave the triangle with the left button pressed I assigned <em>Mouse.Capture(element, Element)</em> to the element on <em>MouseDown</em> and <em>Mouse.Capture(element, None)</em> on <em>MouseUp</em>. 
+The next step was to attach _MouseDown_, _MouseUp_ and _MouseMove_ event Handlers to the triangle. Whenever the mouse is moved over the triangle with the left button pressed the ellipse should follow. To ensure that the ellipse is moved correctly when you leave the triangle with the left button pressed I assigned _Mouse.Capture(element, Element)_ to the element on _MouseDown_ and _Mouse.Capture(element, None)_ on _MouseUp_. 
 
 Last but not least I had to write the code that generates the appropriate color from slider and ellipse position. The complete code can be found [here](http://www.dev-jc-vb.de/dev-jc-vb/blog/ColorSelector.zip). 
 
-<strong>The Result </strong>
+__The Result__
 
 ![](http://www.dev-jc-vb.de/dev-jc-vb/blog/images/070406_0011_HLSColorS4.png) 
 
 In my opinion it was worth to spent some time to create this control. I hope that more people will begin building their own controls and make them available to the public. My control is not perfect and could be done in other ways. This is article is supposed to show only <u>one</u> possible way. 
 
-<strong>Rgb <--> Hls Converter Code </strong>
+__Rgb <--> Hls Converter Code__
 
-<span style="FONT-SIZE: 10px; FONT-FAMILY: Courier New"><font size="2"><span style="COLOR: blue">Imports</span> System.Windows.Media </font></span>
+````VB.NET
+Imports System.Windows.Media 
 
-<span style="FONT-SIZE: 10px; FONT-FAMILY: Courier New">
 
-<font size="2"><span style="COLOR: blue">Public</span> <span style="COLOR: blue">Class</span> HlsConverter </font>
 
-<font size="2"><span style="COLOR: blue">Public</span> <span style="COLOR: blue">Shared</span> <span style="COLOR: blue">Function</span> ConvertFromHls(<span style="COLOR: blue">ByVal</span> value <span style="COLOR: blue">As</span> HlsValue) <span style="COLOR: blue">As</span> Color </font>
+Public Class HlsConverter 
 
-<font size="2"><span style="COLOR: blue">Return</span> ConvertFromHls(value.Hue, value.Lightness, value.Saturation) </font>
+Public Shared Function ConvertFromHls(ByVal value As HlsValue) As Color 
 
-<font size="2"><span style="COLOR: blue">End</span> <span style="COLOR: blue">Function </span></font>
-</span>
+Return ConvertFromHls(value.Hue, value.Lightness, value.Saturation) 
 
-<span style="FONT-SIZE: 10px; FONT-FAMILY: Courier New">
+End Function 
 
-<font size="2"><span style="COLOR: blue">Public</span> <span style="COLOR: blue">Shared</span> <span style="COLOR: blue">Function</span> ConvertFromHls(<span style="COLOR: blue">ByVal</span> h <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double</span>, <span style="COLOR: blue">ByVal</span> l <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double</span>, <span style="COLOR: blue">ByVal</span> s <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double</span>) <span style="COLOR: blue">As</span> Color </font>
 
-<font size="2"><span style="COLOR: blue">Dim</span> p1 <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double </span></font>
 
-<font size="2"><span style="COLOR: blue">Dim</span> p2 <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double </span></font>
-</span>
 
-<span style="FONT-SIZE: 10px; FONT-FAMILY: Courier New">
+Public Shared Function ConvertFromHls(ByVal h As Double, ByVal l As Double, ByVal s As Double) As Color 
 
-<font size="2"><span style="COLOR: blue">Dim</span> r <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double </span></font>
+Dim p1 As Double 
 
-<font size="2"><span style="COLOR: blue">Dim</span> g <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double </span></font>
+Dim p2 As Double 
 
-<font size="2"><span style="COLOR: blue">Dim</span> b <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double </span></font>
-</span>
 
-<span style="FONT-SIZE: 10px; FONT-FAMILY: Courier New"><font size="2">h *= 360 </font></span>
 
-<span style="FONT-SIZE: 10px; FONT-FAMILY: Courier New">
 
-<font size="2"><span style="COLOR: blue">If</span> l <= 0.5 <span style="COLOR: blue">Then </span></font>
+Dim r As Double 
 
-<font size="2">p2 = l * (1 + s) </font>
+Dim g As Double 
 
-<span style="COLOR: blue"><font size="2">Else </font></span>
+Dim b As Double 
 
-<font size="2">p2 = l + s - l * s </font>
 
-<font size="2"><span style="COLOR: blue">End</span> <span style="COLOR: blue">If </span></font>
+h *= 360 
 
-<font size="2">p1 = 2 * l - p2 </font>
 
-<font size="2"><span style="COLOR: blue">If</span> s = 0 <span style="COLOR: blue">Then </span></font>
 
-<font size="2">r = l </font>
+If l <= 0.5 Then 
 
-<font size="2">g = l </font>
+p2 = l * (1 + s) 
 
-<font size="2">b = l </font>
+Else 
 
-<span style="COLOR: blue"><font size="2">Else </font></span>
+p2 = l + s - l * s 
 
-<font size="2">r = QqhToRgb(p1, p2, h + 120) </font>
+End If 
 
-<font size="2">g = QqhToRgb(p1, p2, h) </font>
+p1 = 2 * l - p2 
 
-<font size="2">b = QqhToRgb(p1, p2, h - 120) </font>
+If s = 0 Then 
 
-<font size="2"><span style="COLOR: blue">End</span> <span style="COLOR: blue">If </span></font>
-</span>
+r = l 
 
-<span style="FONT-SIZE: 10px; FONT-FAMILY: Courier New">
+g = l 
 
-<font size="2">r *= <span style="COLOR: blue">Byte</span>.MaxValue </font>
+b = l 
 
-<font size="2">g *= <span style="COLOR: blue">Byte</span>.MaxValue </font>
+Else 
 
-<font size="2">b *= <span style="COLOR: blue">Byte</span>.MaxValue </font>
-</span>
+r = QqhToRgb(p1, p2, h + 120) 
 
-<span style="FONT-SIZE: 10px; FONT-FAMILY: Courier New">
+g = QqhToRgb(p1, p2, h) 
 
-<font size="2"><span style="COLOR: blue">Return</span> Color.FromRgb(<span style="COLOR: blue">CByte</span>(r), <span style="COLOR: blue">CByte</span>(g), <span style="COLOR: blue">CByte</span>(b)) </font>
+b = QqhToRgb(p1, p2, h - 120) 
 
-<font size="2"><span style="COLOR: blue">End</span> <span style="COLOR: blue">Function </span></font>
-</span>
+End If 
 
-<span style="FONT-SIZE: 10px; FONT-FAMILY: Courier New">
 
-<font size="2"><span style="COLOR: blue">Public</span> <span style="COLOR: blue">Shared</span> <span style="COLOR: blue">Function</span> QqhToRgb(<span style="COLOR: blue">ByVal</span> q1 <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double</span>, <span style="COLOR: blue">ByVal</span> q2 <span style="COLOR: blue">As</span> _ </font>
 
-<font size="2"><span style="COLOR: blue">Double</span>, <span style="COLOR: blue">ByVal</span> hue <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double</span>) <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double </span></font>
 
-<font size="2"><span style="COLOR: blue">If</span> hue > 360 <span style="COLOR: blue">Then </span></font>
+r *= Byte.MaxValue 
 
-<font size="2">hue = hue - 360 </font>
+g *= Byte.MaxValue 
 
-<font size="2"><span style="COLOR: blue">ElseIf</span> hue < 0 <span style="COLOR: blue">Then </span></font>
+b *= Byte.MaxValue 
 
-<font size="2">hue = hue + 360 </font>
 
-<font size="2"><span style="COLOR: blue">End</span> <span style="COLOR: blue">If </span></font>
 
-<font size="2"><span style="COLOR: blue">If</span> hue < 60 <span style="COLOR: blue">Then </span></font>
 
-<font size="2">QqhToRgb = q1 + (q2 - q1) * hue / 60 </font>
+Return Color.FromRgb(CByte(r), CByte(g), CByte(b)) 
 
-<font size="2"><span style="COLOR: blue">ElseIf</span> hue < 180 <span style="COLOR: blue">Then </span></font>
+End Function 
 
-<font size="2">QqhToRgb = q2 </font>
 
-<font size="2"><span style="COLOR: blue">ElseIf</span> hue < 240 <span style="COLOR: blue">Then </span></font>
 
-<font size="2">QqhToRgb = q1 + (q2 - q1) * (240 - hue) / 60 </font>
 
-<span style="COLOR: blue"><font size="2">Else </font></span>
+Public Shared Function QqhToRgb(ByVal q1 As Double, ByVal q2 As _ 
 
-<font size="2">QqhToRgb = q1 </font>
+Double, ByVal hue As Double) As Double 
 
-<font size="2"><span style="COLOR: blue">End</span> <span style="COLOR: blue">If </span></font>
+If hue > 360 Then 
 
-<font size="2"><span style="COLOR: blue">End</span> <span style="COLOR: blue">Function </span></font>
-</span>
+hue = hue - 360 
 
-<span style="FONT-SIZE: 10px; FONT-FAMILY: Courier New">
+ElseIf hue < 0 Then 
 
-<font size="2"><span style="COLOR: blue">Public</span> <span style="COLOR: blue">Shared</span> <span style="COLOR: blue">Function</span> ConvertToHls(<span style="COLOR: blue">ByVal</span> color <span style="COLOR: blue">As</span> Color) <span style="COLOR: blue">As</span> HlsValue </font>
+hue = hue + 360 
 
-<font size="2"><span style="COLOR: blue">Dim</span> max <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double </span></font>
+End If 
 
-<font size="2"><span style="COLOR: blue">Dim</span> min <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double </span></font>
+If hue < 60 Then 
 
-<font size="2"><span style="COLOR: blue">Dim</span> diff <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double </span></font>
+QqhToRgb = q1 + (q2 - q1) * hue / 60 
 
-<font size="2"><span style="COLOR: blue">Dim</span> r_dist <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double </span></font>
+ElseIf hue < 180 Then 
 
-<font size="2"><span style="COLOR: blue">Dim</span> g_dist <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double </span></font>
+QqhToRgb = q2 
 
-<font size="2"><span style="COLOR: blue">Dim</span> b_dist <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double </span></font>
-</span>
+ElseIf hue < 240 Then 
 
-<span style="FONT-SIZE: 10px; FONT-FAMILY: Courier New">
+QqhToRgb = q1 + (q2 - q1) * (240 - hue) / 60 
 
-<font size="2"><span style="COLOR: blue">Dim</span> r <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double </span></font>
+Else 
 
-<font size="2"><span style="COLOR: blue">Dim</span> g <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double </span></font>
+QqhToRgb = q1 
 
-<font size="2"><span style="COLOR: blue">Dim</span> b <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double </span></font>
-</span>
+End If 
 
-<span style="FONT-SIZE: 10px; FONT-FAMILY: Courier New">
+End Function 
 
-<font size="2"><span style="COLOR: blue">Dim</span> h <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double </span></font>
 
-<font size="2"><span style="COLOR: blue">Dim</span> l <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double </span></font>
 
-<font size="2"><span style="COLOR: blue">Dim</span> s <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double </span></font>
-</span>
 
-<span style="FONT-SIZE: 10px; FONT-FAMILY: Courier New">
+Public Shared Function ConvertToHls(ByVal color As Color) As HlsValue 
 
-<font size="2">r = color.R / <span style="COLOR: blue">Byte</span>.MaxValue </font>
+Dim max As Double 
 
-<font size="2">g = color.G / <span style="COLOR: blue">Byte</span>.MaxValue </font>
+Dim min As Double 
 
-<font size="2">b = color.B / <span style="COLOR: blue">Byte</span>.MaxValue </font>
-</span>
+Dim diff As Double 
 
-<span style="FONT-SIZE: 10px; FONT-FAMILY: Courier New">
+Dim r_dist As Double 
 
-<font size="2">max = R </font>
+Dim g_dist As Double 
 
-<font size="2"><span style="COLOR: blue">If</span> max < G <span style="COLOR: blue">Then</span> max = G </font>
+Dim b_dist As Double 
 
-<font size="2"><span style="COLOR: blue">If</span> max < B <span style="COLOR: blue">Then</span> max = B </font>
-</span>
 
-<span style="FONT-SIZE: 10px; FONT-FAMILY: Courier New">
 
-<font size="2">min = R </font>
 
-<font size="2"><span style="COLOR: blue">If</span> min > G <span style="COLOR: blue">Then</span> min = G </font>
+Dim r As Double 
 
-<font size="2"><span style="COLOR: blue">If</span> min > B <span style="COLOR: blue">Then</span> min = B </font>
-</span>
+Dim g As Double 
 
-<span style="FONT-SIZE: 10px; FONT-FAMILY: Courier New">
+Dim b As Double 
 
-<font size="2">diff = max - min </font>
 
-<font size="2">L = (max + min) / 2 </font>
 
-<font size="2"><span style="COLOR: blue">If</span> Math.Abs(diff) < 0.00001 <span style="COLOR: blue">Then </span></font>
 
-<font size="2">s = 0 </font>
+Dim h As Double 
 
-<font size="2">h = 0 </font>
+Dim l As Double 
 
-<span style="COLOR: blue"><font size="2">Else </font></span>
+Dim s As Double 
 
-<font size="2"><span style="COLOR: blue">If</span> l <= 0.5 <span style="COLOR: blue">Then </span></font>
 
-<font size="2">s = diff / (max + min) </font>
 
-<span style="COLOR: blue"><font size="2">Else </font></span>
 
-<font size="2">s = diff / (2 - max - min) </font>
+r = color.R / Byte.MaxValue 
 
-<font size="2"><span style="COLOR: blue">End</span> <span style="COLOR: blue">If </span></font>
-</span>
+g = color.G / Byte.MaxValue 
 
-<span style="FONT-SIZE: 10px; FONT-FAMILY: Courier New">
+b = color.B / Byte.MaxValue 
 
-<font size="2">r_dist = (max - r) / diff </font>
 
-<font size="2">g_dist = (max - g) / diff </font>
 
-<font size="2">b_dist = (max - b) / diff </font>
-</span>
 
-<span style="FONT-SIZE: 10px; FONT-FAMILY: Courier New">
+max = R 
 
-<font size="2"><span style="COLOR: blue">If</span> r = max <span style="COLOR: blue">Then </span></font>
+If max < G Then max = G 
 
-<font size="2">h = b_dist - g_dist </font>
+If max < B Then max = B 
 
-<font size="2"><span style="COLOR: blue">ElseIf</span> g = max <span style="COLOR: blue">Then </span></font>
 
-<font size="2">h = 2 + r_dist - b_dist </font>
 
-<span style="COLOR: blue"><font size="2">Else </font></span>
 
-<font size="2">h = 4 + g_dist - r_dist </font>
+min = R 
 
-<font size="2"><span style="COLOR: blue">End</span> <span style="COLOR: blue">If </span></font>
-</span>
+If min > G Then min = G 
 
-<span style="FONT-SIZE: 10px; FONT-FAMILY: Courier New">
+If min > B Then min = B 
 
-<font size="2">h = h * 60 </font>
 
-<font size="2"><span style="COLOR: blue">If</span> h < 0 <span style="COLOR: blue">Then</span> h = h + 360 </font>
 
-<font size="2"><span style="COLOR: blue">End</span> <span style="COLOR: blue">If </span></font>
-</span>
 
-<span style="FONT-SIZE: 10px; FONT-FAMILY: Courier New">
+diff = max - min 
 
-<font size="2">h /= 360 </font>
+L = (max + min) / 2 
 
-<font size="2"><span style="COLOR: blue">Return</span> <span style="COLOR: blue">New</span> HlsValue(h, l, s) </font>
+If Math.Abs(diff) < 0.00001 Then 
 
-<font size="2"><span style="COLOR: blue">End</span> <span style="COLOR: blue">Function </span></font>
+s = 0 
 
-<font size="2"><span style="COLOR: blue">End</span> <span style="COLOR: blue">Class </span></font>
-</span>
+h = 0 
 
-<span style="FONT-SIZE: 10px; FONT-FAMILY: Courier New">
+Else 
 
-<font size="2"><span style="COLOR: blue">Public</span> <span style="COLOR: blue">Structure</span> HlsValue </font>
+If l <= 0.5 Then 
 
-<font size="2"><span style="COLOR: blue">Private</span> mHue <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double </span></font>
+s = diff / (max + min) 
 
-<font size="2"><span style="COLOR: blue">Private</span> mLightness <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double </span></font>
+Else 
 
-<font size="2"><span style="COLOR: blue">Private</span> mSaturation <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double </span></font>
-</span>
+s = diff / (2 - max - min) 
 
-<span style="FONT-SIZE: 10px; FONT-FAMILY: Courier New">
+End If 
 
-<font size="2"><span style="COLOR: blue">Public</span> <span style="COLOR: blue">Sub</span> <span style="COLOR: blue">New</span>(<span style="COLOR: blue">ByVal</span> h <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double</span>, <span style="COLOR: blue">ByVal</span> l <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double</span>, <span style="COLOR: blue">ByVal</span> s <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double</span>) </font>
 
-<font size="2">mHue = h </font>
 
-<font size="2">mLightness = l </font>
 
-<font size="2">mSaturation = s </font>
+r_dist = (max - r) / diff 
 
-<font size="2"><span style="COLOR: blue">End</span> <span style="COLOR: blue">Sub </span></font>
-</span>
+g_dist = (max - g) / diff 
 
-<span style="FONT-SIZE: 10px; FONT-FAMILY: Courier New">
+b_dist = (max - b) / diff 
 
-<font size="2"><span style="COLOR: blue">Public</span> <span style="COLOR: blue">Property</span> Hue() <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double </span></font>
 
-<span style="COLOR: blue"><font size="2">Get </font></span>
 
-<font size="2"><span style="COLOR: blue">Return</span> mHue </font>
 
-<font size="2"><span style="COLOR: blue">End</span> <span style="COLOR: blue">Get </span></font>
+If r = max Then 
 
-<font size="2"><span style="COLOR: blue">Set</span>(<span style="COLOR: blue">ByVal</span> value <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double</span>) </font>
+h = b_dist - g_dist 
 
-<font size="2">mHue = value </font>
+ElseIf g = max Then 
 
-<font size="2"><span style="COLOR: blue">End</span> <span style="COLOR: blue">Set </span></font>
+h = 2 + r_dist - b_dist 
 
-<font size="2"><span style="COLOR: blue">End</span> <span style="COLOR: blue">Property </span></font>
-</span>
+Else 
 
-<span style="FONT-SIZE: 10px; FONT-FAMILY: Courier New">
+h = 4 + g_dist - r_dist 
 
-<font size="2"><span style="COLOR: blue">Public</span> <span style="COLOR: blue">Property</span> Lightness() <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double </span></font>
+End If 
 
-<span style="COLOR: blue"><font size="2">Get </font></span>
 
-<font size="2"><span style="COLOR: blue">Return</span> mLightness </font>
 
-<font size="2"><span style="COLOR: blue">End</span> <span style="COLOR: blue">Get </span></font>
 
-<font size="2"><span style="COLOR: blue">Set</span>(<span style="COLOR: blue">ByVal</span> value <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double</span>) </font>
+h = h * 60 
 
-<font size="2">mLightness = value </font>
+If h < 0 Then h = h + 360 
 
-<font size="2"><span style="COLOR: blue">End</span> <span style="COLOR: blue">Set </span></font>
+End If 
 
-<font size="2"><span style="COLOR: blue">End</span> <span style="COLOR: blue">Property </span></font>
-</span>
 
-<span style="FONT-SIZE: 10px; FONT-FAMILY: Courier New">
 
-<font size="2"><span style="COLOR: blue">Public</span> <span style="COLOR: blue">Property</span> Saturation() <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double </span></font>
 
-<span style="COLOR: blue"><font size="2">Get </font></span>
+h /= 360 
 
-<font size="2"><span style="COLOR: blue">Return</span> mSaturation </font>
+Return New HlsValue(h, l, s) 
 
-<font size="2"><span style="COLOR: blue">End</span> <span style="COLOR: blue">Get </span></font>
+End Function 
 
-<font size="2"><span style="COLOR: blue">Set</span>(<span style="COLOR: blue">ByVal</span> value <span style="COLOR: blue">As</span> <span style="COLOR: blue">Double</span>) </font>
+End Class 
 
-<font size="2">mSaturation = value </font>
 
-<font size="2"><span style="COLOR: blue">End</span> <span style="COLOR: blue">Set </span></font>
 
-<font size="2"><span style="COLOR: blue">End</span> <span style="COLOR: blue">Property </span></font>
-</span>
 
-<span style="FONT-SIZE: 10px; FONT-FAMILY: Courier New">
+Public Structure HlsValue 
 
-<font size="2"><span style="COLOR: blue">Public</span> <span style="COLOR: blue">Shared</span> <span style="COLOR: blue">Operator</span> <>(<span style="COLOR: blue">ByVal</span> left <span style="COLOR: blue">As</span> HlsValue, <span style="COLOR: blue">ByVal</span> right <span style="COLOR: blue">As</span> HlsValue) <span style="COLOR: blue">As</span> <span style="COLOR: blue">Boolean </span></font>
+Private mHue As Double 
 
-<font size="2"><span style="COLOR: blue">Dim</span> bool1 <span style="COLOR: blue">As</span> <span style="COLOR: blue">Boolean </span></font>
-</span>
+Private mLightness As Double 
 
-<span style="FONT-SIZE: 10px; FONT-FAMILY: Courier New"><font size="2">bool1 = left.Lightness <> right.Lightness <span style="COLOR: blue">Or</span> left.Saturation <> right.Saturation </font></span>
+Private mSaturation As Double 
 
-<span style="FONT-SIZE: 10px; FONT-FAMILY: Courier New">
 
-<font size="2"><span style="COLOR: blue">If</span> <span style="COLOR: blue">Not</span> bool1 <span style="COLOR: blue">Then </span></font>
 
-<font size="2"><span style="COLOR: blue">Return</span> left.Hue <> right.Hue <span style="COLOR: blue">And</span> (left.Hue > 0 <span style="COLOR: blue">And</span> right.Hue < 1) <span style="COLOR: blue">And</span> (left.Hue < 1 <span style="COLOR: blue">And</span> right.Hue > 0) </font>
 
-<span style="COLOR: blue"><font size="2">Else </font></span>
+Public Sub New(ByVal h As Double, ByVal l As Double, ByVal s As Double) 
 
-<font size="2"><span style="COLOR: blue">Return</span> bool1 </font>
+mHue = h 
 
-<font size="2"><span style="COLOR: blue">End</span> <span style="COLOR: blue">If </span></font>
+mLightness = l 
 
-<font size="2"><span style="COLOR: blue">End</span> <span style="COLOR: blue">Operator </span></font>
-</span>
+mSaturation = s 
 
-<span style="FONT-SIZE: 10px; FONT-FAMILY: Courier New">
+End Sub 
 
-<font size="2"><span style="COLOR: blue">Public</span> <span style="COLOR: blue">Shared</span> <span style="COLOR: blue">Operator</span> =(<span style="COLOR: blue">ByVal</span> left <span style="COLOR: blue">As</span> HlsValue, <span style="COLOR: blue">ByVal</span> right <span style="COLOR: blue">As</span> HlsValue) <span style="COLOR: blue">As</span> <span style="COLOR: blue">Boolean </span></font>
 
-<font size="2"><span style="COLOR: blue">Dim</span> bool1 <span style="COLOR: blue">As</span> <span style="COLOR: blue">Boolean </span></font>
-</span>
 
-<span style="FONT-SIZE: 10px; FONT-FAMILY: Courier New"><font size="2">bool1 = left.Lightness = right.Lightness <span style="COLOR: blue">And</span> left.Saturation = right.Saturation </font></span>
 
-<span style="FONT-SIZE: 10px; FONT-FAMILY: Courier New">
+Public Property Hue() As Double 
 
-<font size="2"><span style="COLOR: blue">If</span> bool1 <span style="COLOR: blue">Then </span></font>
+Get 
 
-<font size="2"><span style="COLOR: blue">Return</span> Math.Round(left.Hue, 2) = Math.Round(right.Hue, 2) <span style="COLOR: blue">Or</span> (Math.Round(left.Hue, 2) = 1 <span style="COLOR: blue">And</span> Math.Round(right.Hue, 2) = 0) <span style="COLOR: blue">Or</span> (Math.Round(left.Hue, 2) = 0 <span style="COLOR: blue">And</span> Math.Round(right.Hue, 2) = 1) </font>
+Return mHue 
 
-<span style="COLOR: blue"><font size="2">Else </font></span>
+End Get 
 
-<font size="2"><span style="COLOR: blue">Return</span> <span style="COLOR: blue">False </span></font>
+Set(ByVal value As Double) 
 
-<font size="2"><span style="COLOR: blue">End</span> <span style="COLOR: blue">If </span></font>
+mHue = value 
 
-<font size="2"><span style="COLOR: blue">End</span> <span style="COLOR: blue">Operator </span></font>
-</span>
+End Set 
 
-<span style="FONT-SIZE: 10px; FONT-FAMILY: Courier New">
+End Property 
 
-<font size="2"><span style="COLOR: blue">Public</span> <span style="COLOR: blue">Overrides</span> <span style="COLOR: blue">Function</span> ToString() <span style="COLOR: blue">As</span> <span style="COLOR: blue">String </span></font>
 
-<font size="2"><span style="COLOR: blue">Return</span> <span style="COLOR: blue">String</span>.Format(<span style="COLOR: maroon">"H: {0:0.00} L: {1:0.00} S: {2:0.00}"</span>, Hue, Lightness, Saturation) </font>
 
-<font size="2"><span style="COLOR: blue">End</span> <span style="COLOR: blue">Function </span></font>
-</span>
 
-<font size="2"><span style="FONT-SIZE: 10px; FONT-FAMILY: Courier New"><span style="COLOR: blue">End Structure</span></span> </font>
+Public Property Lightness() As Double 
+
+Get 
+
+Return mLightness 
+
+End Get 
+
+Set(ByVal value As Double) 
+
+mLightness = value 
+
+End Set 
+
+End Property 
+
+
+
+
+Public Property Saturation() As Double 
+
+Get 
+
+Return mSaturation 
+
+End Get 
+
+Set(ByVal value As Double) 
+
+mSaturation = value 
+
+End Set 
+
+End Property 
+
+
+
+
+Public Shared Operator <>(ByVal left As HlsValue, ByVal right As HlsValue) As Boolean 
+
+Dim bool1 As Boolean 
+
+
+bool1 = left.Lightness <> right.Lightness Or left.Saturation <> right.Saturation 
+
+
+
+If Not bool1 Then 
+
+Return left.Hue <> right.Hue And (left.Hue > 0 And right.Hue < 1) And (left.Hue < 1 And right.Hue > 0) 
+
+Else 
+
+Return bool1 
+
+End If 
+
+End Operator 
+
+
+
+
+Public Shared Operator =(ByVal left As HlsValue, ByVal right As HlsValue) As Boolean 
+
+Dim bool1 As Boolean 
+
+
+bool1 = left.Lightness = right.Lightness And left.Saturation = right.Saturation 
+
+
+
+If bool1 Then 
+
+Return Math.Round(left.Hue, 2) = Math.Round(right.Hue, 2) Or (Math.Round(left.Hue, 2) = 1 And Math.Round(right.Hue, 2) = 0) Or (Math.Round(left.Hue, 2) = 0 And Math.Round(right.Hue, 2) = 1) 
+
+Else 
+
+Return False 
+
+End If 
+
+End Operator 
+
+
+
+
+Public Overrides Function ToString() As String 
+
+Return String.Format("H: {0:0.00} L: {1:0.00} S: {2:0.00}", Hue, Lightness, Saturation) 
+
+End Function 
+
+
+End Structure 
+````

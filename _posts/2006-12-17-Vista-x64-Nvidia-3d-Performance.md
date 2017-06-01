@@ -15,8 +15,8 @@ Zum Vergleich die 3D Mark 06 Ergebnisse meines Systems auf XP und Vista x64:
 **Windows XP**  
 ![](http://www.dev-jc-vb.de/dev-jc-vb/blog/images/Vistax64Nvidia3dPerformance_130F7/image09.png) 
 
-**Windows Vista x64  
-**![](http://www.dev-jc-vb.de/dev-jc-vb/blog/images/Vistax64Nvidia3dPerformance_130F7/image010.png) 
+**Windows Vista x64**
+![](http://www.dev-jc-vb.de/dev-jc-vb/blog/images/Vistax64Nvidia3dPerformance_130F7/image010.png) 
 
 Die 3D Leistung für Shadermodel 2.0 und 3.0 wird deutlich schlechter bewertet als unter XP. Überraschenderweise wird auch die CPU Leistung etwas niedriger eingestuft.
 
