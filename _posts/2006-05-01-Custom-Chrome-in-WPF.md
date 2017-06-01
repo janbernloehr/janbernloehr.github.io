@@ -16,17 +16,17 @@ Although this breaks one of the [Top 10 Vista rules](http://msdn.microsoft.com/l
 
 You can't get there by simply setting the border of a WPF Window to None because always a thick border remains. You have to do a work around and create an empty Win32 window and fill it with your own WPF controls.
 
-You can use the <strong>HwndSource</strong> object to do this. This object is intended to place WPF controls into Win32 Applications but you can also use it to place a WPF control onto your Windows Desktop which is also a Win32 application. HwndSource will call the native function CreateWindowEx and create the window for you.
+You can use the __HwndSource__ object to do this. This object is intended to place WPF controls into Win32 Applications but you can also use it to place a WPF control onto your Windows Desktop which is also a Win32 application. HwndSource will call the native function CreateWindowEx and create the window for you.
 
-````
+````VB.NET
 Dim params As HwndSourceParameters = New HwndSourceParameters("CustomChrome 1", 400, 300)  
 Dim hwnd As HwndSource = New HwndSource(params)  
 hwnd.RootVisual = New Page1
 ````
 
-This code will create a default window for you. The <strong>HwndSourceParameters</strong>'s constructor sets the Name, Width and Height of the window to create. More parameters will be used later in this article.
+This code will create a default window for you. The __HwndSourceParameters__'s constructor sets the Name, Width and Height of the window to create. More parameters will be used later in this article.
 
-HwndSource's <strong>RootVisual</strong> Property points to the WPF control being displayed by HwndSource.
+HwndSource's __RootVisual__ Property points to the WPF control being displayed by HwndSource.
 
 I created a simple page with a green background:
 
@@ -35,7 +35,7 @@ I created a simple page with a green background:
 The Window has still the default Windows Chrome but it's very easy to get rid of it. The key is the HwndSourceParameters object passed to the HwndSource constuctor. The   
 [WindowStyle](http://msdn.microsoft.com/library/en-us/winui/winui/WindowsUserInterface/Windowing/Windows/WindowReference/WindowStyles.asp) property lets you define how the window looks like.
 
-````
+````VB.NET
  
 
 Public Const WS_POPUP As Integer = &H80000000  
@@ -57,25 +57,25 @@ has <u>round</u> corners ours not.
 
 ![](http://www.dev-jc-vb.de/dev-jc-vb/Articles/Blog/WPF/CustomChrome2.PNG)
 
-To create a non rectangular Window you need a Region, which can be created by serval API functions. In this special case let's pick <strong>CreateRoundRectRgn</strong> which creates a rectangle with round corners.
+To create a non rectangular Window you need a Region, which can be created by serval API functions. In this special case let's pick __CreateRoundRectRgn__ which creates a rectangle with round corners.
 
-````
+````VB.NET
 Public Declare Auto Function CreateRoundRectRgn Lib "gdi32" Alias "CreateRoundRectRgn" (ByVal X1 As Integer, ByVal Y1 As Integer, ByVal X2 As Integer, ByVal Y2 As Integer, ByVal X3 As Integer, ByVal Y3 As Integer) As IntPtr
 ````
 
 X1 and Y1 define the StartPoint of the region, X2 and Y2 the EndPoint. X3 and Y2  
 define the radius of the edges.
 
-Now you have to set the Window's region to the created one by calling <strong>SetWindowRgn</strong>.
+Now you have to set the Window's region to the created one by calling __SetWindowRgn__.
 
-````
+````VB.NET
 Public Declare Auto Function SetWindowRgn Lib "user32.dll" (ByVal hWnd As IntPtr, ByVal hRdn As IntPtr, ByVal bRedraw As Boolean) As Integer
 ````
 
-<strong>SetWinowRgn</strong> requires the Handle to the window whose window region is to be set.  
-You can get this Handle from <strong>HwndSource.Handle</strong>.
+__SetWinowRgn__ requires the Handle to the window whose window region is to be set.  
+You can get this Handle from __HwndSource.Handle__.
 
-````
+````VB.NET
 Dim rgn As IntPtrrgn = CreateRoundRectRgn(0, 0, 400, 300, 10, 10)  
 SetWindowRgn(hwnd.Handle, rgn, True)
 ````
@@ -86,10 +86,10 @@ The result should look like this:
 
 I created the Chrome with WPF Elements using Interactive Designer.
 
-Last but not least you have to react on a closing of your window. The <strong>Disposed</strong> Event  
-is raised when the window is either closed by ALT+F4 etc. or <strong>HwndSource.Dispose</strong> is called (Close Method).
+Last but not least you have to react on a closing of your window. The __Disposed__ Event  
+is raised when the window is either closed by ALT+F4 etc. or __HwndSource.Dispose__ is called (Close Method).
 
-````
+````VB.NET
 AddHandler hwnd.Disposed, AddressOf hwnd_Disposed  
 
 Private Sub hwnd_Disposed(ByVal sender As Object, ByVal e As EventArgs)  
@@ -99,12 +99,9 @@ End Sub
 
 Creating a Window with custom chrome in WPF is very easy. You can define any shape you want by combining regions and use every effect and animation feature you like.
 
-Our Window does not yet support <strong>Sizing </strong>and <strong>Moving</strong> but I will continue this tutorial in a few days ;-)
+Our Window does not yet support __Sizing __and __Moving__ but I will continue this tutorial in a few days ;-)
 
-<strong>Read On:</strong>
+__Read On:__
 
-*   [The hwnd interop white paper](http://blogs.msdn.com/nickkramer/archive/2005/07/18/440085.aspx) 
-[Fun with window regions](http://www.flounder.com/setwindowrgn.htm)
-440085.aspx) 
-[Fun with window regions](http://www.flounder.com/setwindowrgn.htm)
-ttp://www.flounder.com/setwindowrgn.htm)
+- [The hwnd interop white paper](http://blogs.msdn.com/nickkramer/archive/2005/07/18/440085.aspx) 
+- [Fun with window regions](http://www.flounder.com/setwindowrgn.htm)

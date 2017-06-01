@@ -6,11 +6,11 @@ tags: [.NET, WPF]
 ---
 {% include JB / setup %}
 
-The only way <strong>DependencyProperties</strong> tell that something happend to them seems to be via a <strong>binding</strong>.
+The only way __DependencyProperties__ tell that something happend to them seems to be via a __binding__.
 
 So I implemented an DependencyObject that binds to the the property to be watched.
 
-````
+````VB.NET
  
 
 Public Class DependencyProperyChangedHelper(Of T)  
@@ -41,19 +41,15 @@ End Class
 
 You can e.g. assign a binding to a TextBox's TextProperty:
 
-````
+````VB.NET
 Dim autoCompleteHelper As New DependencyProperyChangedHelper(Of String)(Me.txtNotify, "Text")
 ````
 
-The constructor builds a Helper for a <strong>String</strong> Property on <strong>txtNotify</strong> named <strong>Text</strong>.
+The constructor builds a Helper for a __String__ Property on __txtNotify__ named __Text__.
 
-At the moment the Helper does not do anything else than apply the binding but when you take a closer look at the DependencyProperty.Register overloads you will notify that a <font size="2"><strong>PropertyChangedCallback</strong> can be supplied:</font>
+At the moment the Helper does not do anything else than apply the binding but when you take a closer look at the DependencyProperty.Register overloads you will notify that a __PropertyChangedCallback__ can be supplied:
 
-<font size="2">````
- 
-
-<font size="2"></font>
-
+````VB.NET
     Public Shared ReadOnly ValueProperty As DependencyProperty = DependencyProperty.Register("Value", GetType(T), GetType(DependencyProperyChangedHelper(Of T)), New FrameworkPropertyMetadata(New PropertyChangedCallback(AddressOf Value_Changed)))
 
     Private Shared Sub Value_Changed(ByVal d As DependencyObject, ByVal e As DependencyPropertyChangedEventArgs)  
@@ -67,17 +63,14 @@ At the moment the Helper does not do anything else than apply the binding but wh
     Private Sub OnValueChanged(ByVal e As System.Windows.DependencyPropertyChangedEventArgs)  
         RaiseEvent ValueChanged(Me, e)  
     End Sub
-
-
 ````
 
 From now on the helper object raises clr events whenever the property it is bound to changes.
 
-<strong><font color="#808080">Complete Code:</font></strong>
+__Complete Code:__
 
-````
+````VB.NET
  
-
 Public Class DependencyProperyChangedHelper(Of T)  
     Inherits DependencyObject
 
@@ -120,17 +113,6 @@ Public Class DependencyProperyChangedHelper(Of T)
     Public Event ValueChanged As DependencyPropertyChangedEventHandler  
 End Class
 
+````
 
-````</font><font size="2">
 
-</font>
-dler  
-End Class
-
-[/code]</font><font size="2">
-
-</font>
-ont>
-">
-
-</font>

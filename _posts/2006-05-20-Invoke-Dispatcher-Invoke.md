@@ -18,7 +18,7 @@ Windows Server 2k3 SP1
 Visual Studio 2005 Professional; WinFX Feb 05 CTP
 
 **Example 1**  
-````
+````VB.NET
 Dim Coll1 As New System.Collections.ObjectModel.ObservableCollection(Of String)  
 
 For i As Integer = 0 To 20000  
@@ -26,13 +26,13 @@ For i As Integer = 0 To 20000
 Next
 ````
 
-<font color="#ffa500">Dispatcher Thread</font> / <font color="#000080">Threadpool Thread</font>  
-<font color="#ffa500">30 ms</font> / <font color="#000080">crash</font>
+Dispatcher Thread / Threadpool Thread  
+30 ms / crash
 
 Objects are added without synchronization. Fast on the dispatcher thread, crash on any other thread.
 
 **Example 2**  
-````
+````VB.NET
 Private Delegate Sub AddDeleagte(ByVal item As String)  
 …  
 Dim Coll2 As New System.Collections.ObjectModel.ObservableCollection(Of String)  
@@ -42,12 +42,12 @@ For i As Integer = 0 To 20000
 Next
 ````
 
-<font color="#ffa500">8200 ms</font> / <font color="#000080">8200 ms</font>
+8200 ms / 8200 ms
 
 Objects are added with synchronization. Very slow on the dispatcher thread, slow but safe on any other thread.
 
 **Example 3**  
-````
+````VB.NET
 Private Delegate Sub AddDeleagte(ByVal item As String)  
 …  
 Dim Coll3 As New System.Collections.ObjectModel.ObservableCollection(Of String)  
@@ -57,7 +57,7 @@ For i As Integer = 0 To 20000
 Next
 ````
 
-<font color="#ffa500">30 ms</font> / <font color="#000080">8200 ms</font>
+30 ms / 8200 ms
 
 Objects are added with synchronization when required. Fast on the dispatcher thread, slow but safe on any other thread.
 
@@ -67,7 +67,7 @@ The solution is easy: Call a method synchronized that adds the 20000 elements.
 
 **Example 4**
 
-````
+````VB.NET
  
 
 Private Delegate Sub AddToListDelegate()
@@ -85,13 +85,11 @@ If Not Me.Dispatcher.CheckAccess Then Dispatcher.Invoke(System.Windows.Threading
 
 ````
 
-<font color="#ffa500">30 ms</font> / <font color="#000080">31 ms</font>
+30 ms / 31 ms
 
 All objects would be added synchronized when required. Save and fast on any thread.
 
 **Conclusion**  
-Consider whether executing methods asynchronously is useful.  
-Check your UI synchronization needs.  
-Try to avoid frequently UI synchronization. 
-eck your UI synchronization needs.  
-Try to avoid frequently UI synchronization. 
+- Consider whether executing methods asynchronously is useful.  
+- Check your UI synchronization needs.  
+- Try to avoid frequently UI synchronization. 
