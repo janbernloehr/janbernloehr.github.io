@@ -2,9 +2,9 @@
 layout: post
 title : "ASP .NET und LINQ ein (fast) perfektes Team!"
 date : 15.08.2006 04:17:00
-tags: [.NET, ASP .NET, LINQ]
+tags: [.net, asp.net, linq]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 *Dieser Blog Beitrag soll kurz beschreiben, wie man LINQ in ASP .NET Anwendungen einsetzen kann. *
 

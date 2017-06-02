@@ -2,9 +2,9 @@
 layout: post
 title : "Visual Studio 2005 + subversion"
 date : 02.01.2007 04:45:00
-tags: [.NET, Visual Studio 2005]
+tags: [.net, vs2005, svn]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Nicht nur für Team Arbeit bietet sich ein SourceControl Provider an. Steht ein Projekt unter SourceControl, verfügt man über ein ständiges BackUp- und Versionierungssystem, durch das Änderungen schnell rückgängig gemacht aber auch gut nachvollzogen und dokumentiert werden können.
 

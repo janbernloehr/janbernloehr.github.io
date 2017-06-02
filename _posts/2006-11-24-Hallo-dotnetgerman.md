@@ -2,9 +2,9 @@
 layout: post
 title : "Hallo dotnetgerman!"
 date : 24.11.2006 19:12:05
-tags: []
+tags: [dotnetgerman]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Seit heute darf ich mich auch zu den .NET Bloggern zählen, die bei [http://blogs.dotnetgerman.com/](http://blogs.dotnetgerman.com/ "http://blogs.dotnetgerman.com/") gelistet werden, und werde mich aus diesem Grund kurz vorstellen.
 

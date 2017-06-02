@@ -2,9 +2,9 @@
 layout: post
 title : "HowTo: Implement a notification event on a DependencyProperty change"
 date : 04.05.2006 16:26:00
-tags: [.NET, WPF]
+tags: [.net, wpf]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 The only way __DependencyProperties__ tell that something happend to them seems to be via a __binding__.
 

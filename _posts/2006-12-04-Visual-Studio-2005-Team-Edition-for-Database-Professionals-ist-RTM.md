@@ -2,9 +2,9 @@
 layout: post
 title : "Visual Studio 2005 Team Edition for Database Professionals ist RTM"
 date : 04.12.2006 23:01:32
-tags: [Visual Studio 2005]
+tags: [vs2005, updates]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Neben WPF/E und Expression hat Microsoft heute ein weiteres Produkt auf der Newsliste. [Visual Studio 2005 Team Edition for Database Professionals](http://msdn2.microsoft.com/en-us/teamsystem/aa718764.aspx) hat den RTM Status erreicht.
 

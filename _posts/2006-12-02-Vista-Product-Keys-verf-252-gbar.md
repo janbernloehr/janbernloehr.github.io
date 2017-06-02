@@ -4,7 +4,7 @@ title : "Vista Product Keys verf&#252;gbar"
 date : 02.12.2006 00:20:23
 tags: [Vista]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Die Product Keys für Mitglieder des technischen Beta Programs sind nun auf [http://connect.microsoft.com](http://connect.microsoft.com) verfügbar.
 

@@ -2,9 +2,9 @@
 layout: post
 title : "Vista Xaml Styles"
 date : 06.01.2007 19:12:22
-tags: [WPF, Vista]
+tags: [wpf, vista]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Da WPF eine völlig eigenständige Renderengine ist, greift sie nicht auf die GDI Funktionen von Windows zu, sondern zeichnet alles selbst.  
 Dies bedeutet auch, dass alle Windows Styles also Vistas Aero, XPs Luna und der klassische Windows Style in WPF nachgebaut werden mussten.

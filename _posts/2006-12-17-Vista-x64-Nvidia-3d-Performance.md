@@ -2,9 +2,9 @@
 layout: post
 title : "Vista x64: Nvidia 3d Performance"
 date : 17.12.2006 21:41:09
-tags: [Vista]
+tags: [vista]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Nvidia hat noch keine x64 WDDM Treiber für Nvidia Grafikkarten freigegeben. Momentan kursieren [verschiedene Beta Versionen](http://downloads.guru3d.com/download.php?id=32) wie z.B. 97.19 WHQL.
 

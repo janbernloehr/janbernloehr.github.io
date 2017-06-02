@@ -2,9 +2,9 @@
 layout: post
 title : "Panda Internet Security 2006 - Never again!"
 date : 01.05.2006 12:42:00
-tags: []
+tags: [anti-maleware]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Nach der Installation von Panda stürtze mein System häufig mit einem BlueScreen ab. Dannach erkannte Windows beschädigte Dateien auf meiner Festplatte. Eine Deinstallation der Software schlug fehl und resultierte darin, dass sich Windows nicht mehr straten lies.
 

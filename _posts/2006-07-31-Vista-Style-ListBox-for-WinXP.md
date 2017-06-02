@@ -2,9 +2,9 @@
 layout: post
 title : "Vista-Style ListBox for WinXP"
 date : 31.07.2006 17:02:00
-tags: [WPF, Expression Products]
+tags: [wpf, expression]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Since the WPF Style engine is very flexible you can easily achieve a Vista-like style for ListBoxes. 
 

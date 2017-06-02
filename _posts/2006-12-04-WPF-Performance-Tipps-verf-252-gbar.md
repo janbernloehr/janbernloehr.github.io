@@ -2,9 +2,9 @@
 layout: post
 title : "WPF Performance Tipps verf&#252;gbar"
 date : 04.12.2006 22:56:32
-tags: [.NET, WPF]
+tags: [.net, wpf, performance]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Microsoft hat eine Reihe von Performance Tipps für WPF herausgegeben:
 

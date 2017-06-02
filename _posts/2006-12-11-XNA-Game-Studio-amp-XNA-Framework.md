@@ -2,9 +2,9 @@
 layout: post
 title : "XNA Game Studio &amp; XNA Framework"
 date : 11.12.2006 18:18:10
-tags: [.NET]
+tags: [.net, xna]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Für Hobby Spieleentwickler geht ein Traum in Erfüllung.
 

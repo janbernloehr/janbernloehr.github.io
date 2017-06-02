@@ -2,9 +2,9 @@
 layout: post
 title : "How to create a Microsoft Max style window in WPF"
 date : 19.06.2006 22:12:00
-tags: [.NET, WPF]
+tags: [.net, wpf]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 
 When I first saw [Microsoft Max](http://www.microsoft.com/max/) I just though wow! how did they cheat ;) [Sorry for that] 

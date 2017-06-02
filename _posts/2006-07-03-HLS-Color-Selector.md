@@ -2,9 +2,9 @@
 layout: post
 title : "HLS Color Selector"
 date : 03.07.2006 22:11:00
-tags: [.NET, WPF]
+tags: [.net, wpf, hls]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 I searched the web for a while to find a WPF HLS Color selector like Interactive Designer is equipped with. 
 

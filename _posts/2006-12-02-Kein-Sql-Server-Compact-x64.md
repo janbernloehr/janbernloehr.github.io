@@ -2,9 +2,9 @@
 layout: post
 title : "Kein Sql Server Compact x64"
 date : 02.12.2006 00:09:04
-tags: [.NET, Vista, Sql Server]
+tags: [.net, vista, sql-server, sql-compact]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Der Sql Server Compact wird nicht als x64 Version zur Verfügung stehen. Dies erfordert eine kleine Anpassung an .NET Projekten die den Sql Server Compact benutzen und eventuell auf x64 Systemen ausgeführt werden.
 

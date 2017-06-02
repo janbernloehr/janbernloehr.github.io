@@ -2,9 +2,9 @@
 layout: post
 title : "Audio Wave Resource abspielen"
 date : 12.01.2007 15:32:26
-tags: [.NET]
+tags: [.net, audio]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Viele Anwendungen benutzen Sounds um den Benutzer über bestimmte Ereignisse zu informieren. Jedoch will man die Audio Dateien nicht "lose" im Dateisystem herumliegen lassen, sondern mit der Anwendung bündeln. Dazu bietet sich das Resourcen System von Visual Basic an.
 

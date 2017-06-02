@@ -2,9 +2,9 @@
 layout: post
 title : "Visual Studio 2005: IDE Enhancements erschienen"
 date : 30.10.2006 20:41:00
-tags: [.NET, WPF, Visual Studio 2005]
+tags: [.net, wpf, vs2005]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Am Freitag hat Microsoft ein [Set von Erweitungen für Visual Studio 2005](http://www.microsoft.com/downloads/details.aspx?FamilyID=cd7c6e48-e41b-48e3-881e-a0e6e97f9534&DisplayLang=en) veröffentlicht.
 

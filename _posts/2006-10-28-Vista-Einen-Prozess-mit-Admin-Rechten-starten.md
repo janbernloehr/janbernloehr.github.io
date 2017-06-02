@@ -2,9 +2,9 @@
 layout: post
 title : "Vista: Einen Prozess mit Admin Rechten starten"
 date : 28.10.2006 12:04:37
-tags: [.NET, Vista]
+tags: [.net, vista, uac]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 In Vista sorgt die UAC (User Account Protection) dafür, dass Prozesse standardmäßig **<u>keine</u>** Administrator Rechte haben, selbst wenn man als Administrator angemeldet ist.
 

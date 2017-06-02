@@ -2,9 +2,9 @@
 layout: post
 title : "WPF lokalisieren"
 date : 03.01.2007 23:36:05
-tags: [.NET, WPF]
+tags: [.net, wpf, localization]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 .NET setzt beim Programmstart die CultureInfo automatisch auf die systemweit Eingestellte.
 

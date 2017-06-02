@@ -2,9 +2,9 @@
 layout: post
 title : "FireFox 3.0 Alpha und Java 6 RTM"
 date : 11.12.2006 17:57:56
-tags: [Vista]
+tags: [vista]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Die Entwickler von Sun und Mozilla scheinen wieder Nachtschichten eingeschoben zu haben.
 

@@ -2,9 +2,9 @@
 layout: post
 title : "Zur&#252;ck von der Insel"
 date : 17.09.2006 23:51:26
-tags: []
+tags: [.net, vista, updates, vs]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Mein Urlaub auf der griechischen Insel Kos vom 03. August bis zum 17. August ist leider vorbei. Jedoch hat sich auch hier einiges getan. 
 

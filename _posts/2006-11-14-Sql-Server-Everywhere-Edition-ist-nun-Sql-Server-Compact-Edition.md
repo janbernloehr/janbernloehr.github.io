@@ -2,9 +2,9 @@
 layout: post
 title : "Sql Server Everywhere Edition ist nun Sql Server Compact Edition"
 date : 14.11.2006 23:41:17
-tags: [.NET, Visual Studio 2005, Sql Server]
+tags: [.net, vs2005, sql-server, sql-compact]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Microsoft hat heute den Namen des bereits als Sql Server Everywhere Edition bekannten Sql Server abkömlings bekannt gegeben, der auch ohne Installation als Service läuft.
 

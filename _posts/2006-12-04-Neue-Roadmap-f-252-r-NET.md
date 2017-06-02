@@ -2,9 +2,9 @@
 layout: post
 title : "Neue Roadmap f&#252;r .NET"
 date : 04.12.2006 23:25:44
-tags: []
+tags: [vista, .net, updates]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Mit Vista erscheint auch die neue Version 3.0 des .NET Frameworks. Jedoch handelt es sich dabei um kein eigentliches .NET Framework Release sondern nur um Erweiterungen für .NET 2.0. Es gibt keine neuen Compiler und auch kein neues Visual Studio. Dafür sind WPF, WCF, WCS und WWF nun als finale Versionen verfügbar.
 

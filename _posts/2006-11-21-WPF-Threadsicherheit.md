@@ -2,9 +2,9 @@
 layout: post
 title : "WPF Threadsicherheit"
 date : 21.11.2006 15:57:21
-tags: [.NET, WPF]
+tags: [.net, wpf, threading]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Überrascht stelle ich fest, dass in der WPF Final das PropertyChanged Event threadsicher ist.
 

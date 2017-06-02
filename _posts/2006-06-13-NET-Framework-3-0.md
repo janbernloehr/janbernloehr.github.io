@@ -2,9 +2,9 @@
 layout: post
 title : ".NET Framework 3.0"
 date : 13.06.2006 20:39:00
-tags: [.NET, WPF, LINQ]
+tags: [.net, wpf, wcf, linq]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Das unter dem bisherigen Namen WinFX bekannte Framework für Datenvisualisierung (WPF), Kommunikation (WCF), Workflow (WWF) und Identitfizierung (CardSpace) wurde nun offiziell in Microsoft .NET Framework 3.0 umbenannt.
 

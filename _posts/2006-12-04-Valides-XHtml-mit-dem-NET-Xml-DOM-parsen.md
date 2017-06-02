@@ -2,9 +2,9 @@
 layout: post
 title : "Valides XHtml mit dem .NET Xml DOM parsen"
 date : 04.12.2006 23:08:14
-tags: [ASP .NET]
+tags: [asp.net]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Die HTML Ausgabe von Webseiten zu parsen stellt meist eine sehr unschöne Aufgabe dar. Seelig sind die, deren Webseite wenigstens den Xhtml Standard erfüllt also ein valides Xml Dokument ausgibt. Dadurch wird es möglich das Dokument in jeder .NET Anwendung als Xml Dokument zu laden und dann mit effizienten Methoden wie Xpath nach Informationen zu durchforsten.
 

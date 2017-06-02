@@ -2,9 +2,9 @@
 layout: post
 title : "CSS auch f&#252;r Links in ASP .NET"
 date : 17.11.2006 19:23:32
-tags: []
+tags: [css, asp.net]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Definiert man eine Klasse in CSS und referenziert diese von einem Link, wird man vielleicht überrascht sein:
 

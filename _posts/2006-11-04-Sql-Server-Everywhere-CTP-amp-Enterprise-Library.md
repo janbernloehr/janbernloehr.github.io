@@ -2,9 +2,9 @@
 layout: post
 title : "Sql Server Everywhere CTP &amp; Enterprise Library"
 date : 04.11.2006 14:01:00
-tags: [.NET, Sql Server]
+tags: [.net, sql-server]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 ___UPDATE: Mit dem Erscheinen des Sql Servers 2005 Compact Edition RC1 (ehemals Everywhere Edition) wird der SqlCe-Provider automatisch registriert, was einen zusätzlichen Eintrag in der web.config unnötig macht.___
 

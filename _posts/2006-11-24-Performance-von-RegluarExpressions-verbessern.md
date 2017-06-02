@@ -2,9 +2,9 @@
 layout: post
 title : "Performance von RegluarExpressions verbessern"
 date : 24.11.2006 14:24:18
-tags: [.NET]
+tags: [.net, regex]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Im .NET Framework setllen die RegularExpressions (zu deutsch reguläre Ausdrücke) eine Vielzahl von Textoperationen bereit.
 

@@ -2,9 +2,9 @@
 layout: post
 title : "WPF: Jetzt in klarem Licht f&#252;r Entwickler"
 date : 30.10.2006 20:37:28
-tags: [.NET, WPF, Vista]
+tags: [.net, pwf, vista]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Bislang war es unklar ob die Entwicklung von .NET 3.0 Anwendungen schon vollständig von Visual Studio 2005 unterstützt wird oder es nur weitere CTPs bis zum Release von Visual Studio *Codename "Orcas"* geben wird.
 

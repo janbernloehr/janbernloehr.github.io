@@ -2,9 +2,9 @@
 layout: post
 title : "Coole neue Windows Live Beta Programme"
 date : 07.07.2006 13:15:00
-tags: []
+tags: [wlw]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Zu Microsofts neuer Plattform __Windows Live__ gehört nicht nur der __Windows Live Messenger__ (vorher MSN Messenger) und __Windows Live Mail__ (Vorher MSN Hotmail) sondern auch __Windows Live Mail Desktop__ und __Windows Live Safety Center__. 
 

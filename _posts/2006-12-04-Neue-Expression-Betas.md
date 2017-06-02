@@ -4,7 +4,7 @@ title : "Neue Expression Betas!"
 date : 04.12.2006 22:53:25
 tags: [WPF, Expression Products]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Die Microsoft Expression Serie wurde heute aktulisiert. Neben der neuen Hompage ([http://www.microsoft.com/products/expression/en/default.mspx](http://www.microsoft.com/products/expression/en/default.mspx "http://www.microsoft.com/products/expression/en/default.mspx")), gibt es auch einen Neuzugang [Expression Media](http://www.microsoft.com/products/expression/en/expression-media/default.mspx), der Medienverwaltung ermöglicht. Interactive Designer, der Xaml Designer, heißt nun [Expression Blend](http://www.microsoft.com/products/expression/en/expression-blend/default.mspx) und Graphics Desinger, das Bildbearbeitungprogramm, trägt nun den Namen [Expression Design](http://www.microsoft.com/products/expression/en/expression-design/default.mspx). [Expression Web](http://www.microsoft.com/products/expression/en/expression-web/default.mspx) hat seinen Namen behalten und steht ab sofort als RTM zur Verfügung.  
 Alle Tools wurden nun auch zu einer Suite namens Expression Studio zusammengefasst.

@@ -2,9 +2,9 @@
 layout: post
 title : "Invoke != Dispatcher.Invoke"
 date : 20.05.2006 13:48:00
-tags: [.NET, WPF]
+tags: [.net, wpf, threading]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Sometimes applications need to do tasks asynchronously to keep the UI responsible. In .NET you can easily achieve this by using multithreading e.g. via the ThreadPool.  
 Since methods created on a different thread than the owner thread of an Ui Control are not allowed to access the Ui objects you need to synchronise your worker threads with your Ui threads. To do this you can easily call Dispatcher.Invoke(methoddelegate, arguments) instead of Method(arguments) and the WPF Dispatcher does the synchronization for you.  

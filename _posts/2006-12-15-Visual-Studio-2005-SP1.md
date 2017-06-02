@@ -2,9 +2,9 @@
 layout: post
 title : "Visual Studio 2005: SP1"
 date : 15.12.2006 14:13:09
-tags: [.NET, Vista, Visual Studio 2005]
+tags: [.net, vista, vs2005, updates]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Das Service Pack 1 für Visual Studio 2005 ist nun verfügbar. Neben Performance Verbesserungen warten auch neue Features wie das Web Application Model auf.
 

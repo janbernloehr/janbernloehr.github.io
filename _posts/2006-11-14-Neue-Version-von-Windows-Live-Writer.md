@@ -2,9 +2,9 @@
 layout: post
 title : "Neue Version von Windows Live Writer"
 date : 14.11.2006 23:20:22
-tags: []
+tags: [updates, wlw]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Gerade habe ich die aktuellste Version von Windows Live Writer installiert und muss sagen, dass sich das Tool dem RTM Status immer mehr annähert.
 
