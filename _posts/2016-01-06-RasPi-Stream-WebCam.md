@@ -4,7 +4,7 @@ title : "RasPi Stream WebCam"
 date : 06.01.2016 00:51:00
 tags: []
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Logitech C615
 

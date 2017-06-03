@@ -4,7 +4,7 @@ title : "Ankh &#252;ber Proxy Server"
 date : 29.10.2009 11:28:24
 tags: []
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Surft man über einen Proxy Server und will auf seine SVN Repositories über Ankh zugreifen, genügen die globalen Einstellungen des InternetExplorers nicht.
 

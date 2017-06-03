@@ -4,7 +4,7 @@ title : "Kaxaml - Das bessere Xaml Pad"
 date : 17.02.2008 14:04:42
 tags: [WPF]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Wer bereits etwas mit WPF gearbeitet hat kennt vielleicht das XAML Pad. Ein sehr schlankes Tool, das einem erlaubt, Xaml Code zu schreiben und das Ergebnis in einem "Split View" sofort angezeigt zu bekommen.
 

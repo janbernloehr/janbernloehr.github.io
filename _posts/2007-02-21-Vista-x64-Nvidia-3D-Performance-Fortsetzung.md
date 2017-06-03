@@ -4,7 +4,7 @@ title : "Vista x64: Nvidia 3D Performance (Fortsetzung)"
 date : 21.02.2007 17:15:11
 tags: [Vista]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Die 97-er Serie der Nvidia Treiber für Vista x64 bot nur mäßige Performance verglichen mit Windows XP ([Siehe früheres Posting](http://vb-magazin.de/forums/blogs/janm/archive/2006/12/17/6810.aspx)). Nun hat Nvidia aber eine Vorabversion ihrer 100er Treiber veröffentlicht, die mehr Performance versprechen.
 

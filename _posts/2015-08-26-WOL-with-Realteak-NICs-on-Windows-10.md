@@ -4,7 +4,7 @@ title : "WOL with Realteak NICs on Windows 10"
 date : 26.08.2015 17:16:00
 tags: [WOL, Windows 10, S4, Realtek]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 ## TL;DR
 

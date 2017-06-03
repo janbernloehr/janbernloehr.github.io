@@ -4,7 +4,7 @@ title : "AjaxMin – JavaScript und CSS Dateien automatisch schrumpfen"
 date : 25.05.2010 14:18:10
 tags: []
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Während der Entwicklung von Web-Anwendungen ist man meist über gut dokumentierte JavaScripts und CSS Stylesheets, die viel Whitespace zur Strukturierung enthalten, dankbar. Geht es jedoch ans Deployment, möchte man diese Dateien möglichst klein halten, um den Seitenaufbau im Browser zu beschleunigen. Im Web findet man zahlreiche Tools sogenannte “Minifier”, die die Dateien verkleinern, indem Kommentare und Whitespace entfernt werden. In großen Projekten mit vielen Skripts und Styles ist dieser Vorgang jedoch sehr mühsam und nach jeder Änderung müssen die Dateien neu “minifiziert” werden.
 

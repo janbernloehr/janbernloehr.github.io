@@ -4,7 +4,7 @@ title : "Microsoft Download Center SILVERLIGHT (Preview)"
 date : 22.12.2007 20:07:47
 tags: []
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Microsofts Download Center erlaubt den Zugriff auf zig-tausende Applikationen, Updates, AddIns, Whitepapers etc. Jeder Download ist zudem ausführlich dokumentiert und es werden Querverweise zu verwandten Downloads angeboten.
 

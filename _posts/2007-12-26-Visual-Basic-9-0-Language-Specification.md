@@ -4,7 +4,7 @@ title : "Visual Basic 9.0 Language Specification"
 date : 26.12.2007 21:57:31
 tags: [.NET, Visual Studio 2008]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Microsoft hat die Spezifikationen für Visual Basic 9.0 für die Öffentlichkeit bereitgestellt. Die Spezifikation enthält auch die neuen Features wie Lambda- , Linq- und XLinq-Expressions.
 

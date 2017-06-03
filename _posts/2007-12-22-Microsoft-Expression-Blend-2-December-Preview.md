@@ -4,7 +4,7 @@ title : "Microsoft Expression Blend 2 December Preview"
 date : 22.12.2007 20:03:35
 tags: []
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Nach der Erfolgreichen Einführung von Microsoft Expression Blend, geht das Designertool nun in die zweite Runde.
 

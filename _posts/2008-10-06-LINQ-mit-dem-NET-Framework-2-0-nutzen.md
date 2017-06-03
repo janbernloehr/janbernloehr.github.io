@@ -4,7 +4,7 @@ title : "LINQ mit dem .NET Framework 2.0 nutzen"
 date : 06.10.2008 23:34:11
 tags: [.NET, LINQ, Visual Studio 2008]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 LINQ ist ein neues Feature von C# 3.0 und VB 9, das mit dem .NET Framework 3.5 Einzug erhält.
 

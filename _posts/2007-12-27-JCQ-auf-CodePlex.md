@@ -4,7 +4,7 @@ title : "JCQ auf CodePlex"
 date : 27.12.2007 12:20:41
 tags: [.NET]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Vor einiger Zeit habe ich begonnen, einen Icq Client in Visual Basic zu schreiben. Angefangen mit .NET 1.1 bin ich nun bei .NET 3.5 und einer WPF Oberfläche angekommen.
 

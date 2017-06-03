@@ -4,7 +4,7 @@ title : "Titel eines Fensters bestimmen"
 date : 22.06.2007 09:04:37
 tags: [.NET]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Visual Basic .NET Bordmittel ermöglichen es nicht, den Fenstertitel eines anderen Prozesses zu bestimmen. Jedoch ist dies mit der Win32 Api möglich, die Teil des Betriebssystems ist.
 

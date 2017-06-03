@@ -4,7 +4,7 @@ title : "CanAddNew und generische Listen mehrerer Parameter"
 date : 21.06.2010 14:42:54
 tags: []
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Das WPF ListCollectionView unterstützt das Hinzufügen von Elementen bei generischen Listen in einem Parameter, wie List<T> oder ObservableCollection<T>.
 

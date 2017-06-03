@@ -4,7 +4,7 @@ title : "JCQ Alpha 3 Release"
 date : 29.07.2008 12:10:41
 tags: []
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 JCQ ist einen ICQ Instant Messenger, der zu 100% in .NET geschrieben ist. Als Programiersprache kommt Visual Basic zum Einsatz, für das UI wird WPF verwendet.
 

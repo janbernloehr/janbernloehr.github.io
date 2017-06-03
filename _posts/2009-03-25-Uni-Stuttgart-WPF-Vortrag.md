@@ -4,7 +4,7 @@ title : "Uni Stuttgart: WPF Vortrag"
 date : 25.03.2009 18:42:00
 tags: [.NET, WPF, Visual Studio 2008]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Hier gibt es die Slides, Sourcen und Aufgaben zum WPF Vortrag vom 25.03.2009.
 

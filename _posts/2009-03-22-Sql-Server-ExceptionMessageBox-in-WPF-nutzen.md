@@ -4,7 +4,7 @@ title : "Sql Server ExceptionMessageBox in WPF nutzen"
 date : 22.03.2009 13:27:30
 tags: [.NET, WPF, Visual Studio 2008]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Wer das Microsoft Sql Management Studio verwendet kennt sie vielleicht, die ExceptionMessageBox des Sql Servers. Sie bietet eine gute Übersicht über alle relevanten Informationen einer Exception und das Beste ist, dass sie als Assembly in jedes .NET Projekt eingebunden und damit in jeder .NET Anwendung angezeigt werden kann.
 

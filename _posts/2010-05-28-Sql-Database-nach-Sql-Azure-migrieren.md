@@ -4,7 +4,7 @@ title : "Sql Database nach Sql Azure migrieren"
 date : 28.05.2010 11:51:39
 tags: []
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 ## 1. Datenbank einrichten
 

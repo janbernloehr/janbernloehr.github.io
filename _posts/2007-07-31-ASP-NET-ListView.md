@@ -4,7 +4,7 @@ title : "ASP .NET ListView"
 date : 31.07.2007 18:31:29
 tags: [.NET, ASP .NET]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Mit der kommenden Visual Studio Version Visual Studio 2008 Codename: 'Orcas' wird das .NET Framework um viele neue Features erweitert.
 

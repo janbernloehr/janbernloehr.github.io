@@ -4,7 +4,7 @@ title : "Warum auf &quot;Safari&quot; gehen?"
 date : 20.11.2007 14:30:15
 tags: []
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Nicht nur Microsoft bringt mit Silverlight etwas neues in die MacOS X Welt, Apple hält mit seinem WebBrowser Safari, der in der Version 3 auch für Windows verfügbar ist, dagegen.
 

@@ -4,7 +4,7 @@ title : "Benutzereingaben pr&#252;fen: Dateinamen"
 date : 18.08.2007 11:14:57
 tags: [.NET]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 In vielen Anwendungen haben Benutzer die Möglichkeit, Dateinamen selbst zu vergeben. Dabei muss der Anwendungsentwickler darauf achten, dass keine "illegalen" Zeichen im Dateinamen enthalten sind (Für Windows wären das / \ : * ? " < > und |).
 

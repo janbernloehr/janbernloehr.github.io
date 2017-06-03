@@ -4,7 +4,7 @@ title : "Dell Precision M90, Vista x64 und 4GB RAM"
 date : 27.12.2007 02:04:24
 tags: []
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Da die Speicherpreise gerade so niedrig wie nie sind, habe mich noch kurz vor Weihnachten dazu entschlossen, meinem **Dell Precision M90** 4GB RAM zu spendieren. Die 4GB Problematik bei 32-bit Betriebssystem war mir bekannt, aber da ich ja stolzer Besitzer von Vista x64 bin, dachte ich, man könnte das einfach ignorieren.
 

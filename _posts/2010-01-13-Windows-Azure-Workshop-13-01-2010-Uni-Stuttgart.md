@@ -4,7 +4,7 @@ title : "Windows Azure Workshop – 13.01.2010 Uni Stuttgart"
 date : 13.01.2010 12:57:41
 tags: []
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Slides: [http://www.janmolnar.de/uni/download.aspx?f=stuff\Azure_Slides.pdf](http://www.janmolnar.de/uni/download.aspx?f=stuff)
 

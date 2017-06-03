@@ -4,7 +4,7 @@ title : "Vortrag: Einf&#252;hrung in Microsoft .NET / Visual Studio 2008"
 date : 12.02.2008 21:31:32
 tags: []
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Wie versprochen, stelle ich hier die Slides und die Beispiele meines Vortrags vom 12.02. online.
 

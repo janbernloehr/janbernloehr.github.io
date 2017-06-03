@@ -2,9 +2,9 @@
 layout: post
 title : "DirectSound in der eigenen Anwendung nutzen"
 date : 16.01.2007 17:05:56
-tags: [.NET]
+tags: [.net, directsound]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Microsoft bietet seit .NET 2.0 im Framework Methoden um Sounds wiederzugeben. Jedoch sind diese sehr unflexibel und stoßen schnell an ihre Grenzen, wenn es z.B. darum geht mehrere Sounds gleichzeitig wiederzugeben. Außerdem wird die vorhandene Hardware garnicht genutzt sondern immer alles im Softwaremodus wiedergegeben.
 
@@ -16,22 +16,21 @@ Nach der Installation sind viele neue Assemblies verfügbar, wir benötigen ledi
 Ist diese Referenz hinzugefügt ist man nur noch wenige Schritte von einem hörbaren Resultat entfernt.
 
 Zunächst muss ein **Device** erstellt und initialisiert werden.
- <div class="wlWriterSmartContent" id="57F11A72-B0E5-49c7-9094-E3A15BD5B5E7:277f0b11-baa6-4643-81fb-5f43d9213149" contenteditable="false" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px">
 
-<div><span style="color: #0000FF; ">Dim</span><span style="color: #000000; "> dev </span><span style="color: #0000FF; ">As</span><span style="color: #000000; "> Microsoft.DirectX.DirectSound.Device
+````vb
+Dim dev As Microsoft.DirectX.DirectSound.Device
 
-    dev </span><span style="color: #000000; ">=</span><span style="color: #000000; "> </span><span style="color: #0000FF; ">New</span><span style="color: #000000; "> Microsoft.DirectX.DirectSound.Device
-    dev.SetCooperativeLevel(</span><span style="color: #0000FF; ">Me</span><span style="color: #000000; ">, CooperativeLevel.Priority)</span></div>
-</div>
+dev = New Microsoft.DirectX.DirectSound.Device
+dev.SetCooperativeLevel(Me, CooperativeLevel.Priority)
+````
 
 Mit **SetCooperativeLevel** muss ein Bezug auf eine sichtbare Windows Form gesetzt werden.  
 <u>Das Device sollte nur einmal zu Programmstart erstellt und initialisiert werden.</u>
 
 Mit dem initialisierten Device kann man nun einen **SecondaryBuffer** erstellen, in den der Sound geladen wird.
 
-<div class="wlWriterSmartContent" id="57F11A72-B0E5-49c7-9094-E3A15BD5B5E7:678a7bd9-ff17-4063-9e49-19e64b873a38" contenteditable="false" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px">
 
-<div><span style="color: #0000FF; ">Dim</span><span style="color: #000000; "> buff </span><span style="color: #0000FF; ">As</span><span style="color: #000000; "> SecondaryBuffer
+Dim buff </span><span style="color: #0000FF; ">As</span><span style="color: #000000; "> SecondaryBuffer
 
     buff </span><span style="color: #000000; ">=</span><span style="color: #000000; "> </span><span style="color: #0000FF; ">New</span><span style="color: #000000; "> SecondaryBuffer(</span><span style="color: #000000; ">"</span><span style="color: #000000; ">D:\Windows Exclamation.wav</span><span style="color: #000000; ">"</span><span style="color: #000000; ">, dev)</span></div>
 </div>

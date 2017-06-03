@@ -4,7 +4,7 @@ title : "WebDay - Part II (02. Juli 2010)"
 date : 03.07.2010 11:32:00
 tags: []
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 **Agenda **  
 10:00-11:20        WCF & Silverlight  

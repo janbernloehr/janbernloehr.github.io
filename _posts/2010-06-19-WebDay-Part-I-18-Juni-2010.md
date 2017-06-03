@@ -4,7 +4,7 @@ title : "WebDay – Part I (18. Juni 2010)"
 date : 19.06.2010 15:16:00
 tags: []
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 > In einem Tag zum .NET Webentwickler. Wir zeigen dir alles was du brauchst, von ASP.NET und Silverlight über WCF WebServices bis hin zur Datenbank Sql Server 2008.
 

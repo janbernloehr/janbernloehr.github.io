@@ -4,7 +4,7 @@ title : "Microsoft Surface offiziell angek&#252;ndigt"
 date : 03.06.2007 11:13:52
 tags: []
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Schon länger verfolge ich ein Microsoft Projekt, das nun den Namen "Surface" trägt.
 

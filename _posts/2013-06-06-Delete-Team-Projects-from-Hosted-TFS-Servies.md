@@ -4,7 +4,7 @@ title : "Delete Team Projects from Hosted TFS Servies"
 date : 06.06.2013 08:45:00
 tags: [Visual Studio Online]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 When the TFS Services preview went live, I started moving my on premise projects to the hosted tfs services.
 

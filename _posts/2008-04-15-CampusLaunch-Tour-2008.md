@@ -4,7 +4,7 @@ title : "CampusLaunch Tour 2008"
 date : 15.04.2008 15:07:44
 tags: [.NET, WPF, LINQ, Sql Server, Visual Studio 2008]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Am 19. Februar fiel in Frankfurt am Main der deutsche Startschuss für Windows Server 2008, SQL Server 2008 und Visual Studio 2008. Mehr als **6.500** angemeldete Teilnehmer informierten sich auf der Launch-Veranstaltung in Frankfurt erstmals über die neuesten Microsoft-Technologien. **Wir bringen die Technologien nun zu Euch!**  
 

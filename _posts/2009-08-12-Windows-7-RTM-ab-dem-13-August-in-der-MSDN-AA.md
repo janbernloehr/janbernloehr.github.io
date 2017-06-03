@@ -4,7 +4,7 @@ title : "Windows 7 RTM ab dem 13. August in der MSDN AA"
 date : 12.08.2009 09:32:32
 tags: []
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Ich habe soeben folgende Nachricht erhalten:
 

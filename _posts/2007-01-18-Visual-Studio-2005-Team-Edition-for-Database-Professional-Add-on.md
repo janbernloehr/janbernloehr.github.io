@@ -4,7 +4,7 @@ title : "Visual Studio 2005 Team Edition for Database Professional Add-on"
 date : 18.01.2007 17:17:51
 tags: [Visual Studio 2005]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Die Visual Studio 2005 Team Edition for Database Professionals ist nun als Add-on für Visual Studio Team System (Vollversion und Trail) verfügbar.
 

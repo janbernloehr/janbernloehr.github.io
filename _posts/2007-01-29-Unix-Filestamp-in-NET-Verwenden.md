@@ -4,7 +4,7 @@ title : "Unix Filestamp in .NET Verwenden"
 date : 29.01.2007 23:20:43
 tags: [.NET]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Hin und wieder muss man sich doch auch mal mit den anderen unterhalten ;) Dabei kann es vorkommen, dass ein Datum nicht wie gewohnt in der komfortablen **DateTime** Version vorkommt, sondern als Unix Filestamp in einem Byte Array.
 

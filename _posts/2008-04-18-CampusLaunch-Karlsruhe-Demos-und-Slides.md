@@ -4,7 +4,7 @@ title : "CampusLaunch Karlsruhe - Demos und Slides"
 date : 18.04.2008 20:06:27
 tags: [.NET, WPF, Vista, Expression Products, ASP .NET, LINQ, Visual Studio 2008]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Wie versprochen veröffentliche ich hier die Demos und Slides meiner Vorträge vom CampusLaunch in Karlsruhe.
 

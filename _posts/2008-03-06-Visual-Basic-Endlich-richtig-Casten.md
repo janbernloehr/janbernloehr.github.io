@@ -4,7 +4,7 @@ title : "Visual Basic: Endlich richtig Casten"
 date : 06.03.2008 13:17:49
 tags: []
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 In diesem Artikel werden VB Funktionen wie CType, DirectCast, CInt, CStr, ... betrachtet.
 

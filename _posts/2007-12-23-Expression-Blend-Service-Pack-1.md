@@ -4,7 +4,7 @@ title : "Expression Blend Service Pack 1"
 date : 23.12.2007 12:36:56
 tags: [Expression Products]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Soeben ist das SP1 für Expression Blend erschienen. Neben Stabilitätsverbesserungen enthält das Update auch eine verbesserte Unterstützung für Visual Studio 2008. Man muss also nicht unbedingt auf Blend 2 warten, um auch Visual Studio 2008 nutzen zu können.
 

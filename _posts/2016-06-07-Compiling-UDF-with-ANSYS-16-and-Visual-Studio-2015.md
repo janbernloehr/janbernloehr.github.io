@@ -4,7 +4,7 @@ title : "Compiling UDF with ANSYS 16 and Visual Studio 2015"
 date : 07.06.2016 01:59:00
 tags: []
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 # Compiling UDF with ANSYS 16 and Visual Studio 2015
 

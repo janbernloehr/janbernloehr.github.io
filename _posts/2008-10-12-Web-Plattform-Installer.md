@@ -4,7 +4,7 @@ title : "Web Plattform Installer"
 date : 12.10.2008 13:35:23
 tags: [.NET, Vista, ASP .NET, Sql Server, Visual Studio 2008]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Microsoft hat ein neues Tool veröffentlicht, das die Einrichtung von Web Development Plattformen erleichtern soll.
 

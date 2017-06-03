@@ -4,7 +4,7 @@ title : "LINQ To Everything"
 date : 27.12.2007 12:10:50
 tags: [.NET, LINQ, Visual Studio 2008]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Das .NET Framework 3.5 bringt mit den Spracherweiterungen für C# 3.0 und VB 9.0 ein neues Feature namens Language INtegrated Queries (LINQ). Dadruch können beliebige Abfragen als streng typisierter Ausdruck in VB/C# etc. formuliert werden, dannach werden sie von einem Provider übersetzt gegebenenfalls optimiert und an die Datenquelle gesendet.
 

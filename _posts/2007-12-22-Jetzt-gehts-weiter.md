@@ -4,7 +4,7 @@ title : "Jetzt gehts weiter!"
 date : 22.12.2007 20:00:03
 tags: [.NET]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Obwohl Visual Studio 2008 noch nichtmal offiziell gelaunched wurde, gibt es bereits die ersten Erweiterungs CTPs, die auf der 2008er Version basieren. 
 

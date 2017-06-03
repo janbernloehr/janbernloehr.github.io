@@ -4,7 +4,7 @@ title : "Plot3D with RegionFunction equivalent in MATLAB"
 date : 19.01.2016 17:07:00
 tags: []
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Suppose you want to plot a function *g* depending on two variables *x*, *y* over a range where y depends on *x*.
 

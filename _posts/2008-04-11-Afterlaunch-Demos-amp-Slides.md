@@ -4,7 +4,7 @@ title : "Afterlaunch Demos &amp; Slides"
 date : 11.04.2008 23:19:47
 tags: [.NET, Visual Studio 2008]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Heute haben auf dem Afterlaunch Event im Technologiepark Köln zahlreiche Speaker von ihrer Praxiserfahrung mit neuen Microsoft Technologien rund um Windows Server 2008, Visual Studio 2088 und Sql Server 2008 berichtet.
 

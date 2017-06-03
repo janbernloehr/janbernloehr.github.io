@@ -4,7 +4,7 @@ title : "ASP.NET und LINQ to SQL RELOADED!"
 date : 01.08.2007 00:20:13
 tags: [.NET, ASP .NET, LINQ]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Blicke ich zurück auf meinen [früheren Post](http://vb-magazin.de/forums/blogs/janm/archive/2006/08/15/5591.aspx), hat sich bei der Zusammenarbeit von ASP.NET und LINQ in der neusten Beta 2 von Visual Studio 2008 (Codename Orcas) viel getan.
 

@@ -4,7 +4,7 @@ title : "Vortrag: C# 3.0 Was gibt's neues?"
 date : 23.05.2008 17:29:29
 tags: [.NET, LINQ, Visual Studio 2008]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Hier habe ich den Demo-Code und die Folien meines Vortrags vom 21. Mai an der Uni Stuttgart zusammengestellt.
 

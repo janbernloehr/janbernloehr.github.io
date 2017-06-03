@@ -4,7 +4,7 @@ title : "How to create a local copy of our wordpress site for testing"
 date : 25.02.2016 23:17:00
 tags: []
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 <style>.markdown-preview:not([data-use-github-style]) { padding: 2em; font-size: 1.2em; color: rgb(171, 178, 191); overflow: auto; background-color: rgb(40, 44, 52); }
 .markdown-preview:not([data-use-github-style]) > :first-child { margin-top: 0px; }

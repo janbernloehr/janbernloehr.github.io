@@ -4,7 +4,7 @@ title : "Das wahre Office kommt…"
 date : 05.04.2009 18:24:26
 tags: []
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Kommende Woche - am 8. April! 
 

@@ -4,7 +4,7 @@ title : "ASP.NET Team Todo: DataPager"
 date : 18.08.2007 11:33:23
 tags: [.NET, ASP .NET]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Neu in .NET 3.5 ist der DataPager. Wie sein Name schon erraten lässt, erweitert dieses Control das ListView um die Paging Funktionalität.
 

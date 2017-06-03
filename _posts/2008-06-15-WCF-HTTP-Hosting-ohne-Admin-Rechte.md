@@ -4,7 +4,7 @@ title : "WCF HTTP Hosting - ohne Admin Rechte"
 date : 15.06.2008 13:49:36
 tags: []
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 WCF bietet von Haus aus die Möglichkeit einen Service in einem Prozess anstatt im IIS zu hosten. Dadurch ist das Hosting auch wesentlich flexibler, denn zum einen erfordert dann ein HTTP Hosting nicht zwingend die Installation des IIS auf dem Server, zum anderen stehen auch andere Protokolle wie TCP/IP und NetPipes zur Vefügung, die dem IIS fehlen.
 

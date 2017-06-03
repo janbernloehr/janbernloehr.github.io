@@ -4,7 +4,7 @@ title : "Visual Studio 2008 Final Express Editions"
 date : 20.11.2007 14:38:15
 tags: [Vista, Expression Products]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Visual Studio 2008 und .NET 3.5 sind fertiggestellt und ab sofort gibt es auch wieder die Express Editions zum kostenlosen Download (bisher nur in der englischsprachigen Version).
 

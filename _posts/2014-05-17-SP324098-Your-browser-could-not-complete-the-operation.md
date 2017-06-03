@@ -4,7 +4,7 @@ title : "SP324098: Your browser could not complete the operation"
 date : 17.05.2014 09:12:00
 tags: [VPN, Visual Studio]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 After having changed the password of my Visual Studio Online account, Visual Studio greeted me by asking to reenter my credentials. So I clicked on the Sign In button but instead of being redirected to the Sign In page I simply got the error message **"SP324098: Your browser could not complete the operation"**.
 

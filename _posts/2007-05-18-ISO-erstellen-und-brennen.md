@@ -4,7 +4,7 @@ title : "ISO erstellen und brennen"
 date : 18.05.2007 15:08:07
 tags: [Vista]
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 In letzter Zeit beschäftige ich mich viel mit Virtualisierung und benötige dafür ISO Images.
 

@@ -4,7 +4,7 @@ title : "Uni Karlsruhe: WPF Vortrag"
 date : 18.06.2009 14:59:18
 tags: []
 ---
-{% include JB / setup %}
+{% include JB/setup %}
 
 Hier gibt es die Slides, Sourcen und Aufgaben zum WPF Vortrag vom 19.06.2009.
 
