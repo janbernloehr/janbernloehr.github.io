@@ -99,20 +99,21 @@ Die Visual Studio Intellisense empfiehlt stets eine Umwandlung mittels CType ode
 
 Hier gilt es zwei Fälle zu unterschieden:
 
-1.  Typen, die nicht IConvertible implementieren (idR. Refrenztypen: Controls, Forms, selbst definierte Klassen, Interfaces, etc.)  
-In Beispiel 1 wurde eine Variable vom Typ Object, die eine Instanz des Person Typs enthält, gecastet. Da es sich hier um einen Referenz handelt und keine Konvertierung möglich ist, wird CType vom Compiler als DirectCast übersetzt. Es macht hier also keinen Unterschied CType oder DirectCast zu nehmen. 
-Typen, die IConvertible implementieren (idR. Datentypen: Integer, Double, Date, ... aber auch String)  
-Hier macht es einen deutlichen Unterschied ob man CType, C*, DirectCast oder Convert verwendet.  
+* Typen, die nicht IConvertible implementieren (idR. Refrenztypen: Controls, Forms, selbst definierte Klassen, Interfaces, etc.)
+ In Beispiel 1 wurde eine Variable vom Typ Object, die eine Instanz des Person Typs enthält, gecastet. Da es sich hier um einen Referenz handelt und keine Konvertierung möglich ist, wird CType vom Compiler als DirectCast übersetzt. Es macht hier also keinen Unterschied CType oder DirectCast zu nehmen. 
+* Typen, die IConvertible implementieren (idR. Datentypen: Integer, Double, Date, ... aber auch String)
+Hier macht es einen deutlichen Unterschied ob man CType, C*, DirectCast oder Convert verwendet.
+
 Um Aussage etwas mit Zahlen zu unterlegen habe ich einen kleinen Benchmark geschrieben, der die Dauer in Millisekunden angibt, die es auf meinem System benötigt hat die gewünschte Operation 100.000.000 mal durchzuführen.  
 
 [![image](http://www.dev-jc-vb.de/dev-jc-vb/blog/images/VisualBasicEndlichrichtigCasten_CF01/image_thumb_3.png)](http://www.dev-jc-vb.de/dev-jc-vb/blog/images/VisualBasicEndlichrichtigCasten_CF01/image_3.png) 
 
 Für mich ergibt sich daraus
 
-*   Wann immer möglich DirectCast verwenden, da es bis zu 10 mal schneller ist als CType. 
-Ist eine Umwandlung des zugrundeliegenden Werts notwendig, dann zeigen die Methoden der .NET Convert Klasse deutlich bessere Performance als die Conversion Methoden von Visual Basic, weshalb man CInt(o), etc. durch Convert.ToInt32(o), etc. ersetzten sollte.  
-Ausnahme bilden hier CStr und CDate, die nicht in VisualBasic.Conversion vertreten sind, sondern direkt Methoden des Frameworks aufrufen. 
-Stellen die Datentypen also eigene Umwandlungsmethoden zur Verfügung wie Integer.Parse bzw. Object.ToString, dann sind diese zu empfehlen.
+- Wann immer möglich DirectCast verwenden, da es bis zu 10 mal schneller ist als CType. 
+- Ist eine Umwandlung des zugrundeliegenden Werts notwendig, dann zeigen die Methoden der .NET Convert Klasse deutlich bessere Performance als die Conversion Methoden von Visual Basic, weshalb man CInt(o), etc. durch Convert.ToInt32(o), etc. ersetzten sollte. 
+Ausnahme bilden hier CStr und CDate, die nicht in VisualBasic.Conversion vertreten sind, sondern direkt Methoden des Frameworks aufrufen.
+- Stellen die Datentypen eigene Umwandlungsmethoden zur Verfügung wie Integer.Parse bzw. Object.ToString, dann sind diese zu empfehlen.
 
 ### Ergebnis
 
