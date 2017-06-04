@@ -10,4 +10,4 @@ Kommende Woche - am 8. April!
 
 Download: [www.daswahreoffice.de](http://www.daswahreoffice.de)
 
-[![clip_image001](http://www.vb-magazin.de/forums/blogs/janm/clip_image001_176A6A90.jpg "clip_image001")](http://www.daswahreoffice.de)
+[![das wahre office](/assets/images/das-wahre-office.jpg)](http://www.daswahreoffice.de)
