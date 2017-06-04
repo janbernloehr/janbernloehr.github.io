@@ -2,7 +2,7 @@
 layout: post
 title : "Uni Karlsruhe: WPF Vortrag"
 date : 18.06.2009 14:59:18
-tags: []
+tags: [.net, wpf, visual-studio, msp, slides]
 ---
 {% include JB/setup %}
 
@@ -24,5 +24,6 @@ WPF Toolkit
 
 KaXaml   
 [http://www.kaxaml.com/](http://www.kaxaml.com/)
- Family Show    
+
+Family Show    
 [http://www.vertigo.com/familyshow.aspx](http://www.vertigo.com/familyshow.aspx)

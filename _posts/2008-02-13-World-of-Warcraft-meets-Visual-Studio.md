@@ -2,7 +2,7 @@
 layout: post
 title : "World of Warcraft meets Visual Studio"
 date : 13.02.2008 20:18:51
-tags: [Visual Studio 2008]
+tags: [visual-studio, games]
 ---
 {% include JB/setup %}
 

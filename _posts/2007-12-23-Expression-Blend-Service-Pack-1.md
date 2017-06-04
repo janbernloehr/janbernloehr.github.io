@@ -2,7 +2,7 @@
 layout: post
 title : "Expression Blend Service Pack 1"
 date : 23.12.2007 12:36:56
-tags: [Expression Products]
+tags: [expression, updates, visual-studio]
 ---
 {% include JB/setup %}
 

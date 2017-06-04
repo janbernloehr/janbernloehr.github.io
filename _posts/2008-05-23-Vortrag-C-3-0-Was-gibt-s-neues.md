@@ -2,7 +2,7 @@
 layout: post
 title : "Vortrag: C# 3.0 Was gibt's neues?"
 date : 23.05.2008 17:29:29
-tags: [.NET, LINQ, Visual Studio 2008]
+tags: [.net, linq, visual-studio, slides, msp, c#]
 ---
 {% include JB/setup %}
 

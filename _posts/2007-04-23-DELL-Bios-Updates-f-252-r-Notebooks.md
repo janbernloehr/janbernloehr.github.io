@@ -2,7 +2,7 @@
 layout: post
 title : "DELL Bios Updates f&#252;r Notebooks"
 date : 23.04.2007 15:01:35
-tags: [Vista]
+tags: [vista, dell]
 ---
 {% include JB/setup %}
 

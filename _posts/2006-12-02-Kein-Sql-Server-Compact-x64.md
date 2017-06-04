@@ -2,7 +2,7 @@
 layout: post
 title : "Kein Sql Server Compact x64"
 date : 02.12.2006 00:09:04
-tags: [.net, vista, sql-server, sql-compact]
+tags: [.net, vista, sql-server, sql-compact, x64]
 ---
 {% include JB/setup %}
 

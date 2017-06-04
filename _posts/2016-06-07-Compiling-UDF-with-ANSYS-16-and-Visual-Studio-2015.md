@@ -2,7 +2,7 @@
 layout: post
 title : "Compiling UDF with ANSYS 16 and Visual Studio 2015"
 date : 07.06.2016 01:59:00
-tags: []
+tags: [ansys, visual-studio, udf]
 ---
 {% include JB/setup %}
 
@@ -16,11 +16,22 @@ In this article I will only consider the case of x64 ANSYS.
 
 Go to `C:\Program Files\ANSYS Inc\v162\fluent\ntbin\win64` and back up the file `udf.bat`. We need to modify this file to add support for Visual C++ 2015. To this end, add **below** `set MSVC_VERSION=0` the following lines
 
-<div class="line"><span class="text plain"><span class="meta paragraph text"><span>echo trying to find MS C compiler, version 140....</span></span></span></div><div class="line"><span class="text plain"><span> </span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>set MSVC_DEFAULT=%ProgramFiles(x86)%\Microsoft Visual Studio 14.0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>if exist "%MSVC_DEFAULT%\VC\vcvarsall.bat" set MSVC=%MSVC_DEFAULT%</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>if not "%MSVC%" == "" goto msvc_env140</span></span></span></div>
+````
+echo trying to find MS C compiler, version 140....
+
+set MSVC_DEFAULT=%ProgramFiles(x86)%\Microsoft Visual Studio 14.0
+if exist "%MSVC_DEFAULT%\VC\vcvarsall.bat" set MSVC=%MSVC_DEFAULT%
+if not "%MSVC%" == "" goto msvc_env140
+````
 
 Moreover, add **above** `:msvc_env71` the following lines
 
-<div class="line"><span class="text plain"><span class="meta paragraph text"><span>:msvc_env140</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>set MSVC_VERSION=140</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>call "%MSVC%\VC\vcvarsall.bat" x64</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>goto ms_c_end</span></span></span></div>
+````
+:msvc_env140
+set MSVC_VERSION=140
+call "%MSVC%\VC\vcvarsall.bat" x64
+goto ms_c_end
+````
 
 Save the file `udf.bat` and you are good to go.
 

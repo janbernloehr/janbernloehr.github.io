@@ -2,7 +2,7 @@
 layout: post
 title : "WebDay - Part II (02. Juli 2010)"
 date : 03.07.2010 11:32:00
-tags: []
+tags: [asp.net, .net, visual-studio, sql-server, silverlight, wcf]
 ---
 {% include JB/setup %}
 

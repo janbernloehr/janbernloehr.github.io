@@ -2,7 +2,7 @@
 layout: post
 title : "Visual Basic 9.0 Language Specification"
 date : 26.12.2007 21:57:31
-tags: [.NET, Visual Studio 2008]
+tags: [.net, visual-studio, vb]
 ---
 {% include JB/setup %}
 

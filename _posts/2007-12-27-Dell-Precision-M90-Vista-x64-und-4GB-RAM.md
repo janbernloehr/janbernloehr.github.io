@@ -2,7 +2,7 @@
 layout: post
 title : "Dell Precision M90, Vista x64 und 4GB RAM"
 date : 27.12.2007 02:04:24
-tags: []
+tags: [dell, vista, x64]
 ---
 {% include JB/setup %}
 

@@ -2,7 +2,7 @@
 layout: post
 title : "JCQ auf CodePlex"
 date : 27.12.2007 12:20:41
-tags: [.NET]
+tags: [.net, jcq, codeplex]
 ---
 {% include JB/setup %}
 
@@ -14,4 +14,4 @@ Die Basisfunktionen des Icq Netzwerks sind implementiert, man kann also probleml
 
 Die Oberfläche ist leider noch etwas umständlich und unvollständig. Nun suche ich weitere Personen, die sich für das Projekt interessieren und sich im OSCAR Protokoll und/oder WPF auskennen.
 
-Das Projekt ist seit gestern Abend auf CodePlex verfügbar. http://www.codeplex.com/JCQ
+Das Projekt ist seit gestern Abend auf CodePlex verfügbar. [http://www.codeplex.com/JCQ](http://www.codeplex.com/JCQ)

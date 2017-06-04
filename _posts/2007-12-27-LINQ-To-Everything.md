@@ -2,7 +2,7 @@
 layout: post
 title : "LINQ To Everything"
 date : 27.12.2007 12:10:50
-tags: [.NET, LINQ, Visual Studio 2008]
+tags: [.net, linq, visual-studio]
 ---
 {% include JB/setup %}
 
@@ -14,7 +14,7 @@ Das .NET Framework 3.5 bietet Unterstützung für die Datenquellen
 *   Xml (Linq To Xml)
 *   .NET Objekte (Linq To Objects) 
 
-Microsoft hat aber viel dafür getan, das LINQ möglichst offen und flexibel zu gestallten, damit man leicht eigene Provider erstellen kann. Und dies zeigt bereits eine enorme Wirkung, denn auf CodePlex gibt es bereits zahlreiche weitere Provider
+Microsoft hat aber viel dafür getan, LINQ möglichst offen und flexibel zu gestallten, damit man leicht eigene Provider erstellen kann. Und dies zeigt bereits eine enorme Wirkung, denn auf CodePlex gibt es bereits zahlreiche weitere Provider
 
 *   Sharepoint (LINQ to Sharepoint [http://www.codeplex.com/LINQtoSharePoint](http://www.codeplex.com/LINQtoSharePoint))
 *   Active Directory (LINQtoAD [http://www.codeplex.com/LINQtoAD](http://www.codeplex.com/LINQtoAD))

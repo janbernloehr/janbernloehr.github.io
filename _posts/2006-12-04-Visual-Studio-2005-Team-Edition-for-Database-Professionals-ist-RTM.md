@@ -2,7 +2,7 @@
 layout: post
 title : "Visual Studio 2005 Team Edition for Database Professionals ist RTM"
 date : 04.12.2006 23:01:32
-tags: [vs2005, updates]
+tags: [visual-studio, updates]
 ---
 {% include JB/setup %}
 

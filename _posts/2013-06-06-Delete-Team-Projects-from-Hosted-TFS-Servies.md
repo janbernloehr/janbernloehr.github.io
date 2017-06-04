@@ -2,7 +2,7 @@
 layout: post
 title : "Delete Team Projects from Hosted TFS Servies"
 date : 06.06.2013 08:45:00
-tags: [Visual Studio Online]
+tags: [tfs]
 ---
 {% include JB/setup %}
 
@@ -12,6 +12,6 @@ At some point I wanted to delete a team project created in the hosted services. 
 
 **Syntax:**
 
-<font face="Courier New">tfsdeleteproject /force /collection:</font><font face="Courier New">https://[yourname].visualstudio.com/DefaultCollection</font><font face="Courier New"> [yourproject]</font>
+    tfsdeleteproject /force /collection:https://[yourname].visualstudio.com/DefaultCollection [yourproject]
 
 **Warning:** This operation cannot be undone!

@@ -2,17 +2,17 @@
 layout: post
 title : "WebDay – Part I (18. Juni 2010)"
 date : 19.06.2010 15:16:00
-tags: []
+tags: [asp.net, .net, visual-studio, wcf, silverlight, msp, slides]
 ---
 {% include JB/setup %}
 
-> In einem Tag zum .NET Webentwickler. Wir zeigen dir alles was du brauchst, von ASP.NET und Silverlight über WCF WebServices bis hin zur Datenbank Sql Server 2008.
+In einem Tag zum .NET Webentwickler. Wir zeigen dir alles was du brauchst, von ASP.NET und Silverlight über WCF WebServices bis hin zur Datenbank Sql Server 2008.
 
 **Agenda**   
 10:00-11:20        Einführung in ASP .NET   
 11:40-13:00        Silverlight
 
-**<font color="#800080">Fortsetzung mit WCF WebServices und Sql Server am 02. Juli 2010 um 10:00</font>**
+**Fortsetzung mit WCF WebServices und Sql Server am 02. Juli 2010 um 10:00**
 
 **Ressourcen**
 

@@ -2,7 +2,7 @@
 layout: post
 title : "Microsoft Download Center SILVERLIGHT (Preview)"
 date : 22.12.2007 20:07:47
-tags: []
+tags: [microsoft, updates, silverlight]
 ---
 {% include JB/setup %}
 

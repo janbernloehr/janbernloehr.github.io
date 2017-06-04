@@ -2,11 +2,11 @@
 layout: post
 title : "Microsoft Expression Blend 2 December Preview"
 date : 22.12.2007 20:03:35
-tags: []
+tags: [expression, silverlight]
 ---
 {% include JB/setup %}
 
-Nach der Erfolgreichen Einführung von Microsoft Expression Blend, geht das Designertool nun in die zweite Runde.
+Nach der erfolgreichen Einführung von Microsoft Expression Blend, geht das Designertool nun in die zweite Runde.
 
 Der Schwerpunkt liegt hier ganz klar in der Unterstützung von Silverlight und Visual Studio 2008, es gibt aber eine ganze Reihe von Neuerungen.
 

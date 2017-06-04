@@ -2,7 +2,7 @@
 layout: post
 title : "Web Plattform Installer"
 date : 12.10.2008 13:35:23
-tags: [.NET, Vista, ASP .NET, Sql Server, Visual Studio 2008]
+tags: [.net, vista, asp.net, sql-server, visual-studio]
 ---
 {% include JB/setup %}
 

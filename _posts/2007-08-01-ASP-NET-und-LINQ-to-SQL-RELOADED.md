@@ -2,7 +2,7 @@
 layout: post
 title : "ASP.NET und LINQ to SQL RELOADED!"
 date : 01.08.2007 00:20:13
-tags: [.NET, ASP .NET, LINQ]
+tags: [.net, asp.net, linq]
 ---
 {% include JB/setup %}
 
@@ -12,17 +12,53 @@ ASP.NET Anwendungen können jetzt problemlos die neuen .NET 3.5 Assemblys einbin
 
 Für Webentwickler steht sogar die neue **LinqDataSource** bereit, die den Zugriff von allen Data-Bound-Controls wie GridView, ListView, DataRepeater etc. auf einen Linq to Sql DataContext gewährt und neben automatischem **Sorting** und **Paging** auch **Insert-**, **Upadte-** und **Delete-Querys** unterstützt.
 
-Ist ein Linq-to-Sql DataContext im AppCode Folder oder in einer referenzierten Assembly vorhanden, kann man wie bei der Sql Data Source gewohnt mit dem Visual Designer arbeiten. Probleme bereiten noch Where-Conditions und komplexe Queries, doch in der LinqDataSource steckt mehr als Microsoft offen zugeben will.
+Ist ein Linq-to-Sql DataContext im `AppCode` Folder oder in einer referenzierten Assembly vorhanden, kann man wie bei der Sql Data Source gewohnt mit dem Visual Designer arbeiten. Probleme bereiten noch `Where`-Conditions und komplexe Queries, doch in der **LinqDataSource** steckt mehr als Microsoft offen zugeben will.
 
-Das **Selecting** Event der LinqDataSource bietet einem die Möglichkeit die vordefinierte Linq Query über den Parameter *e.Result* zu erstetzten. Dabei ist man nicht auf den Linq-to-Sql DataContext beschränkt, sondern kann jede beliebige Linq Query verwenden (z.B. Linq-to-Objects, Linq-to-Entities, Linq-to-Amazon, etc.) und das <u>ohne</u> den Verlust von Sorting und Paging.
+Das **Selecting** Event der LinqDataSource bietet einem die Möglichkeit die vordefinierte Linq Query über den Parameter `e.Result` zu erstetzten. Dabei ist man nicht auf den Linq-to-Sql DataContext beschränkt, sondern kann jede beliebige Linq Query verwenden (z.B. Linq-to-Objects, Linq-to-Entities, Linq-to-Amazon, etc.) und das <u>ohne</u> den Verlust von Sorting und Paging.
 
 **Hier eine kleine Demonstration**
 
-**** 
+ASP .NET Declaration 
+````html
+<asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" DataSourceID="PersonSource" />
+<asp:LinqDataSource ID="PersonSource" runat="server" />
+````
 
- <div class="wlWriterSmartContent" id="F2210F5F-69EB-4d4c-AFF7-B8A050E9CC72:39b70089-3deb-4e67-9375-397cc8444f20" contenteditable="false" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px">ASP .NET Declaration <div><span style="color: #0000FF;"><</span><span style="color: #800000;">asp:GridView </span><span style="color: #FF0000;">ID</span><span style="color: #0000FF;">="GridView1"</span><span style="color: #FF0000;"> runat</span><span style="color: #0000FF;">="server"</span><span style="color: #FF0000;"> AllowPaging</span><span style="color: #0000FF;">="True"</span><span style="color: #FF0000;"> AllowSorting</span><span style="color: #0000FF;">="True"</span><span style="color: #FF0000;"> DataSourceID</span><span style="color: #0000FF;">="PersonSource"</span><span style="color: #FF0000;"> </span><span style="color: #0000FF;">/></span><span style="color: #000000;"> </span><span style="color: #0000FF;"><</span><span style="color: #800000;">asp:LinqDataSource </span><span style="color: #FF0000;">ID</span><span style="color: #0000FF;">="PersonSource"</span><span style="color: #FF0000;"> runat</span><span style="color: #0000FF;">="server"</span><span style="color: #FF0000;"> </span><span style="color: #0000FF;">/></span></div> </div>
+ASP .NET Code 
+````vb
+Partial Class _Default Inherits System.Web.UI.Page
 
- <div class="wlWriterSmartContent" id="F2210F5F-69EB-4d4c-AFF7-B8A050E9CC72:de27e77a-02bf-4579-8d4e-0db75869ceaf" contenteditable="false" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px">ASP .NET Code <div><span style="color: #000000;"> </span><span style="color: #0000FF;">Partial</span><span style="color: #000000;"> </span><span style="color: #0000FF;">Class</span><span style="color: #000000;"> _Default </span><span style="color: #0000FF;">Inherits</span><span style="color: #000000;"> System.Web.UI.Page </span><span style="color: #0000FF;">Protected</span><span style="color: #000000;"> </span><span style="color: #0000FF;">Sub</span><span style="color: #000000;"> PersonSource_Selecting(</span><span style="color: #0000FF;">ByVal</span><span style="color: #000000;"> sender </span><span style="color: #0000FF;">As</span><span style="color: #000000;"> </span><span style="color: #0000FF;">Object</span><span style="color: #000000;">, </span><span style="color: #0000FF;">ByVal</span><span style="color: #000000;"> e </span><span style="color: #0000FF;">As</span><span style="color: #000000;"> System.Web.UI.WebControls.LinqDataSourceSelectEventArgs) </span><span style="color: #0000FF;">Handles</span><span style="color: #000000;"> PersonSource.Selecting </span><span style="color: #0000FF;">Dim</span><span style="color: #000000;"> persons </span><span style="color: #0000FF;">As</span><span style="color: #000000;"> Person() </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">New</span><span style="color: #000000;"> Person() {</span><span style="color: #0000FF;">New</span><span style="color: #000000;"> Person </span><span style="color: #0000FF;">With</span><span style="color: #000000;"> {.Name </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #800000;">"</span><span style="color: #800000;">Jan</span><span style="color: #800000;">"</span><span style="color: #000000;">, .Age </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #800080;">19</span><span style="color: #000000;">}, </span><span style="color: #0000FF;">New</span><span style="color: #000000;"> Person </span><span style="color: #0000FF;">With</span><span style="color: #000000;"> {.Name </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #800000;">"</span><span style="color: #800000;">Albert</span><span style="color: #800000;">"</span><span style="color: #000000;">, .Age </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #800080;">23</span><span style="color: #000000;">}, </span><span style="color: #0000FF;">New</span><span style="color: #000000;"> Person </span><span style="color: #0000FF;">With</span><span style="color: #000000;"> {.Name </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #800000;">"</span><span style="color: #800000;">Robert</span><span style="color: #800000;">"</span><span style="color: #000000;">, .Age </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #800080;">61</span><span style="color: #000000;">}} e.Result </span><span style="color: #000000;">=</span><span style="color: #000000;"> From x </span><span style="color: #0000FF;">In</span><span style="color: #000000;"> persons Where x.Age </span><span style="color: #000000;">></span><span style="color: #000000;"> </span><span style="color: #800080;">20</span><span style="color: #000000;"> </span><span style="color: #0000FF;">End Sub</span><span style="color: #000000;"> </span><span style="color: #0000FF;">End Class</span><span style="color: #000000;"> </span><span style="color: #0000FF;">Public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">Class</span><span style="color: #000000;"> Person </span><span style="color: #0000FF;">Private</span><span style="color: #000000;"> _Name </span><span style="color: #0000FF;">As</span><span style="color: #000000;"> </span><span style="color: #0000FF;">String</span><span style="color: #000000;"> </span><span style="color: #0000FF;">Public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">Property</span><span style="color: #000000;"> Name() </span><span style="color: #0000FF;">As</span><span style="color: #000000;"> </span><span style="color: #0000FF;">String</span><span style="color: #000000;"> </span><span style="color: #0000FF;">Get</span><span style="color: #000000;"> </span><span style="color: #0000FF;">Return</span><span style="color: #000000;"> _Name </span><span style="color: #0000FF;">End</span><span style="color: #000000;"> </span><span style="color: #0000FF;">Get</span><span style="color: #000000;"> </span><span style="color: #0000FF;">Set</span><span style="color: #000000;">(</span><span style="color: #0000FF;">ByVal</span><span style="color: #000000;"> value </span><span style="color: #0000FF;">As</span><span style="color: #000000;"> </span><span style="color: #0000FF;">String</span><span style="color: #000000;">) _Name </span><span style="color: #000000;">=</span><span style="color: #000000;"> value </span><span style="color: #0000FF;">End</span><span style="color: #000000;"> </span><span style="color: #0000FF;">Set</span><span style="color: #000000;"> </span><span style="color: #0000FF;">End Property</span><span style="color: #000000;"> </span><span style="color: #0000FF;">Private</span><span style="color: #000000;"> _Age </span><span style="color: #0000FF;">As</span><span style="color: #000000;"> </span><span style="color: #0000FF;">Integer</span><span style="color: #000000;"> </span><span style="color: #0000FF;">Public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">Property</span><span style="color: #000000;"> Age() </span><span style="color: #0000FF;">As</span><span style="color: #000000;"> </span><span style="color: #0000FF;">Integer</span><span style="color: #000000;"> </span><span style="color: #0000FF;">Get</span><span style="color: #000000;"> </span><span style="color: #0000FF;">Return</span><span style="color: #000000;"> _Age </span><span style="color: #0000FF;">End</span><span style="color: #000000;"> </span><span style="color: #0000FF;">Get</span><span style="color: #000000;"> </span><span style="color: #0000FF;">Set</span><span style="color: #000000;">(</span><span style="color: #0000FF;">ByVal</span><span style="color: #000000;"> value </span><span style="color: #0000FF;">As</span><span style="color: #000000;"> </span><span style="color: #0000FF;">Integer</span><span style="color: #000000;">) _Age </span><span style="color: #000000;">=</span><span style="color: #000000;"> value </span><span style="color: #0000FF;">End</span><span style="color: #000000;"> </span><span style="color: #0000FF;">Set</span><span style="color: #000000;"> </span><span style="color: #0000FF;">End Property</span><span style="color: #000000;"> </span><span style="color: #0000FF;">End Class</span><span style="color: #000000;"> </span></div> </div>
+    Protected Sub PersonSource_Selecting(ByVal sender As Object, ByVal e As     System.Web.UI.WebControls.LinqDataSourceSelectEventArgs) Handles PersonSource.Selecting
+        Dim persons As Person() = New Person() {New Person With {.Name = "Jan", .Age = 19}, New Person With {.Name = "Albert", .Age = 23}, New Person With {.Name = "Robert", .Age = 61}}
+        e.Result = From x In persons
+                   Where x.Age > 20
+    End Sub
+End Class
+
+Public Class Person
+    Private _Name As String
+    
+    Public Property Name() As String
+        Get
+            Return _Name
+        End Get
+        Set(ByVal value As String)
+            _Name = value
+        End Set
+    End Property
+    
+    Private _Age As Integer
+    
+    Public Property Age() As Integer
+        Get
+            Return _Age
+        End Get
+        Set(ByVal value As Integer)
+            _Age = value
+        End Set
+    End Property
+End Class
+````
 
 In diesem Beispiel wird ein einfaches GridView mit Sorting und Paging an eine LinqDataSource gebunden. Im Code wird eine Klasse Person definiert mit den Eigenschaften Name und Age. Im Selecting Event werden einige Person Objekte erstellt. Daraufhin werden mit einer Linq Query diejenigen Person Objekte herausgefiltert, deren Age Eigenschaft größer als 20 ist.
 

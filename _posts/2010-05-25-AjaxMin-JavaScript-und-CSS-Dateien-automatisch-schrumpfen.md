@@ -2,7 +2,7 @@
 layout: post
 title : "AjaxMin – JavaScript und CSS Dateien automatisch schrumpfen"
 date : 25.05.2010 14:18:10
-tags: []
+tags: [asp.net, ajax]
 ---
 {% include JB/setup %}
 

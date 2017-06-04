@@ -2,7 +2,7 @@
 layout: post
 title : "Titel eines Fensters bestimmen"
 date : 22.06.2007 09:04:37
-tags: [.NET]
+tags: [.net, win32, interop]
 ---
 {% include JB/setup %}
 
@@ -10,9 +10,11 @@ Visual Basic .NET Bordmittel ermöglichen es nicht, den Fenstertitel eines ander
 
 Dafür benötigt man zwei Funktionen:
 
-    <span style="color: #0000ff">Declare</span> Auto <span style="color: #0000ff">Function</span> FindWindow <span style="color: #0000ff">Lib</span> "<span style="color: #8b0000">user32</span>" (<span style="color: #0000ff">ByVal</span> lpClassName <span style="color: #0000ff">As</span> <span style="color: #0000ff">String</span>, <span style="color: #0000ff">ByVal</span> lpWindowName <span style="color: #0000ff">As</span> <span style="color: #0000ff">String</span>) <span style="color: #0000ff">As</span> IntPtr
+````vb
+Declare Auto Function FindWindow Lib "user32" (ByVal lpClassName As String, ByVal lpWindowName As String) As IntPtr
 
-        <span style="color: #0000ff">Declare</span> Auto <span style="color: #0000ff">Function</span> GetWindowText <span style="color: #0000ff">Lib</span> "<span style="color: #8b0000">user32</span>" (<span style="color: #0000ff">ByVal</span> hwnd <span style="color: #0000ff">As</span> IntPtr, <span style="color: #0000ff">ByVal</span> lpString <span style="color: #0000ff">As</span> Text.StringBuilder, <span style="color: #0000ff">ByVal</span> nMaxCount <span style="color: #0000ff">As</span> <span style="color: #0000ff">Integer</span>) <span style="color: #0000ff">As</span> <span style="color: #0000ff">Integer</span>
+Declare Auto Function GetWindowText Lib "user32" (ByVal hwnd As IntPtr, ByVal lpString As Text.StringBuilder, ByVal nMaxCount As Integer) As Integer
+````
 
 **FindWindow** gibt das Handle eines Fensters zurück. Für uns ist der Parameter lpClassName entscheidend, dem man die Fensterklasse übergibt. (Z.B. Notepad)
 
@@ -22,23 +24,29 @@ Dafür benötigt man zwei Funktionen:
 
 Zuerst muss das Handle des Fensters bestimmt werden.
 
-<span style="color: #0000ff">Dim</span> hWnd <span style="color: #0000ff">As</span> IntPtr 
-    hWnd = Win32Functions.FindWindow("<span style="color: #8b0000">Notepad</span>", <span style="color: #0000ff">Nothing</span>)
+````vb
+Dim hWnd As IntPtr 
+hWnd = Win32Functions.FindWindow("Notepad", Nothing)
+````
 
 Nun kann man die Länge des Fenstertitels erfragen.
 
-<span style="color: #0000ff">Dim</span> titleLength <span style="color: #0000ff">As</span> <span style="color: #0000ff">Integer</span>
-    titleLength = Win32Functions.GetWindowTextLength(hWnd) + 1
+````vb
+Dim titleLength As Integer
+titleLength = Win32Functions.GetWindowTextLength(hWnd) + 1
+````
 
 Mit Fenster-Handle und Titel-Länge lässt sich nun der Titel abfragen.
 
-<span style="color: #0000ff">Dim</span> title <span style="color: #0000ff">As</span> Text.StringBuilder
+````vb
+Dim title As Text.StringBuilder
 
-    title = <span style="color: #0000ff">New</span> Text.StringBuilder(titleLength)
+title = New Text.StringBuilder(titleLength)
 
-    Win32Functions.GetWindowText(hWnd, title, titleLength)
+Win32Functions.GetWindowText(hWnd, title, titleLength)
 
-    Console.WriteLine(title.ToString())
+Console.WriteLine(title.ToString())
+````
 
 Der Titel des Fensters ist nun im StringBuilder title gespeichert. 
 
@@ -46,52 +54,42 @@ Der Titel des Fensters ist nun im StringBuilder title gespeichert.
 
 ### Source Code
 
-<span style="color: #0000ff">Module</span> <span style="color: #0000ff">Module</span>1
-        <span style="color: #0000ff">Sub</span> Main()
-            <span style="color: #0000ff">Dim</span> hWnd <span style="color: #0000ff">As</span> IntPtr
-            <span style="color: #0000ff">Dim</span> title <span style="color: #0000ff">As</span> <span style="color: #0000ff">String</span>
+````vb
+Module Module1
+    Sub Main()
+        Dim hWnd As IntPtr
+        Dim title As String
+        ' Handle des Fensters bestimmen
+        hWnd = Win32Functions.FindWindow("Notepad", Nothing)
+        Console.WriteLine("Handle: {0}", hWnd.ToString)
+        If hWnd = IntPtr.Zero Then
+            Console.WriteLine("No window found :(")
+        Else
+            ' Titel des Fensters bestimmen
+            title = GetWindowTitle(hWnd)
+            Console.WriteLine("Title: {0}", title)
+        End If
+        Console.ReadLine()
+    End Sub
 
-            ' Handle des Fensters bestimmen
-            hWnd = Win32Functions.FindWindow("<span style="color: #8b0000">Notepad</span>", <span style="color: #0000ff">Nothing</span>)
+    Private Function GetWindowTitle(ByVal hWnd As IntPtr) As String
+        Dim titleLength As Integer
+        Dim title As Text.StringBuilder
+        ' Länge des Titles bestimmmen (0 = 1, 1 = 2 usw. wichtig für die erstellung des string buffers)
+        titleLength = Win32Functions.GetWindowTextLength(hWnd) + 1
+        If titleLength = 1 Then Return String.Empty
+        ' string buffer erstellen
+        title = New Text.StringBuilder(titleLength)
+        ' Titel in den buffer schreiben
+        Win32Functions.GetWindowText(hWnd, title, titleLength)
+        Return title.ToString
+    End Function
+End Module
 
-            Console.WriteLine("<span style="color: #8b0000">Handle: {0}</span>", hWnd.ToString)
-
-            <span style="color: #0000ff">If</span> hWnd = IntPtr.Zero <span style="color: #0000ff">Then</span>
-                Console.WriteLine("<span style="color: #8b0000">No window found :(</span>")
-            <span style="color: #0000ff">Else</span>
-                ' Titel des Fensters bestimmen
-                title = GetWindowTitle(hWnd)
-
-                Console.WriteLine("<span style="color: #8b0000">Title: {0}</span>", title)
-            <span style="color: #0000ff">End</span> <span style="color: #0000ff">If</span>
-
-            Console.ReadLine()
-        <span style="color: #0000ff">End</span> <span style="color: #0000ff">Sub</span>
-
-        <span style="color: #0000ff">Private</span> <span style="color: #0000ff">Function</span> GetWindowTitle(<span style="color: #0000ff">ByVal</span> hWnd <span style="color: #0000ff">As</span> IntPtr) <span style="color: #0000ff">As</span> <span style="color: #0000ff">String</span>
-            <span style="color: #0000ff">Dim</span> titleLength <span style="color: #0000ff">As</span> <span style="color: #0000ff">Integer</span>
-            <span style="color: #0000ff">Dim</span> title <span style="color: #0000ff">As</span> Text.StringBuilder
-
-            ' Länge des Titles bestimmmen (0 = 1, 1 = 2 usw. wichtig für die erstellung des <span style="color: #0000ff">string</span> buffers)
-            titleLength = Win32Functions.GetWindowTextLength(hWnd) + 1
-
-            <span style="color: #0000ff">If</span> titleLength = 1 <span style="color: #0000ff">Then</span> <span style="color: #0000ff">Return</span> <span style="color: #0000ff">String</span>.Empty
-
-            ' <span style="color: #0000ff">string</span> buffer erstellen
-            title = <span style="color: #0000ff">New</span> Text.StringBuilder(titleLength)
-
-            ' Titel <span style="color: #0000ff">in</span> den buffer schreiben
-            Win32Functions.GetWindowText(hWnd, title, titleLength)
-
-            <span style="color: #0000ff">Return</span> title.ToString
-        <span style="color: #0000ff">End</span> <span style="color: #0000ff">Function</span>
-    <span style="color: #0000ff">End</span> <span style="color: #0000ff">Module</span>
-
-    ' Notwendige Win32 Api Deklarationen (Siehe http:<span style="color: #008000">//www.pinvoke.net)</span>
-    <span style="color: #0000ff">Public</span> <span style="color: #0000ff">Class</span> Win32Functions
-        <span style="color: #0000ff">Declare</span> Auto <span style="color: #0000ff">Function</span> FindWindow <span style="color: #0000ff">Lib</span> "<span style="color: #8b0000">user32</span>" (<span style="color: #0000ff">ByVal</span> lpClassName <span style="color: #0000ff">As</span> <span style="color: #0000ff">String</span>, <span style="color: #0000ff">ByVal</span> lpWindowName <span style="color: #0000ff">As</span> <span style="color: #0000ff">String</span>) <span style="color: #0000ff">As</span> IntPtr
-
-        <span style="color: #0000ff">Declare</span> Auto <span style="color: #0000ff">Function</span> GetWindowText <span style="color: #0000ff">Lib</span> "<span style="color: #8b0000">user32</span>" (<span style="color: #0000ff">ByVal</span> hwnd <span style="color: #0000ff">As</span> IntPtr, <span style="color: #0000ff">ByVal</span> lpString <span style="color: #0000ff">As</span> Text.StringBuilder, <span style="color: #0000ff">ByVal</span> nMaxCount <span style="color: #0000ff">As</span> <span style="color: #0000ff">Integer</span>) <span style="color: #0000ff">As</span> <span style="color: #0000ff">Integer</span>
-
-        <span style="color: #0000ff">Declare</span> Auto <span style="color: #0000ff">Function</span> GetWindowTextLength <span style="color: #0000ff">Lib</span> "<span style="color: #8b0000">user32</span>" (<span style="color: #0000ff">ByVal</span> hwnd <span style="color: #0000ff">As</span> IntPtr) <span style="color: #0000ff">As</span> <span style="color: #0000ff">Integer</span>
-    <span style="color: #0000ff">End</span> <span style="color: #0000ff">Class</span>
+' Notwendige Win32 Api Deklarationen (Siehe http://www.pinvoke.net)
+Public Class Win32Functions
+    Declare Auto Function FindWindow Lib "user32" (ByVal lpClassName As String, ByVal lpWindowName As String) As IntPtr
+    Declare Auto Function GetWindowText Lib "user32" (ByVal hwnd As IntPtr, ByVal lpString As Text.StringBuilder, ByVal nMaxCount As Integer) As Integer
+    Declare Auto Function GetWindowTextLength Lib "user32" (ByVal hwnd As IntPtr) As Integer
+End Class
+````

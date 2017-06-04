@@ -2,7 +2,7 @@
 layout: post
 title : "Afterlaunch Demos &amp; Slides"
 date : 11.04.2008 23:19:47
-tags: [.NET, Visual Studio 2008]
+tags: [.net, visual-studio, slides, msp]
 ---
 {% include JB/setup %}
 

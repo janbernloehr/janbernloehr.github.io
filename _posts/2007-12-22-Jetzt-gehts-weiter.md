@@ -2,7 +2,7 @@
 layout: post
 title : "Jetzt gehts weiter!"
 date : 22.12.2007 20:00:03
-tags: [.NET]
+tags: [.net, ef, plinq, visual-studio]
 ---
 {% include JB/setup %}
 
@@ -10,7 +10,7 @@ Obwohl Visual Studio 2008 noch nichtmal offiziell gelaunched wurde, gibt es bere
 
 1. Microsoft Parallel Extensions to .NET Framework 3.5 Dec 07 CTP 
 
-[<font color="#333333">Durch</font>](http://www.microsoft.com/downloads/details.aspx?FamilyID=e848dc1d-5be3-4941-8705-024bc7f180ba&DisplayLang=en) die Parallel Extension werden die Fähigkeiten des .NET Fameworks Aufgaben gleichzeitig abzuarbeiten stark erweitert. 
+[Durch](http://www.microsoft.com/downloads/details.aspx?FamilyID=e848dc1d-5be3-4941-8705-024bc7f180ba&DisplayLang=en) die Parallel Extension werden die Fähigkeiten des .NET Fameworks Aufgaben gleichzeitig abzuarbeiten stark erweitert. 
 
 [http://www.microsoft.com/downloads/details.aspx?FamilyID=e848dc1d-5be3-4941-8705-024bc7f180ba&DisplayLang=en](http://www.microsoft.com/downloads/details.aspx?FamilyID=e848dc1d-5be3-4941-8705-024bc7f180ba&DisplayLang=en) 
 

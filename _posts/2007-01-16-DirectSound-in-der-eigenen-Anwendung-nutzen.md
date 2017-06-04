@@ -2,7 +2,7 @@
 layout: post
 title : "DirectSound in der eigenen Anwendung nutzen"
 date : 16.01.2007 17:05:56
-tags: [.net, directsound]
+tags: [.net, mdx, directsound]
 ---
 {% include JB/setup %}
 
@@ -16,8 +16,7 @@ Nach der Installation sind viele neue Assemblies verfügbar, wir benötigen ledi
 Ist diese Referenz hinzugefügt ist man nur noch wenige Schritte von einem hörbaren Resultat entfernt.
 
 Zunächst muss ein **Device** erstellt und initialisiert werden.
-
-````vb
+ ````vb
 Dim dev As Microsoft.DirectX.DirectSound.Device
 
 dev = New Microsoft.DirectX.DirectSound.Device
@@ -29,19 +28,23 @@ Mit **SetCooperativeLevel** muss ein Bezug auf eine sichtbare Windows Form gese
 
 Mit dem initialisierten Device kann man nun einen **SecondaryBuffer** erstellen, in den der Sound geladen wird.
 
+````vb
+Dim buff As SecondaryBuffer
 
-Dim buff </span><span style="color: #0000FF; ">As</span><span style="color: #000000; "> SecondaryBuffer
-
-    buff </span><span style="color: #000000; ">=</span><span style="color: #000000; "> </span><span style="color: #0000FF; ">New</span><span style="color: #000000; "> SecondaryBuffer(</span><span style="color: #000000; ">"</span><span style="color: #000000; ">D:\Windows Exclamation.wav</span><span style="color: #000000; ">"</span><span style="color: #000000; ">, dev)</span></div>
-</div>
+buff = New SecondaryBuffer("D:\Windows Exclamation.wav", dev)
+````
 
 Nun kann der Sound mit der **Play** Methode abgespielt werden.
 
- <div class="wlWriterSmartContent" id="57F11A72-B0E5-49c7-9094-E3A15BD5B5E7:196a863e-9152-4150-8993-45623ad5baad" contenteditable="false" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"> <div><span style="color: #000000; ">buff.Play(</span><span style="color: #000000; ">0</span><span style="color: #000000; ">, BufferPlayFlags.Default)</span></div> </div>
+````vb
+buff.Play(0, BufferPlayFlags.Default)
+````
 
 Analog dazu funktioniert das Abspielen eines Sounds aus einem Stream, wie das z.B. bei eingebetteten Resourcen der Fall ist. Anstatt des Pfads wird lediglich der Stream angegeben.
 
- <div class="wlWriterSmartContent" id="57F11A72-B0E5-49c7-9094-E3A15BD5B5E7:19a6df7f-263e-437d-b75c-2e1fd3094297" contenteditable="false" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"> <div><span style="color: #0000FF; ">Dim</span><span style="color: #000000; "> buff </span><span style="color: #0000FF; ">As</span><span style="color: #000000; "> SecondaryBuffer buff </span><span style="color: #000000; ">=</span><span style="color: #000000; "> </span><span style="color: #0000FF; ">New</span><span style="color: #000000; "> SecondaryBuffer(stream, _SoundDevice) buff.Play(</span><span style="color: #000000; ">0</span><span style="color: #000000; ">, BufferPlayFlags.Default)</span></div> </div>
+````vb
+Dim buff As SecondaryBuffer buff = New SecondaryBuffer(stream, _SoundDevice) buff.Play(0, BufferPlayFlags.Default)
+````
 
 **Zusammenfassung**
 
@@ -51,50 +54,48 @@ Das einzige "Manko" ist, dass auf dem Zielrechner eine Installation von DirectX 
 
 Source Code:
 
-<div class="wlWriterSmartContent" id="57F11A72-B0E5-49c7-9094-E3A15BD5B5E7:9c474464-ae36-4ff9-b073-0f639f9f5f01" contenteditable="false" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px">
+````vb
+' Initialisierung ...
+Dim player As SoundPlayer
+player = New SoundPlayer(Me)
 
-<div><span style="color: #008000; ">'</span><span style="color: #008000; "> Initialisierung ...</span><span style="color: #008000; ">
-    </span><span style="color: #0000FF; ">Dim</span><span style="color: #000000; "> player </span><span style="color: #0000FF; ">As</span><span style="color: #000000; "> SoundPlayer
-    player </span><span style="color: #000000; ">=</span><span style="color: #000000; "> </span><span style="color: #0000FF; ">New</span><span style="color: #000000; "> SoundPlayer(</span><span style="color: #0000FF; ">Me</span><span style="color: #000000; ">)
+' Abspielen
+player.PlaySoundFromEmbeddedResource("Windows Exclamation.wav")
+````
 
-    </span><span style="color: #008000; ">'</span><span style="color: #008000; "> Abspielen</span><span style="color: #008000; ">
-    </span><span style="color: #000000; ">player.PlaySoundFromEmbeddedResource(</span><span style="color: #000000; ">"</span><span style="color: #000000; ">Windows Exclamation.wav</span><span style="color: #000000; ">"</span><span style="color: #000000; ">)</span></div>
-</div>
-<div class="wlWriterSmartContent" id="57F11A72-B0E5-49c7-9094-E3A15BD5B5E7:461e8fcb-94a9-4845-a63e-db4e3af85eb7" contenteditable="false" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px">
+````vb
+Public Class SoundPlayer
+        Dim dev As Microsoft.DirectX.DirectSound.Device
 
-<div><span style="color: #000000; ">
-    </span><span style="color: #0000FF; ">Public</span><span style="color: #000000; "> </span><span style="color: #0000FF; ">Class</span><span style="color: #000000; "> SoundPlayer
-        </span><span style="color: #0000FF; ">Dim</span><span style="color: #000000; "> dev </span><span style="color: #0000FF; ">As</span><span style="color: #000000; "> Microsoft.DirectX.DirectSound.Device
-
-        </span><span style="color: #0000FF; ">Public</span><span style="color: #000000; "> </span><span style="color: #0000FF; ">Sub</span><span style="color: #000000; "> </span><span style="color: #0000FF; ">New</span><span style="color: #000000; ">(</span><span style="color: #0000FF; ">ByVal</span><span style="color: #000000; "> owner </span><span style="color: #0000FF; ">As</span><span style="color: #000000; "> Form)
-            dev </span><span style="color: #000000; ">=</span><span style="color: #000000; "> </span><span style="color: #0000FF; ">New</span><span style="color: #000000; "> Microsoft.DirectX.DirectSound.Device
+        Public Sub New(ByVal owner As Form)
+            dev = New Microsoft.DirectX.DirectSound.Device
             dev.SetCooperativeLevel(owner, CooperativeLevel.Priority)
-        </span><span style="color: #0000FF; ">End Sub</span><span style="color: #000000; ">
+        End Sub
 
-        </span><span style="color: #0000FF; ">Public</span><span style="color: #000000; "> </span><span style="color: #0000FF; ">Sub</span><span style="color: #000000; "> PlaySoundFromFile(</span><span style="color: #0000FF; ">ByVal</span><span style="color: #000000; "> fileName </span><span style="color: #0000FF; ">As</span><span style="color: #000000; "> </span><span style="color: #0000FF; ">String</span><span style="color: #000000; ">)
-            </span><span style="color: #0000FF; ">Dim</span><span style="color: #000000; "> buff </span><span style="color: #0000FF; ">As</span><span style="color: #000000; "> SecondaryBuffer
+        Public Sub PlaySoundFromFile(ByVal fileName As String)
+            Dim buff As SecondaryBuffer
 
-            buff </span><span style="color: #000000; ">=</span><span style="color: #000000; "> </span><span style="color: #0000FF; ">New</span><span style="color: #000000; "> SecondaryBuffer(fileName, dev)
-            buff.Play(</span><span style="color: #000000; ">0</span><span style="color: #000000; ">, BufferPlayFlags.Default)
-        </span><span style="color: #0000FF; ">End Sub</span><span style="color: #000000; ">
+            buff = New SecondaryBuffer(fileName, dev)
+            buff.Play(0, BufferPlayFlags.Default)
+        End Sub
 
-        </span><span style="color: #0000FF; ">Public</span><span style="color: #000000; "> </span><span style="color: #0000FF; ">Sub</span><span style="color: #000000; "> PlaySoundFromEmbeddedResource(</span><span style="color: #0000FF; ">ByVal</span><span style="color: #000000; "> fileName </span><span style="color: #0000FF; ">As</span><span style="color: #000000; "> </span><span style="color: #0000FF; ">String</span><span style="color: #000000; ">)
-            </span><span style="color: #0000FF; ">Dim</span><span style="color: #000000; "> namesp </span><span style="color: #0000FF; ">As</span><span style="color: #000000; "> </span><span style="color: #0000FF; ">String</span><span style="color: #000000; ">
-            </span><span style="color: #0000FF; ">Dim</span><span style="color: #000000; "> stream </span><span style="color: #0000FF; ">As</span><span style="color: #000000; "> System.IO.Stream
+        Public Sub PlaySoundFromEmbeddedResource(ByVal fileName As String)
+            Dim namesp As String
+            Dim stream As System.IO.Stream
 
-            namesp </span><span style="color: #000000; ">=</span><span style="color: #000000; "> System.Reflection.Assembly.GetExecutingAssembly.GetName.Name
-            stream </span><span style="color: #000000; ">=</span><span style="color: #000000; "> System.Reflection.Assembly.GetExecutingAssembly.GetManifestResourceStream(namesp </span><span style="color: #000000; ">&</span><span style="color: #000000; "> </span><span style="color: #000000; ">"</span><span style="color: #000000; ">.</span><span style="color: #000000; ">"</span><span style="color: #000000; "> </span><span style="color: #000000; ">&</span><span style="color: #000000; "> fileName)
+            namesp = System.Reflection.Assembly.GetExecutingAssembly.GetName.Name
+            stream = System.Reflection.Assembly.GetExecutingAssembly.GetManifestResourceStream(namesp & "." & fileName)
 
-            </span><span style="color: #0000FF; ">If</span><span style="color: #000000; "> stream </span><span style="color: #0000FF; ">Is</span><span style="color: #000000; "> </span><span style="color: #0000FF; ">Nothing</span><span style="color: #000000; "> </span><span style="color: #0000FF; ">Then</span><span style="color: #000000; "> </span><span style="color: #0000FF; ">Throw</span><span style="color: #000000; "> </span><span style="color: #0000FF; ">New</span><span style="color: #000000; "> ArgumentException(</span><span style="color: #0000FF; ">String</span><span style="color: #000000; ">.Format(</span><span style="color: #000000; ">"</span><span style="color: #000000; ">Embedded Resource '{0}' wurde nicht gefunden!</span><span style="color: #000000; ">"</span><span style="color: #000000; ">, fileName))
+            If stream Is Nothing Then Throw New ArgumentException(String.Format("Embedded Resource '{0}' wurde nicht gefunden!", fileName))
 
             PlaySoundFromStream(stream)
-        </span><span style="color: #0000FF; ">End Sub</span><span style="color: #000000; ">
+        End Sub
 
-        </span><span style="color: #0000FF; ">Public</span><span style="color: #000000; "> </span><span style="color: #0000FF; ">Sub</span><span style="color: #000000; "> PlaySoundFromStream(</span><span style="color: #0000FF; ">ByVal</span><span style="color: #000000; "> stream </span><span style="color: #0000FF; ">As</span><span style="color: #000000; "> System.IO.Stream)
-            </span><span style="color: #0000FF; ">Dim</span><span style="color: #000000; "> buff </span><span style="color: #0000FF; ">As</span><span style="color: #000000; "> SecondaryBuffer
+        Public Sub PlaySoundFromStream(ByVal stream As System.IO.Stream)
+            Dim buff As SecondaryBuffer
 
-            buff </span><span style="color: #000000; ">=</span><span style="color: #000000; "> </span><span style="color: #0000FF; ">New</span><span style="color: #000000; "> SecondaryBuffer(stream, dev)
-            buff.Play(</span><span style="color: #000000; ">0</span><span style="color: #000000; ">, BufferPlayFlags.Default)
-        </span><span style="color: #0000FF; ">End Sub</span><span style="color: #000000; ">
-    </span><span style="color: #0000FF; ">End Class</span></div>
-</div>
+            buff = New SecondaryBuffer(stream, dev)
+            buff.Play(0, BufferPlayFlags.Default)
+        End Sub
+    End Class
+````

@@ -2,7 +2,7 @@
 layout: post
 title : "Windows Azure Workshop – 13.01.2010 Uni Stuttgart"
 date : 13.01.2010 12:57:41
-tags: []
+tags: [azure, msp, slides]
 ---
 {% include JB/setup %}
 

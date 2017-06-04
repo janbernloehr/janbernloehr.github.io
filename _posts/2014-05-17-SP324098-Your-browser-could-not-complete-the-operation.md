@@ -2,7 +2,7 @@
 layout: post
 title : "SP324098: Your browser could not complete the operation"
 date : 17.05.2014 09:12:00
-tags: [VPN, Visual Studio]
+tags: [vpn, visual-studio]
 ---
 {% include JB/setup %}
 

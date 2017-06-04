@@ -2,7 +2,7 @@
 layout: post
 title : "WCF HTTP Hosting - ohne Admin Rechte"
 date : 15.06.2008 13:49:36
-tags: []
+tags: [wcf, iis, windows-server]
 ---
 {% include JB/setup %}
 
@@ -17,7 +17,7 @@ Es gibt aber einen Weg, den Wcf Service auch ohne Admin Rechte zu hosten. Unter 
 
 Die Syntax dafür lautet
 
-netsh http add urlacl url=http://+:80/MyUri user=DOMAIN\user
+    netsh http add urlacl url=http://+:80/MyUri user=DOMAIN\user
 
 Für Windows XP oder Windows Server 2003 übernimmt das Tool **<u>httpcfg</u>** diese Aufgabe.
 

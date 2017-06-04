@@ -2,7 +2,7 @@
 layout: post
 title : "Visual Studio 2005 + subversion"
 date : 02.01.2007 04:45:00
-tags: [.net, vs2005, svn]
+tags: [.net, visual-studio, svn]
 ---
 {% include JB/setup %}
 

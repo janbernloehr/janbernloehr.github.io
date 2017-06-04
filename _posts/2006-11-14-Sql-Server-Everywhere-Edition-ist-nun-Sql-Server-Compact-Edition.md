@@ -2,7 +2,7 @@
 layout: post
 title : "Sql Server Everywhere Edition ist nun Sql Server Compact Edition"
 date : 14.11.2006 23:41:17
-tags: [.net, vs2005, sql-server, sql-compact]
+tags: [.net, visual-studio, sql-server, sql-compact]
 ---
 {% include JB/setup %}
 

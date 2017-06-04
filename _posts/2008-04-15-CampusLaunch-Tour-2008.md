@@ -2,7 +2,7 @@
 layout: post
 title : "CampusLaunch Tour 2008"
 date : 15.04.2008 15:07:44
-tags: [.NET, WPF, LINQ, Sql Server, Visual Studio 2008]
+tags: [.net, wpf, linq, sql-server, visual-studio, msp]
 ---
 {% include JB/setup %}
 

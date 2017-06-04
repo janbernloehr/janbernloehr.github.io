@@ -2,7 +2,7 @@
 layout: post
 title : "Visual Studio 2005 Team Edition for Database Professional Add-on"
 date : 18.01.2007 17:17:51
-tags: [Visual Studio 2005]
+tags: [visual-studio]
 ---
 {% include JB/setup %}
 

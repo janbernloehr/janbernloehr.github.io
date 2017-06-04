@@ -2,7 +2,7 @@
 layout: post
 title : "Vista x64: IE64 als Standard"
 date : 15.12.2006 22:14:26
-tags: [vista]
+tags: [vista, x64]
 ---
 {% include JB/setup %}
 

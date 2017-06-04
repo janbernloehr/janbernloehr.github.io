@@ -2,7 +2,7 @@
 layout: post
 title : "Unix Filestamp in .NET Verwenden"
 date : 29.01.2007 23:20:43
-tags: [.NET]
+tags: [.net, unix, interop]
 ---
 {% include JB/setup %}
 
@@ -10,6 +10,24 @@ Hin und wieder muss man sich doch auch mal mit den anderen unterhalten ;) Dabei 
 
 Aber für .NET ist die Konvertierung ein Kinderspiel:
 
- <div class="wlWriterSmartContent" id="57F11A72-B0E5-49c7-9094-E3A15BD5B5E7:31f0491c-b4bf-4a2c-9a0a-c91340a932e2" contenteditable="false" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"> <div><span style="color: #000000; "> </span><span style="color: #008000; ">'</span><span style="color: #008000; ">'' <summary></span><span style="color: #008000; "> </span><span style="color: #000000; "> </span><span style="color: #008000; ">'</span><span style="color: #008000; ">'' Converts a byte array representing a UNIX FileStamp to a datetime value.</span><span style="color: #008000; "> </span><span style="color: #000000; "> </span><span style="color: #008000; ">'</span><span style="color: #008000; ">'' </summary></span><span style="color: #008000; "> </span><span style="color: #000000; "> </span><span style="color: #0000FF; ">Private</span><span style="color: #000000; "> </span><span style="color: #0000FF; ">Function</span><span style="color: #000000; "> UnixFileStampToDateTime(</span><span style="color: #0000FF; ">ByVal</span><span style="color: #000000; "> bytes </span><span style="color: #0000FF; ">As</span><span style="color: #000000; "> </span><span style="color: #0000FF; ">Byte</span><span style="color: #000000; ">()) </span><span style="color: #0000FF; ">As</span><span style="color: #000000; "> DateTime </span><span style="color: #0000FF; ">Dim</span><span style="color: #000000; "> lngSeconds </span><span style="color: #0000FF; ">As</span><span style="color: #000000; "> UInt32 lngSeconds </span><span style="color: #000000; ">=</span><span style="color: #000000; "> BitConverter.ToUInt32(bytes, </span><span style="color: #000000; ">0</span><span style="color: #000000; ">) </span><span style="color: #0000FF; ">Return</span><span style="color: #000000; "> (</span><span style="color: #0000FF; ">New</span><span style="color: #000000; "> System.DateTime(</span><span style="color: #000000; ">1970</span><span style="color: #000000; ">, </span><span style="color: #000000; ">1</span><span style="color: #000000; ">, </span><span style="color: #000000; ">1</span><span style="color: #000000; ">, </span><span style="color: #000000; ">0</span><span style="color: #000000; ">, </span><span style="color: #000000; ">0</span><span style="color: #000000; ">, </span><span style="color: #000000; ">0</span><span style="color: #000000; ">)).AddSeconds(lngSeconds) </span><span style="color: #0000FF; ">End Function</span></div> </div> <div class="wlWriterSmartContent" id="57F11A72-B0E5-49c7-9094-E3A15BD5B5E7:c8a9b3bc-e238-4713-8546-a7a54dfb74f9" contenteditable="false" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"> <div><span style="color: #000000; "> </span><span style="color: #008000; ">'</span><span style="color: #008000; ">'' <summary></span><span style="color: #008000; "> </span><span style="color: #000000; "> </span><span style="color: #008000; ">'</span><span style="color: #008000; ">'' Converts a datetime value to a byte array representing a UNIX FileStamp.</span><span style="color: #008000; "> </span><span style="color: #000000; "> </span><span style="color: #008000; ">'</span><span style="color: #008000; ">'' </summary></span><span style="color: #008000; "> </span><span style="color: #000000; "> </span><span style="color: #0000FF; ">Private</span><span style="color: #000000; "> </span><span style="color: #0000FF; ">Function</span><span style="color: #000000; "> DateTimeToFileStamp(</span><span style="color: #0000FF; ">ByVal</span><span style="color: #000000; "> [</span><span style="color: #0000FF; ">date</span><span style="color: #000000; ">] </span><span style="color: #0000FF; ">As</span><span style="color: #000000; "> </span><span style="color: #0000FF; ">Date</span><span style="color: #000000; ">) </span><span style="color: #0000FF; ">As</span><span style="color: #000000; "> </span><span style="color: #0000FF; ">Byte</span><span style="color: #000000; ">() </span><span style="color: #0000FF; ">Dim</span><span style="color: #000000; "> lngSeconds </span><span style="color: #0000FF; ">As</span><span style="color: #000000; "> </span><span style="color: #0000FF; ">Long</span><span style="color: #000000; "> lngSeconds </span><span style="color: #000000; ">=</span><span style="color: #000000; "> </span><span style="color: #0000FF; ">CLng</span><span style="color: #000000; ">([</span><span style="color: #0000FF; ">date</span><span style="color: #000000; ">].Subtract(</span><span style="color: #0000FF; ">New</span><span style="color: #000000; "> System.DateTime(</span><span style="color: #000000; ">1970</span><span style="color: #000000; ">, </span><span style="color: #000000; ">1</span><span style="color: #000000; ">, </span><span style="color: #000000; ">1</span><span style="color: #000000; ">, </span><span style="color: #000000; ">0</span><span style="color: #000000; ">, </span><span style="color: #000000; ">0</span><span style="color: #000000; ">, </span><span style="color: #000000; ">0</span><span style="color: #000000; ">)).TotalSeconds) </span><span style="color: #0000FF; ">Return</span><span style="color: #000000; "> BitConverter.GetBytes((CUInt(lngSeconds))) </span><span style="color: #0000FF; ">End Function</span><span style="color: #000000; "> </span></div> </div>
+````vb
+''' <summary>
+''' Converts a byte array representing a UNIX FileStamp to a datetime value.  
+''' </summary>  
+Private Function UnixFileStampToDateTime(ByVal bytes As Byte()) As DateTime
+    Dim lngSeconds As UInt32 
+    lngSeconds = BitConverter.ToUInt32(bytes, 0)
+    Return (New System.DateTime(1970, 1, 1, 0, 0, 0)).AddSeconds(lngSeconds)
+End Function
+
+''' <summary>  
+''' Converts a datetime value to a byte array representing a UNIX FileStamp.  
+''' </summary>  
+Private Function DateTimeToFileStamp(ByVal [date] As Date) As Byte() 
+    Dim lngSeconds As Long 
+    lngSeconds = CLng([date].Subtract(New System.DateTime(1970, 1, 1, 0, 0, 0)).TotalSeconds)
+    Return BitConverter.GetBytes((CUInt(lngSeconds))) 
+End Function
+````
 
 Hinweis: Bei Litte-Endian muss das byte Array vorher noch umgekehrt (**Array.Reverse**) werden.

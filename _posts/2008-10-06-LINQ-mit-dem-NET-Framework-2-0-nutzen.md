@@ -2,7 +2,7 @@
 layout: post
 title : "LINQ mit dem .NET Framework 2.0 nutzen"
 date : 06.10.2008 23:34:11
-tags: [.NET, LINQ, Visual Studio 2008]
+tags: [.net, linq, visual-studio]
 ---
 {% include JB/setup %}
 

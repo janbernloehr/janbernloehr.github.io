@@ -2,7 +2,7 @@
 layout: post
 title : "ASP.NET Team Todo: DataPager"
 date : 18.08.2007 11:33:23
-tags: [.NET, ASP .NET]
+tags: [.net, asp .net]
 ---
 {% include JB/setup %}
 

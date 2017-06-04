@@ -2,7 +2,7 @@
 layout: post
 title : "Kaxaml - Das bessere Xaml Pad"
 date : 17.02.2008 14:04:42
-tags: [WPF]
+tags: [wpf, xaml]
 ---
 {% include JB/setup %}
 

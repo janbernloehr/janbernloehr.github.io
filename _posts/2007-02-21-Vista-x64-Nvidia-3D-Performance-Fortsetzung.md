@@ -2,7 +2,7 @@
 layout: post
 title : "Vista x64: Nvidia 3D Performance (Fortsetzung)"
 date : 21.02.2007 17:15:11
-tags: [Vista]
+tags: [vista, nvidia, x64]
 ---
 {% include JB/setup %}
 
@@ -13,4 +13,4 @@ Mein Testsystem DELL Precision M90 (Core 2 Duo 2,0 GHz, 2 GB DDR2 667 RAM, Nvidi
 
 Der Unterschied von 50 Punkten kann vernachlässigt werden, da ich mein Testsystem (Windows Vista Ultimate x64) in der Standard Konfiguration lies und keine Services wie UAC oder Windows Defender deaktivierte.
 
-Besonders auffällig ist, dass die 100er Treiberpakete deutlich kleiner als die 97er Version sind. Dies untermauert Nvidias Aussage, dass die 97er Pakete lediglich eine Übergangsversion gewesen seien und erst mit den 100er Paketen vollständige Vista-Unterstützung Einzug erhalten werde.
+Besonders auffällig ist, dass die 100er Treiberpakete deutlich kleiner als die 97er Version sind. Dies untermauert Nvidias Aussage, dass die 97er Pakete lediglich eine Übergangsversion gewesen seien und die 100er Paketserie vollständige für Vista neuentwickelt wurde.

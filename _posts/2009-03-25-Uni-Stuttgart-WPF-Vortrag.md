@@ -2,17 +2,17 @@
 layout: post
 title : "Uni Stuttgart: WPF Vortrag"
 date : 25.03.2009 18:42:00
-tags: [.NET, WPF, Visual Studio 2008]
+tags: [.net, wpf, visual-studio, msp, slides]
 ---
 {% include JB/setup %}
 
 Hier gibt es die Slides, Sourcen und Aufgaben zum WPF Vortrag vom 25.03.2009.
 
-**Slides + Sourcen   
-[http://vb-magazin.de/janm/WPF-Vortrag.zip](http://vb-magazin.de/janm/WPF-Vortrag.zip)**
+**Slides + Sourcen**
+[http://vb-magazin.de/janm/WPF-Vortrag.zip](http://vb-magazin.de/janm/WPF-Vortrag.zip)
 
-**Aufgaben   
-[http://vb-magazin.de/janm/Aufgaben.pdf](http://vb-magazin.de/janm/Aufgaben.pdf)**
+**Aufgaben**
+[http://vb-magazin.de/janm/Aufgaben.pdf](http://vb-magazin.de/janm/Aufgaben.pdf)
 
 ****
 

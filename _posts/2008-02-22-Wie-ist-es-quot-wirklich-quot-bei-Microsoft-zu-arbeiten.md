@@ -2,7 +2,7 @@
 layout: post
 title : "Wie ist es &quot;wirklich&quot; bei Microsoft zu arbeiten?"
 date : 22.02.2008 12:45:12
-tags: []
+tags: [microsoft]
 ---
 {% include JB/setup %}
 

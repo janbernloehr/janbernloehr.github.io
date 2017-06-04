@@ -2,7 +2,7 @@
 layout: post
 title : "FireFox 3.0 Alpha und Java 6 RTM"
 date : 11.12.2006 17:57:56
-tags: [vista]
+tags: [vista, updates]
 ---
 {% include JB/setup %}
 

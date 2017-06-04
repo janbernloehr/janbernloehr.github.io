@@ -2,7 +2,7 @@
 layout: post
 title : "Vista x64: Nvidia 3d Performance"
 date : 17.12.2006 21:41:09
-tags: [vista]
+tags: [vista, nvidia, x64]
 ---
 {% include JB/setup %}
 

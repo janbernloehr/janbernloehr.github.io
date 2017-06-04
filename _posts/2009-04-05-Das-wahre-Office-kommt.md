@@ -2,7 +2,7 @@
 layout: post
 title : "Das wahre Office kommt…"
 date : 05.04.2009 18:24:26
-tags: []
+tags: [office, msp]
 ---
 {% include JB/setup %}
 

@@ -2,7 +2,7 @@
 layout: post
 title : "Microsoft Surface offiziell angek&#252;ndigt"
 date : 03.06.2007 11:13:52
-tags: []
+tags: [surface]
 ---
 {% include JB/setup %}
 

@@ -2,7 +2,7 @@
 layout: post
 title : "Web Platfrom Installer geht in die zweite Runde"
 date : 22.03.2009 13:33:22
-tags: [.NET, Vista, ASP .NET, Sql Server, Visual Studio 2008]
+tags: [.net, vista, asp.net, sql-server, visual-studio]
 ---
 {% include JB/setup %}
 
@@ -14,5 +14,6 @@ In Version 2 ist außerdem noch die Installation von beliebten Anwendungen wie D
 
 Das Tool unterstützt Windows XP SP2+, Windows Vista SP1, Windows Server 2003 SP1+ und Windows Server 2008.
 
-**Download   
-[http://www.microsoft.com/web/downloads/platform.aspx](http://www.microsoft.com/web/downloads/platform.aspx)**
+**Download**
+
+[http://www.microsoft.com/web/downloads/platform.aspx](http://www.microsoft.com/web/downloads/platform.aspx)

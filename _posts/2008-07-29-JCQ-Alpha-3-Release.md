@@ -2,7 +2,7 @@
 layout: post
 title : "JCQ Alpha 3 Release"
 date : 29.07.2008 12:10:41
-tags: []
+tags: [.net, jcq, codeplex]
 ---
 {% include JB/setup %}
 

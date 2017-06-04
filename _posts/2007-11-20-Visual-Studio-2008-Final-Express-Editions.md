@@ -2,7 +2,7 @@
 layout: post
 title : "Visual Studio 2008 Final Express Editions"
 date : 20.11.2007 14:38:15
-tags: [Vista, Expression Products]
+tags: [vista, expression, visual-studio]
 ---
 {% include JB/setup %}
 
@@ -20,10 +20,7 @@ Wichtige Neuerungen sind
 
 **Download Links**
 
-[Visual Basic 2008 Express](http://www.microsoft.com/express/vb/Default.aspx)
-
-[Visual C# 2008 Express](http://www.microsoft.com/express/vcsharp/Default.aspx)
-
-[Visual C++ 2008 Express](http://www.microsoft.com/express/vc/Default.aspx)
-
-[Visual Web Developer 2008 Express](http://www.microsoft.com/express/vwd/Default.aspx)
+- [Visual Basic 2008 Express](http://www.microsoft.com/express/vb/Default.aspx)
+- [Visual C# 2008 Express](http://www.microsoft.com/express/vcsharp/Default.aspx)
+- [Visual C++ 2008 Express](http://www.microsoft.com/express/vc/Default.aspx)
+- [Visual Web Developer 2008 Express](http://www.microsoft.com/express/vwd/Default.aspx)

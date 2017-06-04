@@ -2,7 +2,7 @@
 layout: post
 title : "CampusLaunch Karlsruhe - Demos und Slides"
 date : 18.04.2008 20:06:27
-tags: [.NET, WPF, Vista, Expression Products, ASP .NET, LINQ, Visual Studio 2008]
+tags: [.net, wpf, vista, expression, asp.net, linq, visual-studio, slides, msp]
 ---
 {% include JB/setup %}
 

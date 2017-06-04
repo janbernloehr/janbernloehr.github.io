@@ -2,7 +2,7 @@
 layout: post
 title : "Visual Studio 2005: IDE Enhancements erschienen"
 date : 30.10.2006 20:41:00
-tags: [.net, wpf, vs2005]
+tags: [.net, wpf, visual-studio]
 ---
 {% include JB/setup %}
 

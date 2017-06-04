@@ -2,7 +2,7 @@
 layout: post
 title : "Expression Blend 2 August CTP 2007"
 date : 01.08.2007 00:25:52
-tags: [WPF, Expression Products]
+tags: [wpf, expression]
 ---
 {% include JB/setup %}
 
