@@ -10,7 +10,7 @@ Vor einiger Zeit habe ich begonnen, einen Icq Client in Visual Basic zu schreibe
 
 Die Basisfunktionen des Icq Netzwerks sind implementiert, man kann also problemlos einloggen, chatten, user suchen, user adden.
 
-[![image](http://www.vb-magazin.de/janm/blog/images/JCQaufCodePlex_ADDA/image_thumb.png)](http://www.vb-magazin.de/janm/blog/images/JCQaufCodePlex_ADDA/image.png) [![image](http://www.vb-magazin.de/janm/blog/images/JCQaufCodePlex_ADDA/image_thumb_3.png)](http://www.vb-magazin.de/janm/blog/images/JCQaufCodePlex_ADDA/image_3.png) [![image](http://www.vb-magazin.de/janm/blog/images/JCQaufCodePlex_ADDA/image_thumb_4.png)](http://www.vb-magazin.de/janm/blog/images/JCQaufCodePlex_ADDA/image_4.png) 
+[![image](/assets/images/JCQaufCodePlex_ADDA/image_thumb.png)](/assets/images/JCQaufCodePlex_ADDA/image.png) [![image](/assets/images/JCQaufCodePlex_ADDA/image_thumb_3.png)](/assets/images/JCQaufCodePlex_ADDA/image_3.png) [![image](/assets/images/JCQaufCodePlex_ADDA/image_thumb_4.png)](/assets/images/JCQaufCodePlex_ADDA/image_4.png) 
 
 Die Oberfläche ist leider noch etwas umständlich und unvollständig. Nun suche ich weitere Personen, die sich für das Projekt interessieren und sich im OSCAR Protokoll und/oder WPF auskennen.
 

@@ -12,11 +12,11 @@ Jedoch gibt es mehrere Möglichkeiten, einen Prozess doch mit Admin Rechten zu s
 
 ### 1. Manuell
 
-Ein Rechtsklick auf die Anwendung öffnet das Context-Menü mit dem Eintrag ![](http://vb-magazin.de/janm/blog/images/VistaEinenProzessmitAdminRechtenstarten_A15F/image013.png) .
+Ein Rechtsklick auf die Anwendung öffnet das Context-Menü mit dem Eintrag ![](/assets/images/VistaEinenProzessmitAdminRechtenstarten_A15F/image013.png) .
 
 Wählt man dieser Option wird man als Administrator um Zustimmung gebeten oder als Standard Benutzer um ein Admin Passwort:
 
-![](http://vb-magazin.de/janm/blog/images/VistaEinenProzessmitAdminRechtenstarten_A15F/cred14.jpg) 
+![](/assets/images/VistaEinenProzessmitAdminRechtenstarten_A15F/cred14.jpg) 
 
 ### 2. Manifestdatei
 
@@ -57,7 +57,7 @@ End Function
 
 Ein Aufruf von StartProcessAsAdmin(fileName, arguments) sorgt nun dafür, dass der Prozess auch in Vista mit Administrator Rechten gestartet wird.
 
-Das *Verb* **runas** hat den gleichen Effekt wie ein Klick auf ![](http://vb-magazin.de/janm/blog/images/VistaEinenProzessmitAdminRechtenstarten_A15F/image013.png).
+Das *Verb* **runas** hat den gleichen Effekt wie ein Klick auf ![](/assets/images/VistaEinenProzessmitAdminRechtenstarten_A15F/image013.png).
 
 Auf Windows Versionen vor Vista wird jedoch der Dialog "Ausführen als ..." angezeigt, weshalb die Version auf größergleich 6.x also Vista geprüft wird.
 

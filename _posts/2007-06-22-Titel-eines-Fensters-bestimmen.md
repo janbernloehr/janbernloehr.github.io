@@ -50,7 +50,7 @@ Console.WriteLine(title.ToString())
 
 Der Titel des Fensters ist nun im StringBuilder title gespeichert. 
 
-![image](http://vb-magazin.de/janm/blog/images/TiteleinesFenstersbestimmen_7967/image.png) 
+![image](/assets/images/TiteleinesFenstersbestimmen_7967/image.png) 
 
 ### Source Code
 

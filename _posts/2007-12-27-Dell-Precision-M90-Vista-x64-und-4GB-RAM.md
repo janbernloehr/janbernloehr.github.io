@@ -12,4 +12,4 @@ Falsch gedacht, denn das M90 hat einen **Intel i945 PM Chipsatz**, der leider nu
 
 Es bleiben bei mir also ca. 700mb ungenutzt, das ist aber immernoch besser als nur 2gb.
 
-[![image](http://www.vb-magazin.de/janm/blog/images/DellPrecisionM90Vistax64und4GBRAM_1C23/image_thumb.png)](http://www.vb-magazin.de/janm/blog/images/DellPrecisionM90Vistax64und4GBRAM_1C23/image.png)
+[![image](/assets/images/DellPrecisionM90Vistax64und4GBRAM_1C23/image_thumb.png)](/assets/images/DellPrecisionM90Vistax64und4GBRAM_1C23/image.png)
