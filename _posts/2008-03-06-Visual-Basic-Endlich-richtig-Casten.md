@@ -67,13 +67,14 @@ CType wandelt also die zugrundeliegenden Daten (hier vom Typ String in Integer).
 
 Alternativ zu CType stellt Visual Basic noch spezielle Konvertierungsschlüsselwörter wie CStr, CInt, CDbl, CDate, etc. (Im Folgenden C* genannt) zur Verfügung, die für die Umwandlung in die entsprechenden Datentypen zur Verfügung stehen. Diese sind kürzer als die CType Notation und sparen somit Tipparbeit. 
 
-<div style="padding-right: 0px; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px; display: inline" id="scid:F2210F5F-69EB-4d4c-AFF7-B8A050E9CC72:3fafc08b-3e1b-4f02-a93f-c38d49610454" class="wlWriterSmartContent">Beispiel 4
+Beispiel 4
 
-1 Dim o As Object 
-    2 o = "12" 
-    3 Dim i As Integer 
-    4 i = CInt(o)
-</div>
+``` vb
+Dim o As Object 
+o = "12" 
+Dim i As Integer 
+i = CInt(o)
+```
 
 Beim Umwandeln von primitiven Datentypen wie Strings, Integers, etc. werden sowohl CType als auch C* vom Compiler in Aufrufe von Microsoft.VisualBasic.Conversion umgewandelt.
 
@@ -83,13 +84,14 @@ Ein Aufruf von CType(o, String) bzw. CStr wird vom Compiler in Microsoft.VisualB
 
 Neben den VB Spezifischen Umwandlungen stellt das .NET Framework mit der Convert Klasse eine für alle .NET Sprachen einheitliche Möglichkeit zur Verfügung Daten umzuwandeln.
 
-<div style="padding-right: 0px; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px; display: inline" id="scid:F2210F5F-69EB-4d4c-AFF7-B8A050E9CC72:256a09f4-48f8-437a-b477-424c811d6b68" class="wlWriterSmartContent">Beispiel 4
+Beispiel 5
 
-1 Dim o As Object 
-    2 o = "12" 
-    3 <span style="color: #0000FF;">Dim i As Integer 
-    4 i = Convert.ToInt32(o)
-</div>
+``` vb
+Dim o As Object 
+o = "12" 
+Dim i As Integer 
+i = Convert.ToInt32(o)
+```
 
 ### Performancebetrachtung
 
