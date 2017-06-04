@@ -12,13 +12,13 @@ Seit längerem beobachte ich das [LINQ Projekt](http://msdn.microsoft.com/data/r
 
 Beispiel:
 
-````VB.NET
+``` vb
     Dim data = From x In Northwind.Customers _ 
 
     Where x.CustomerName.Startswith("A") _ 
 
     Select x.CustomerId
-````
+```
 
 Dazu kommen noch sehr viele und interessante Neuerungen in [Visual Basic 9](http://msdn.microsoft.com/vbasic/future/). 
 
@@ -30,8 +30,8 @@ Zuletzt wollte ich meine Testanwendung auf einem WebServer testen. Da LINQ eigen
 
 Das Problem bei ASP .NET Anwendungen ist jedoch, dass die Seiten bei jedem Aufruf teilweise neu übersetzt werden. Da ich aber wie gesagt den LINQ Compiler nicht installieren konnte, musste das verhindert werden.Dies kann man mit dem Tool aspnet_compiler erreichen, welches sich im .NET Framework Verzeichnis befindet. Dieses Tool kann die WebSeite so vorkompilieren, dass sämtlicher Inhalt (auch die .aspx Seiten) in die Assembly intergiert werden. Somit muss die WebSeite beim Aufruf nicht neu erstellt werden und die LINQ Kommandos funktionieren problemlos. 
 
-````
+```
 aspnet_compiler -p PhysicalProjectLocation -v / ProjectPublishDirectory
-````
+```
 
 Hinweis: Für LINQ gibt es keine Go-Live Lizenz, weshalb es nicht möglich ist, LINQ in komerziellen Projekten einzusetzen.

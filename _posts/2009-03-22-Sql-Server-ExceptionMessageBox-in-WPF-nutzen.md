@@ -13,7 +13,7 @@ Wer das Microsoft Sql Management Studio verwendet kennt sie vielleicht, die `Exc
 Einziger Haken: Zur Anzeige der ExceptionMessageBox wird ein owner vom Typ **System.Windows.Forms.IWin32Owner** erwartet. Bewegt man sich in WPF, steht dieser einem natürlich nicht zur Verfügung. Abhilfe schafft der Typ ExceptionMessageBoxParent, da dieser mit einem gewöhnlichen Handle erstellt werden und somit als IWin32Owner verwendet werden kann.
 
 Mit den WPF Interop Tools kann somit die ExceptionMessageBox problemlos in WPF einbinden.
-````csharp
+``` csharp
     public class ExceptionMessageBoxWpf : ExceptionMessageBox
     {
         public ExceptionMessageBoxWpf() : base() { }
@@ -52,11 +52,11 @@ Mit den WPF Interop Tools kann somit die ExceptionMessageBox problemlos in WPF e
             this.Show(parent);
         }
 }
-````
+```
 
 Als Parameter lässt sich somit jedes WPF Window übergeben.
 
-````csharp
+``` csharp
 try {
     throw new ApplicationException("Hello from WPF!");
 } catch (Exception ex) {
@@ -64,11 +64,12 @@ try {
     ebx.Show(this);
     throw;
 }
-````
+```
 
 Die ExceptionMessageBox ist jedoch erstaunlich vielseitig und lässt sich auch für Meldungen jeglicher Art verwenden (siehe [hier](http://geekswithblogs.net/kobush/archive/2006/05/21/ExceptionMessageBox.aspx)).
 
 **Zum Weiterlesen**
 
 [1] [How to: Program Exception Message Box (MSDN)](http://msdn.microsoft.com/en-us/library/ms166340.aspx)
+
 [2] [Make your exceptions shine with SQL Server Exception Message Box](http://geekswithblogs.net/kobush/archive/2006/05/21/ExceptionMessageBox.aspx)

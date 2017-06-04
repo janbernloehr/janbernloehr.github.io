@@ -17,7 +17,7 @@ First of all you have to know that WPF Windows are based on old fashioned Win32 
 
 The namespace [System.Windows.Interop](http://windowssdk.msdn.microsoft.com/en-us/system.windows.interop(VS.80).aspx) contains a class called [WindowInteropHelper](http://windowssdk.msdn.microsoft.com/en-us/system.windows.interop.windowinterophelper(VS.80).aspx) which does the dirty work for us. We should call <em>SetWindowLong</em> before the window is shown (so we can’t use the Loaded event) and after the handle is created (so we can’t use the Initialized event). The solution is the [SourceInitialized](http://windowssdk.msdn.microsoft.com/en-us/system.windows.window.sourceinitialized(VS.80).aspx) event, which is called after the handle is created but before the window is actually shown. 
 
-````VB.NET
+``` vb
 
 Private Sub mWindow_SourceInitialized(ByVal sender As Object, ByVal e As System.EventArgs) Handles mWindow.SourceInitialized 
 
@@ -54,7 +54,7 @@ Private Function WndProc(ByVal hwnd As IntPtr, ByVal msg As Integer, ByVal wPara
 
 End Sub 
 
-````
+```
 
 I created the helper first to get the handle. Then I also created a [HwndSource](http://windowssdk.msdn.microsoft.com/en-us/system.windows.interop.hwndsource(VS.80).aspx) object (found in System.Windows.Interop) which provides wpf-points to screen transforms and a hook. The hook method is called whenever the Win32 window receives a window message. Yes WPF Windows <u>use and support</u> window messages to interact with the desktop. At last set the window style to 0 which creates a plain window without frame. 
 
@@ -83,7 +83,7 @@ Y3 is the y radius of the corner circle.
 The created region can be applied by calling [SetWindowRgn](http://msdn.microsoft.com/library/en-us/gdi/pantdraw_2him.asp)(hWnd, hRdn, bRedraw). 
 
 
-````VB.NET
+``` vb
 Private Sub _UpdateCorners() 
 
 Dim deviceSize As Point 
@@ -100,7 +100,7 @@ rges = Win32Methods.CreateRoundRectRgn(0, 0, CInt(deviceSize.X) + 1, CInt(device
 Win32Methods.SetWindowRgn(_Handle, rges, True) 
 
 End Sub 
-````
+```
 
 You have to update the window regions during <em>SourceInitialized</em> and every time the window is resized (<em>SizeChanged</em> event).
 
@@ -113,13 +113,13 @@ Now we have a good looking window with round corners but I’m not happy yet bec
 To make the window moveable you can use following source. 
 
 
-````VB.NET
+``` vb
 Private Sub Window1_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Input.MouseButtonEventArgs) Handles Me.MouseDown 
 
 If System.Windows.Input.Mouse.LeftButton = MouseButtonState.Pressed Then Me.DragMove() 
 
 End Sub
-````
+```
 
 
 Now you can move your window by pressing the left button of your mouse while over the window and then move your mouse. 
@@ -134,7 +134,7 @@ These controls can be used to make the window resizable. Unfortunately we can’
 
 You can send Windows a System Command using the API function [SendMessage](http://msdn.microsoft.com/library/en-us/winui/winui/windowsuserinterface/windowing/messagesandmessagequeues/messagesandmessagequeuesreference/messagesandmessagequeuesfunctions/sendmessage.asp). This makes window to resize the window while moving the mouse. 
 
-````VB.NET
+``` vb
 Public Sub DragSize(ByVal sizingAction As SizingAction) 
 
 If System.Windows.Input.Mouse.LeftButton = Input.MouseButtonState.Pressed Then 
@@ -174,7 +174,7 @@ SouthEast = 8
 SouthWest = 7 
 
 End Enum 
-````
+```
 
 The first parameter is the window handle, the second identifies this window message as a SystemCommand and the third parameter specifies in which ways you want to resize your window. This is important since every border does a different resize (e.g. The right border resize in/decreases the window’s width). The SizingAction enum allows you to easily specify at which place your resize border lives. 
 

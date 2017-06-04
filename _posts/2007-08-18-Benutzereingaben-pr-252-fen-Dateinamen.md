@@ -10,9 +10,9 @@ In vielen Anwendungen haben Benutzer die Möglichkeit, Dateinamen selbst zu verg
 
 Dies lässt sich mit einem einfachen Regular Expression verhindern.
 
-````vb
+``` vb
 filename = System.Text.RegularExpressions.Regex.Replace(filename, "[/\\:\*\?""<>\|]", "")
-````
+```
 
 So werden einfach alle illegalen Zeichen aus dem Dateinamen entfernt.
 

@@ -27,7 +27,7 @@ There are plenty of ways to create backups. The most convenient one is probably 
 *   Overwrite the contents of your local *wp-content* folder with the ones of your live site.
 *   Edit the local *wp-config.php* from your live site and enter the login data of your local mysql server and point it to your restored mysql database *wordpress-restored*.
 
-````
+```
 /** The name of the database for WordPress */
 define('DB_NAME', 'wordpress-restored');
 
@@ -45,11 +45,11 @@ define('DB_CHARSET', 'utf8');
 
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
-````
+```
 
 *   Find the section of your live site's *wp-config.php* containing the authorization keys and salts and insert the ones of your live site.
 
-````
+```
 define('AUTH_KEY',         'put your unique phrase here');
 define('SECURE_AUTH_KEY',  'put your unique phrase here');
 define('LOGGED_IN_KEY',    'put your unique phrase here');
@@ -58,21 +58,21 @@ define('AUTH_SALT',        'put your unique phrase here');
 define('SECURE_AUTH_SALT', 'put your unique phrase here');
 define('LOGGED_IN_SALT',   'put your unique phrase here');
 define('NONCE_SALT',       'put your unique phrase here');
-````
+```
 
 *   Open the *wp-login.php* and find this line:
 
-````
+```
 require( dirname(__FILE__) . '/wp-load.php' );
-````
+```
 
 insert the following lines below
 
-````
+```
 //FIXME: do comment/remove these hack lines. (once the database is updated)
 update_option('siteurl', 'http://localhost/wordpress' );
 update_option('home', 'http://localhost/wordpress' );
-````
+```
 
 *   If you installed a newer wordpress version locally than the one running on your live site, head to the admin portal to initiate a database update.
 *   That's it!

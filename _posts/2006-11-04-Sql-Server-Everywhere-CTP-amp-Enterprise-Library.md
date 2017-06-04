@@ -13,17 +13,17 @@ _Die [Microsoft patterns & practices](http://msdn.microsoft.com/practices/) [Ent
 Mit dem DataAccess Application Block der Enterprise Library kann man vollkommen datenbankunabhängige Anwendungen entwerfen. Die Provider von ADO .NET 2.0 machen dies möglich, indem sie die sepeziellen Objekte wie z.b. SqlConnection und SqlCommand für ihre Datenbank erstellen und dem Entwickler allgemeine Objekte wie DbConnection und DbCommand zur Verfügung stellen.  
 Durch eine kleine Änderung am ConnectionString kann so z.B. von Oracle auf Sql Server 2005 gewechselt werden.
 
-````xml
+``` xml
 <connectionStrings>  
 <add name="AppDatabase" connectionString="Data Source=(local);Initial Catalog=dbname;User Id=user;Password=pwd;" __providerName="System.Data.SqlClient"__/>  
 </connectionStrings>
-````
+```
 
 Will man nun den Sql Server Everywhere mit __providerName="System.Data.SqlServerCe"__ einsetzten, stößt man zunächst auf die Fehlermeldung, dass kein Provider gefunden wird, obwohl sich in der Assembly befindet sich aber der xyz Provider befindet. Das Problem ist lediglich, dass dieser nicht ADO .NET registriert ist.
 
 Die Registrierung ist jedoch mit einem weiteren Eintrag in der web.config ganz einfach zu erreichen:
 
-````xml
+``` xml
 <system.data>  
 <DbProviderFactories>  
 <add name="SQL Server 2005 Everywhere Data Provider"  
@@ -34,7 +34,7 @@ System.Data.SqlServerCe, Version=9.0.242.0, Culture=neutral,
 PublicKeyToken=89845dcd8080cc91" />  
 </DbProviderFactories>  
 </system.data>
-````
+```
 
 Nun glückt die Instanzierung und die Enterprise Library kann in vollem Umfang eingesetzt werden.
 

@@ -14,22 +14,22 @@ In this article I will only consider the case of x64 ANSYS.
 
 Go to `C:\Program Files\ANSYS Inc\v162\fluent\ntbin\win64` and back up the file `udf.bat`. We need to modify this file to add support for Visual C++ 2015. To this end, add **below** `set MSVC_VERSION=0` the following lines
 
-````
+```
 echo trying to find MS C compiler, version 140....
 
 set MSVC_DEFAULT=%ProgramFiles(x86)%\Microsoft Visual Studio 14.0
 if exist "%MSVC_DEFAULT%\VC\vcvarsall.bat" set MSVC=%MSVC_DEFAULT%
 if not "%MSVC%" == "" goto msvc_env140
-````
+```
 
 Moreover, add **above** `:msvc_env71` the following lines
 
-````
+```
 :msvc_env140
 set MSVC_VERSION=140
 call "%MSVC%\VC\vcvarsall.bat" x64
 goto ms_c_end
-````
+```
 
 Save the file `udf.bat` and you are good to go.
 

@@ -18,13 +18,13 @@ Windows Server 2k3 SP1
 Visual Studio 2005 Professional; WinFX Feb 05 CTP
 
 **Example 1**  
-````VB.NET
+``` vb
 Dim Coll1 As New System.Collections.ObjectModel.ObservableCollection(Of String)  
 
 For i As Integer = 0 To 20000  
  Coll1.Add(System.Guid.NewGuid.ToString)  
 Next
-````
+```
 
 Dispatcher Thread / Threadpool Thread  
 30 ms / crash
@@ -32,7 +32,7 @@ Dispatcher Thread / Threadpool Thread
 Objects are added without synchronization. Fast on the dispatcher thread, crash on any other thread.
 
 **Example 2**  
-````VB.NET
+``` vb
 Private Delegate Sub AddDeleagte(ByVal item As String)  
 …  
 Dim Coll2 As New System.Collections.ObjectModel.ObservableCollection(Of String)  
@@ -40,14 +40,14 @@ Dim Coll2 As New System.Collections.ObjectModel.ObservableCollection(Of String)
 For i As Integer = 0 To 20000  
  Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority.Normal, New AddDeleagte(AddressOf Coll2.Add), System.Guid.NewGuid.ToString)  
 Next
-````
+```
 
 8200 ms / 8200 ms
 
 Objects are added with synchronization. Very slow on the dispatcher thread, slow but safe on any other thread.
 
 **Example 3**  
-````VB.NET
+``` vb
 Private Delegate Sub AddDeleagte(ByVal item As String)  
 …  
 Dim Coll3 As New System.Collections.ObjectModel.ObservableCollection(Of String)  
@@ -55,7 +55,7 @@ Dim Coll3 As New System.Collections.ObjectModel.ObservableCollection(Of String)
 For i As Integer = 0 To 20000  
  If Not Me.Dispatcher.CheckAccess Then Me.Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority.Normal, New AddDeleagte(AddressOf Coll3.Add), System.Guid.NewGuid.ToString) Else Coll3.Add(System.Guid.NewGuid.ToString)  
 Next
-````
+```
 
 30 ms / 8200 ms
 
@@ -67,7 +67,7 @@ The solution is easy: Call a method synchronized that adds the 20000 elements.
 
 **Example 4**
 
-````VB.NET
+``` vb
  
 
 Private Delegate Sub AddToListDelegate()
@@ -83,7 +83,7 @@ End Sub
 If Not Me.Dispatcher.CheckAccess Then Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority.Normal, New AddToListDelegate(AddressOf AddToList)) Else AddToList()
 
 
-````
+```
 
 30 ms / 31 ms
 

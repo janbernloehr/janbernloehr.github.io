@@ -10,7 +10,7 @@ The only way __DependencyProperties__ tell that something happend to them seems 
 
 So I implemented an DependencyObject that binds to the the property to be watched.
 
-````VB.NET
+``` vb
  
 
 Public Class DependencyProperyChangedHelper(Of T)  
@@ -37,19 +37,19 @@ Public Class DependencyProperyChangedHelper(Of T)
 End Class
 
 
-```` 
+``` 
 
 You can e.g. assign a binding to a TextBox's TextProperty:
 
-````VB.NET
+``` vb
 Dim autoCompleteHelper As New DependencyProperyChangedHelper(Of String)(Me.txtNotify, "Text")
-````
+```
 
 The constructor builds a Helper for a __String__ Property on __txtNotify__ named __Text__.
 
 At the moment the Helper does not do anything else than apply the binding but when you take a closer look at the DependencyProperty.Register overloads you will notify that a __PropertyChangedCallback__ can be supplied:
 
-````VB.NET
+``` vb
     Public Shared ReadOnly ValueProperty As DependencyProperty = DependencyProperty.Register("Value", GetType(T), GetType(DependencyProperyChangedHelper(Of T)), New FrameworkPropertyMetadata(New PropertyChangedCallback(AddressOf Value_Changed)))
 
     Private Shared Sub Value_Changed(ByVal d As DependencyObject, ByVal e As DependencyPropertyChangedEventArgs)  
@@ -63,13 +63,13 @@ At the moment the Helper does not do anything else than apply the binding but wh
     Private Sub OnValueChanged(ByVal e As System.Windows.DependencyPropertyChangedEventArgs)  
         RaiseEvent ValueChanged(Me, e)  
     End Sub
-````
+```
 
 From now on the helper object raises clr events whenever the property it is bound to changes.
 
 __Complete Code:__
 
-````VB.NET
+``` vb
  
 Public Class DependencyProperyChangedHelper(Of T)  
     Inherits DependencyObject
@@ -113,6 +113,6 @@ Public Class DependencyProperyChangedHelper(Of T)
     Public Event ValueChanged As DependencyPropertyChangedEventHandler  
 End Class
 
-````
+```
 
 

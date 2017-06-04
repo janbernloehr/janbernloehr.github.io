@@ -16,35 +16,35 @@ Nach der Installation sind viele neue Assemblies verfügbar, wir benötigen ledi
 Ist diese Referenz hinzugefügt ist man nur noch wenige Schritte von einem hörbaren Resultat entfernt.
 
 Zunächst muss ein **Device** erstellt und initialisiert werden.
- ````vb
+ ``` vb
 Dim dev As Microsoft.DirectX.DirectSound.Device
 
 dev = New Microsoft.DirectX.DirectSound.Device
 dev.SetCooperativeLevel(Me, CooperativeLevel.Priority)
-````
+```
 
 Mit **SetCooperativeLevel** muss ein Bezug auf eine sichtbare Windows Form gesetzt werden.  
 <u>Das Device sollte nur einmal zu Programmstart erstellt und initialisiert werden.</u>
 
 Mit dem initialisierten Device kann man nun einen **SecondaryBuffer** erstellen, in den der Sound geladen wird.
 
-````vb
+``` vb
 Dim buff As SecondaryBuffer
 
 buff = New SecondaryBuffer("D:\Windows Exclamation.wav", dev)
-````
+```
 
 Nun kann der Sound mit der **Play** Methode abgespielt werden.
 
-````vb
+``` vb
 buff.Play(0, BufferPlayFlags.Default)
-````
+```
 
 Analog dazu funktioniert das Abspielen eines Sounds aus einem Stream, wie das z.B. bei eingebetteten Resourcen der Fall ist. Anstatt des Pfads wird lediglich der Stream angegeben.
 
-````vb
+``` vb
 Dim buff As SecondaryBuffer buff = New SecondaryBuffer(stream, _SoundDevice) buff.Play(0, BufferPlayFlags.Default)
-````
+```
 
 **Zusammenfassung**
 
@@ -54,16 +54,16 @@ Das einzige "Manko" ist, dass auf dem Zielrechner eine Installation von DirectX 
 
 Source Code:
 
-````vb
+``` vb
 ' Initialisierung ...
 Dim player As SoundPlayer
 player = New SoundPlayer(Me)
 
 ' Abspielen
 player.PlaySoundFromEmbeddedResource("Windows Exclamation.wav")
-````
+```
 
-````vb
+``` vb
 Public Class SoundPlayer
         Dim dev As Microsoft.DirectX.DirectSound.Device
 
@@ -98,4 +98,4 @@ Public Class SoundPlayer
             buff.Play(0, BufferPlayFlags.Default)
         End Sub
     End Class
-````
+```

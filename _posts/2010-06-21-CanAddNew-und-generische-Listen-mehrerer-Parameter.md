@@ -12,7 +12,7 @@ Erstellt man jedoch ein View zu einer Collection der Bauart `MyCollection<T,S>`,
 
 Man folgendem dirty code lässt sich das Problem umgehen. In der Implementierung von ListCollectionView in .NET 4 tritt das Problem nicht auf.
 
-`````csharp
+```` csharp
 public class TypedListCollectionView : ListCollectionView   
 {   
     public TypedListCollectionView(IList items, Type itemType)   
@@ -27,4 +27,4 @@ public class TypedListCollectionView : ListCollectionView
         isItemConstructorValidField.SetValue(this, true);   
     }   
 }
-````
+```

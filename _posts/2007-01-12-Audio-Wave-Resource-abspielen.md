@@ -14,7 +14,7 @@ Hier eine Schritt für Schritt Anleitung zum Abspielen von Wave Dateien aus Reso
 2. Das Item im Projekt Explorer auswählen und in den Eigenschaften als Build-Aktion *Eingebettete Resource* einstellen  
 3. Folgende Klasse bietet die Funktionalität zum Abspielen
 
-````vb
+``` vb
 Public Class Winmm
     Public Const SND_ASYNC As UInt32 = 1
     Public Const SND_MEMORY As UInt32 = 4 
@@ -41,10 +41,10 @@ Public Class Winmm
         PlaySound(data, IntPtr.Zero, SND_ASYNC Or SND_ASYNC)
     End Sub
 End Class
-````
+```
 
 4. Die Resource MeineTolleWaveDatei.wav lässt sich so abspielen
 
-````vb
+``` vb
 Winmm.PlayWavResource("MeineTolleWaveDatei.wav")
-````
+```

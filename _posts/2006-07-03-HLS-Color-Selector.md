@@ -48,7 +48,7 @@ In my opinion it was worth to spent some time to create this control. I hope tha
 
 __Rgb <--> Hls Converter Code__
 
-````VB.NET
+``` vb
 Imports System.Windows.Media 
 
 
@@ -440,4 +440,4 @@ End Function
 
 
 End Structure 
-````
+```

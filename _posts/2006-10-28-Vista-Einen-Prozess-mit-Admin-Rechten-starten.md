@@ -26,9 +26,9 @@ Die Manifestdatei muss sich im Verzeichnis der Anwendung befinden und den Namen 
 
 **Inhalt der Manifestdatei**
 
-````xml
+``` xml
 <textarea><?xml version="1.0" encoding="UTF-8" standalone="yes"?> <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0"> <dependency> <dependentAssembly> <assemblyIdentity type="win32" name="Microsoft.Windows.Common-Controls" version="6.0.0.0" processorArchitecture="*" publicKeyToken="6595b64144ccf1df" language="*" /> </dependentAssembly> </dependency> <v3:trustInfo xmlns:v3="urn:schemas-microsoft-com:asm.v3"> <v3:security> <v3:requestedPrivileges> <!-- level can be "asInvoker", "highestAvailable", or "requireAdministrator" --> <v3:requestedExecutionLevel level="highestAvailable" /> </v3:requestedPrivileges> </v3:security> </v3:trustInfo> </assembly> </textarea>
-````
+```
 
 Beim Ausführen wird ein Standardbenutzer nun aufgefordert, die Anwendung als Administrator zu starten.
 
@@ -43,7 +43,7 @@ Häufig muss eine Anwendung, die über kein Manifest verfügt, jedoch zur Laufz
 Ein Ausführen von System.Diagnostics.Process.Start(fileName, arguments) führt auf den ersten Blick nicht ans Ziel.  
 Mit einem kleinen Kniff kann man dies jedoch auch mit den .NET Bordmitteln erreichen:
 
-````vb
+``` vb
 Private Function StartProcessAsAdmin(ByVal fileName As String, ByVal arguments As String) As System.Diagnostics.Process
     Dim pi As System.Diagnostics.ProcessStartInfo pi = New System.Diagnostics.ProcessStartInfo(fileName, arguments)
     
@@ -53,7 +53,7 @@ Private Function StartProcessAsAdmin(ByVal fileName As String, ByVal arguments A
     
     Return System.Diagnostics.Process.Start(pi) 
 End Function
-````
+```
 
 Ein Aufruf von StartProcessAsAdmin(fileName, arguments) sorgt nun dafür, dass der Prozess auch in Vista mit Administrator Rechten gestartet wird.
 

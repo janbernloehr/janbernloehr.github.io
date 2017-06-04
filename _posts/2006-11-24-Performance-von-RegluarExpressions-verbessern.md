@@ -10,7 +10,7 @@ Im .NET Framework setllen die RegularExpressions (zu deutsch reguläre Ausdrück
 
 Beispiel: Format einer Email Adresse überprüfen
 
-````vb
+``` vb
 Dim text As String = [someone@somecompany.com](mailto:someone@somecompany.com)
 
 If System.Text.RegularExpressions.RegEx.IsMatch(text, "\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*")  
@@ -18,7 +18,7 @@ If System.Text.RegularExpressions.RegEx.IsMatch(text, "\w+([-+.']\w+)*@\w+([-.]\
 Else  
   ' Diese Email ist ungültig  
 End If
-````
+```
 
 Jedoch müsste bei jedem Aufruf des Codes der reguläre Ausdruck bei jedem Aufruf erst interpretiert und dann angewendet werden.
 
@@ -28,14 +28,14 @@ Wird die Validierung jedoch sehr häufig benötigt vielleicht sogar mehrmals in 
 
 Dazu sollte man den das RegEx in einer Variablen speichern:
 
-````vb
+``` vb
 Private Shared ReadOnly emailregex As New System.Text.RegularExpressions.Regex("\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", System.Text.RegularExpressions.RegexOptions.Compiled) 
-````
+```
 
 Der Ausdruck wird nun kompiliert und ist nun viel perfomanter bei häufiger Ausführung. 
 
 Um zusätzlich noch Platz zu sparen und Übersichtlichkeit zu erhalten, kann man den Namespace System.Text.RegularExpressions importieren: 
 
-````vb
+``` vb
 Private Shared ReadOnly emailregex As New Regex("\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", RegexOptions.Compiled)
-````
+```

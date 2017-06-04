@@ -19,13 +19,13 @@ Das **Selecting** Event der LinqDataSource bietet einem die Möglichkeit die vor
 **Hier eine kleine Demonstration**
 
 ASP .NET Declaration 
-````html
+``` html
 <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" DataSourceID="PersonSource" />
 <asp:LinqDataSource ID="PersonSource" runat="server" />
-````
+```
 
 ASP .NET Code 
-````vb
+``` vb
 Partial Class _Default Inherits System.Web.UI.Page
 
     Protected Sub PersonSource_Selecting(ByVal sender As Object, ByVal e As     System.Web.UI.WebControls.LinqDataSourceSelectEventArgs) Handles PersonSource.Selecting
@@ -58,7 +58,7 @@ Public Class Person
         End Set
     End Property
 End Class
-````
+```
 
 In diesem Beispiel wird ein einfaches GridView mit Sorting und Paging an eine LinqDataSource gebunden. Im Code wird eine Klasse Person definiert mit den Eigenschaften Name und Age. Im Selecting Event werden einige Person Objekte erstellt. Daraufhin werden mit einer Linq Query diejenigen Person Objekte herausgefiltert, deren Age Eigenschaft größer als 20 ist.
 

@@ -10,7 +10,7 @@ Hin und wieder muss man sich doch auch mal mit den anderen unterhalten ;) Dabei 
 
 Aber für .NET ist die Konvertierung ein Kinderspiel:
 
-````vb
+``` vb
 ''' <summary>
 ''' Converts a byte array representing a UNIX FileStamp to a datetime value.  
 ''' </summary>  
@@ -28,6 +28,6 @@ Private Function DateTimeToFileStamp(ByVal [date] As Date) As Byte()
     lngSeconds = CLng([date].Subtract(New System.DateTime(1970, 1, 1, 0, 0, 0)).TotalSeconds)
     Return BitConverter.GetBytes((CUInt(lngSeconds))) 
 End Function
-````
+```
 
 Hinweis: Bei Litte-Endian muss das byte Array vorher noch umgekehrt (**Array.Reverse**) werden.

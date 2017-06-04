@@ -12,14 +12,14 @@ Ist **Option Strict** aktiviert, fordert der Visual Basic Compiler, dass man bei
 
 Beispiel 1
 
-````vb
+``` vb
 Dim person1 As Person 
 person1 = New Person
 Console.WriteLine(person1.Name) ' funktioniert 
 Dim person2 As Object 
 person2 = New Person
 Console.WriteLine(person2.Name) ' Compilerfehler, da Name keine Eigenschaft von Object ist.
-````
+```
 
 In diesem Beispiel müsste man zuerst die Instanz `person2` in den Typ `Person` casten.
 
@@ -29,12 +29,12 @@ Bei einem Cast einer Instanz `o` in den Typ `T`, teilt man dem Compiler mit, das
 
 Beispiel 2
 
-````vb
+``` vb
 Dim o As Object
 o = New Person ' o ist vom Typ Person, also kann man dies dem Compiler mitteilen 
 Dim p As Person 
 p = DirectCast(o, Person)
-````
+```
 
 Hier wurde dem Compiler mitgeteilt, das Objekt `o` als Instanz des Typs `Person` zu betrachten. Nun kann man auf die Eigenschaften und Funktionen, die Person bereitstellt, zugreifen. 
 
@@ -42,11 +42,11 @@ Beim Casten bleiben die zugrundeliegenden Daten unverändert, man ändert nur di
 
 VBs `DirectCast` ist ein "pures" Casting, es findet also keine Umwandlung statt, und damit ist es equivalent mit dem C# Cast. 
 
-````vb
+``` vb
 Dim p As Person = DirectCast(o, Person)
 
 Person p = (Person)o;
-````
+```
 
 ### Was ist eine Conversion?
 
@@ -54,12 +54,12 @@ Unter VB steht neben `DirectCast` noch das Schlüsselwort `CType` zur Verfügung
 
 Beispiel 3
 
-````vb
+``` vb
 Dim o As Object 
 o = "12" 
 Dim i As Integer 
 i = CType(o, Integer)
-````
+```
 
 In diesem Beispiel wird der Variable `o` der Wert "12" zugewiesen, somit ist sie vom Typ `String`. Eine Umwandlung mit DirectCast zum Typ Integer würde einen Fehler erzeugen, da der zugrundeliegende Datentyp nicht Integer sonder String ist und somit noch eine Umwandlung erforderlich wäre. 
 

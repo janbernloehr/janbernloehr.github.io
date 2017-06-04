@@ -10,11 +10,11 @@ Visual Basic .NET Bordmittel ermöglichen es nicht, den Fenstertitel eines ander
 
 Dafür benötigt man zwei Funktionen:
 
-````vb
+``` vb
 Declare Auto Function FindWindow Lib "user32" (ByVal lpClassName As String, ByVal lpWindowName As String) As IntPtr
 
 Declare Auto Function GetWindowText Lib "user32" (ByVal hwnd As IntPtr, ByVal lpString As Text.StringBuilder, ByVal nMaxCount As Integer) As Integer
-````
+```
 
 **FindWindow** gibt das Handle eines Fensters zurück. Für uns ist der Parameter lpClassName entscheidend, dem man die Fensterklasse übergibt. (Z.B. Notepad)
 
@@ -24,21 +24,21 @@ Declare Auto Function GetWindowText Lib "user32" (ByVal hwnd As IntPtr, ByVal lp
 
 Zuerst muss das Handle des Fensters bestimmt werden.
 
-````vb
+``` vb
 Dim hWnd As IntPtr 
 hWnd = Win32Functions.FindWindow("Notepad", Nothing)
-````
+```
 
 Nun kann man die Länge des Fenstertitels erfragen.
 
-````vb
+``` vb
 Dim titleLength As Integer
 titleLength = Win32Functions.GetWindowTextLength(hWnd) + 1
-````
+```
 
 Mit Fenster-Handle und Titel-Länge lässt sich nun der Titel abfragen.
 
-````vb
+``` vb
 Dim title As Text.StringBuilder
 
 title = New Text.StringBuilder(titleLength)
@@ -46,7 +46,7 @@ title = New Text.StringBuilder(titleLength)
 Win32Functions.GetWindowText(hWnd, title, titleLength)
 
 Console.WriteLine(title.ToString())
-````
+```
 
 Der Titel des Fensters ist nun im StringBuilder title gespeichert. 
 
@@ -54,7 +54,7 @@ Der Titel des Fensters ist nun im StringBuilder title gespeichert.
 
 ### Source Code
 
-````vb
+``` vb
 Module Module1
     Sub Main()
         Dim hWnd As IntPtr
@@ -92,4 +92,4 @@ Public Class Win32Functions
     Declare Auto Function GetWindowText Lib "user32" (ByVal hwnd As IntPtr, ByVal lpString As Text.StringBuilder, ByVal nMaxCount As Integer) As Integer
     Declare Auto Function GetWindowTextLength Lib "user32" (ByVal hwnd As IntPtr) As Integer
 End Class
-````
+```
