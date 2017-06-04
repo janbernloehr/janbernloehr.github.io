@@ -66,12 +66,9 @@ try {
 }
 ````
 
-Die ExceptionMessageBox ist jedoch erstaunlich vielseitig und lässt sich auch für Meldungen jeglicher Art verwenden (siehe [2]).
+Die ExceptionMessageBox ist jedoch erstaunlich vielseitig und lässt sich auch für Meldungen jeglicher Art verwenden (siehe [hier](http://geekswithblogs.net/kobush/archive/2006/05/21/ExceptionMessageBox.aspx)).
 
 **Zum Weiterlesen**
 
-[1] How to: Program Exception Message Box (MSDN)   
-[1]: http://msdn.microsoft.com/en-us/library/ms166340.aspx
-
-[2] Make your exceptions shine with SQL Server Exception Message Box   
-[2]: http://geekswithblogs.net/kobush/archive/2006/05/21/ExceptionMessageBox.aspx
+[1] [How to: Program Exception Message Box (MSDN)](http://msdn.microsoft.com/en-us/library/ms166340.aspx)
+[2] [Make your exceptions shine with SQL Server Exception Message Box](http://geekswithblogs.net/kobush/archive/2006/05/21/ExceptionMessageBox.aspx)
