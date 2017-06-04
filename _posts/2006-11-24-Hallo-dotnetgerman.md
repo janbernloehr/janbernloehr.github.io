@@ -12,6 +12,6 @@ Momentan besuche ich die 13. Klasse des Friedrich-Schiller-Gymansium Marbachs un
 
 Microsoft .NET kenn ich schon, seit es selbst noch in den Kinderschuhen steckte also von den Betas der 1.0 Version an. Heute entwickle ich Windows- und Webanwendungen mit Visual Studio 2005 und habe mir bereits einen gewissen Wissensfundus über .NET 3.0 angeeignet.
 
-Im Baden-Württemberger Raum habe ich bereits mehrere Softwareprojekte durchgeführt, sowie weitere in Zusammenarbeit mit [Alex Bierhaus](http://vb-magazin.de/forums/blogs/alexbierhaus/default.aspx).
+Im Baden-Württemberger Raum habe ich bereits mehrere Softwareprojekte durchgeführt, sowie weitere in Zusammenarbeit mit [Alex Bierhaus](https://www.linkedin.com/in/alexbierhaus).
 
-Sie können mich über meinen Blog oder das VB-Magazin [http://www.vb-magazin.de/](http://www.vb-magazin.de/) erreichen.
+Sie können mich über meinen Blog oder das VB-Magazin erreichen.

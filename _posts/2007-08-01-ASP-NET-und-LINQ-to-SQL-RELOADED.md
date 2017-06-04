@@ -6,7 +6,7 @@ tags: [.net, asp.net, linq]
 ---
 {% include JB/setup %}
 
-Blicke ich zurück auf meinen [früheren Post](http://vb-magazin.de/forums/blogs/janm/archive/2006/08/15/5591.aspx), hat sich bei der Zusammenarbeit von ASP.NET und LINQ in der neusten Beta 2 von Visual Studio 2008 (Codename Orcas) viel getan.
+Blicke ich zurück auf meinen [früheren Post](/2006/08/15/ASP-NET-und-LINQ-ein-fast-perfektes-Team), hat sich bei der Zusammenarbeit von ASP.NET und LINQ in der neusten Beta 2 von Visual Studio 2008 (Codename Orcas) viel getan.
 
 ASP.NET Anwendungen können jetzt problemlos die neuen .NET 3.5 Assemblys einbinden und deren Features nutzen.
 
@@ -62,11 +62,11 @@ End Class
 
 In diesem Beispiel wird ein einfaches GridView mit Sorting und Paging an eine LinqDataSource gebunden. Im Code wird eine Klasse Person definiert mit den Eigenschaften Name und Age. Im Selecting Event werden einige Person Objekte erstellt. Daraufhin werden mit einer Linq Query diejenigen Person Objekte herausgefiltert, deren Age Eigenschaft größer als 20 ist.
 
-Um  sich nun von der Flexibilität der LinqDataSource zu überzeugen muss man lediglich die Anwendung starten.
+Um sich nun von der Flexibilität der LinqDataSource zu überzeugen muss man lediglich die Anwendung starten.
 
 **Fazit**
 
-Man sieht, dass das ASP.NET Team in den letzten Monaten nicht geschlafen hat, sondern neben der Erstellung der AJAX-Extension und [neuen WebControls](http://vb-magazin.de/forums/blogs/janm/archive/2007/07/31/11446.aspx) auch noch die Linq Integration deutlich verbessert hat.
+Man sieht, dass das ASP.NET Team in den letzten Monaten nicht geschlafen hat, sondern neben der Erstellung der AJAX-Extension und [neuen WebControls](/2007/07/31/ASP-NET-ListView) auch noch die Linq Integration deutlich verbessert hat.
 
 Zwar sind die Query Funktionen noch nicht sehr ausgereift, mit einem kleinen Workaround lässt sich dies aber spielend meistern.
 
