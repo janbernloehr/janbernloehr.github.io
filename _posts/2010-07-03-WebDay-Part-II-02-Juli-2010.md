@@ -6,7 +6,7 @@ tags: [asp.net, .net, visual-studio, sql-server, silverlight, wcf]
 ---
 {% include JB/setup %}
 
-**Agenda **  
+**Agenda**  
 10:00-11:20        WCF & Silverlight  
 11:40-13:00        Sql Server  
 
