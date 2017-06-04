@@ -1,6 +1,8 @@
 ---
 layout: page
+category : academia
 title: Academia
+group: navigation
 ---
 {% include JB/setup %}
 
