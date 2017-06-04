@@ -9,7 +9,7 @@ tags: [css, asp.net]
 Definiert man eine Klasse in CSS und referenziert diese von einem Link, wird man vielleicht überrascht sein:
 
 CSS
-```css
+``` css
  .my-link {
  
  color: #ffc700;
@@ -27,7 +27,7 @@ Der Link ist nicht wie erwartet gelb, sondern hat die Browser Standard Farbe fü
 
 CSS
 
-```css
+``` css
  .my-link:link, .my-link:active, .my-link:hover, .my-link:visited {
  
  color: #ffc700;

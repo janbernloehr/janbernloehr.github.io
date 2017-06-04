@@ -12,7 +12,7 @@ Since the WPF Style engine is very flexible you can easily achieve a Vista-like 
 
 Xaml Code: 
 
-```XAML
+``` xml
 
 <ListBox> 
 
