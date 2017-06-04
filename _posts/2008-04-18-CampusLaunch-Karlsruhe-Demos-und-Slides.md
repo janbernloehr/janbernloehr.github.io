@@ -8,14 +8,7 @@ tags: [.net, wpf, vista, expression, asp.net, linq, visual-studio, slides, msp]
 
 Wie versprochen veröffentliche ich hier die Demos und Slides meiner Vorträge vom CampusLaunch in Karlsruhe.
 
-Windows Presentation Foundation  
-[Slides](http://www.vb-magazin.de/vblernen/uploads/CampusLaunch.Wpf.pdf) | [Demos](http://www.vb-magazin.de/vblernen/uploads/CampusLaunch.Wpf.zip)
-
-LINQ mit C# 3.0 und VB 9  
-[Slides](http://www.vb-magazin.de/vblernen/uploads/CampusLaunch.Linq.pdf) | [Demos](http://www.vb-magazin.de/vblernen/uploads/CampusLaunch.Linq.zip)
-
-ASP.NET AJAX  
-[Slides](http://www.vb-magazin.de/vblernen/uploads/CampusLaunch.Ajax.pdf) | [Demos](http://www.vb-magazin.de/vblernen/uploads/CampusLaunch.Ajax.zip)
+[Slides & Demos](https://github.com/janbernloehr/2008-04-18-CampusLaunchTour)
 
 In meinen Vorträgen habe ich mehrmals **CodePlex** erhwähnt, hier also die Url  
 [http://www.codeplex.com](http://www.codeplex.com)

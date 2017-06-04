@@ -10,8 +10,4 @@ Hier habe ich den Demo-Code und die Folien meines Vortrags vom 21. Mai an der Un
 
 Vielen Dank fürs Kommen! Für Themenvorschläge bin ich immer offen :)
 
-**Slides**  
-[Download](http://www.vb-magazin.de/KnowledgeBase/uploads/jan-cornelius%20molnar/Stuttgart.CSharp3WhatsNew.pdf) (pdf) | [Download](http://www.vb-magazin.de/KnowledgeBase/uploads/jan-cornelius%20molnar/Stuttgart.CSharp3WhatsNew.pptx) (pptx)
-
-**Demos**  
-[Download](http://www.vb-magazin.de/KnowledgeBase/uploads/jan-cornelius%20molnar/Stuttgart.CSharp3WhatsNew.zip) (zip)
+[Slides & Demos](https://github.com/janbernloehr/2008-05-23-CSharp3WhatsNew)

@@ -8,11 +8,7 @@ tags: [.net, wpf, visual-studio, msp, slides]
 
 Hier gibt es die Slides, Sourcen und Aufgaben zum WPF Vortrag vom 19.06.2009.
 
-**Sildes+Sourcen**   
-[http://janmolnar.de/msp/wpfkarlsruhe/WpfWorkshop.zip](http://janmolnar.de/msp/wpfkarlsruhe/WpfWorkshop.zip)
-
-**Aufgaben**   
-[http://janmolnar.de/msp/wpfkarlsruhe/aufgaben2.pdf](http://janmolnar.de/msp/wpfkarlsruhe/aufgaben2.pdf)
+[Slides, Sourcen & Aufgaben](https://github.com/janbernloehr/2009-03-25-WpfStuttgart)
 
 **Zum Weiterlesen**
 

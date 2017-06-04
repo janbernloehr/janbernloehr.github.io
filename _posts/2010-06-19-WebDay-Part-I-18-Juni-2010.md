@@ -20,8 +20,5 @@ In einem Tag zum .NET Webentwickler. Wir zeigen dir alles was du brauchst, von A
 [http://ajax.asp.net](http://ajax.asp.net) – Ajax Control Kit
 
 **Material**   
-Slides   
-[http://www.janmolnar.de/uni/download.aspx?f=stuff/ASP.NET-Slides.pdf](http://www.janmolnar.de/uni/download.aspx?f=stuff/ASP.NET-Slides.pdf)
 
-Sourcen   
-[http://www.janmolnar.de/uni/download.aspx?f=stuff/ASP.NET-Sourcen.zip](http://www.janmolnar.de/uni/download.aspx?f=stuff/ASP.NET-Sourcen.zip)
+[Slides & Sourcen](https://github.com/janbernloehr/2010-06-18-WebDay-Part1)

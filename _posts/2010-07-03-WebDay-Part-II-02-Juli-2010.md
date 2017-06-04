@@ -17,8 +17,4 @@ Fortsetzung mit Microsoft Surface am 16. Juli 2010 um 10:00
 [Sql Server Developer Center](http://msdn.microsoft.com/de-de/sqlserver/default.aspx)  
 
 **Material**   
-WCF Slides  
-[http://www.janmolnar.de/uni/download.aspx?f=stuff/WebDay-Wcf.pdf](http://www.janmolnar.de/uni/download.aspx?f=stuff/WebDay-Wcf.pdf)  
-
-Sql Server Slides  
-[http://www.janmolnar.de/uni/download.aspx?f=stuff/WebDay-SqlServer.pdf](http://www.janmolnar.de/uni/download.aspx?f=stuff/WebDay-SqlServer.pdf)   
+[Slides](https://github.com/janbernloehr/2010-07-03-WebDay-Part2)
