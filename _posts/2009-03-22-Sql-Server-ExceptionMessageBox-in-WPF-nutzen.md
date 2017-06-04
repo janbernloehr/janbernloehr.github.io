@@ -8,7 +8,7 @@ tags: [.net, wpf, visual-studio, sql-server]
 
 Wer das Microsoft Sql Management Studio verwendet kennt sie vielleicht, die `ExceptionMessageBox` des Sql Servers. Sie bietet eine gute Übersicht über alle relevanten Informationen einer Exception und das Beste ist, dass sie als Assembly in jedes .NET Projekt eingebunden und damit in jeder .NET Anwendung angezeigt werden kann.
 
-[![image](http://www.vb-magazin.de/forums/blogs/janm/image_thumb_3DB23A5A.png "image")](http://www.vb-magazin.de/forums/blogs/janm/image_3A346B17.png) 
+![ExceptionMessageBox](https://gwb.blob.core.windows.net/kobush/1591/o_ErrorMessageBox.png)
 
 Einziger Haken: Zur Anzeige der ExceptionMessageBox wird ein owner vom Typ **System.Windows.Forms.IWin32Owner** erwartet. Bewegt man sich in WPF, steht dieser einem natürlich nicht zur Verfügung. Abhilfe schafft der Typ ExceptionMessageBoxParent, da dieser mit einem gewöhnlichen Handle erstellt werden und somit als IWin32Owner verwendet werden kann.
 
