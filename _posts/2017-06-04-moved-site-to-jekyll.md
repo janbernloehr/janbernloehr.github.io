@@ -1,7 +1,7 @@
 ---
 layout: post
 title : "Moved website and blog to github pages"
-date : 01.05.2006 12:50:00
+date : 04.06.2017 23:39:00
 tags: [github, jekyll]
 ---
 {% include JB/setup %}
