@@ -16,4 +16,4 @@ Schaut einfach auf die [Homepage der CampusLaunch Tour 2008](http://www.studentp
 
 Der Besuch der Veranstaltung ist **kostenlos**, also nichts wie anmelden! 
 
-![image](http://www.vb-magazin.de/forums/blogs/janm/WindowsLiveWriter/CampusLaunchTour2008_D4BA/image_3.png)
+![image](/assets/images/campus_launch.png)
