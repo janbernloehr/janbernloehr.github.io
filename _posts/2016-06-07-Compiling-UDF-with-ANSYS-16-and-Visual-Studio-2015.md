@@ -6,8 +6,6 @@ tags: [ansys, visual-studio, udf]
 ---
 {% include JB/setup %}
 
-# Compiling UDF with ANSYS 16 and Visual Studio 2015
-
 To compile User Defined Functions (UDF) with ANSYS you need to install a C++ compiler. ANSYS recommends Visual C++ which is freely available in form of [Visual Studio Community](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx).
 
 In this article I will only consider the case of x64 ANSYS.
