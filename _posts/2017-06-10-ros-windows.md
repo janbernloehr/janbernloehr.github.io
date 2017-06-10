@@ -36,6 +36,11 @@ Release:        16.04
 Codename:       xenial
 ```
 
+If it shows an older version, you have to uninstall and then reinstall bash on ubuntu from the windows command line as follows
+
+    lxrun /uninstall /full /y
+    lxrun /install
+
 ## Install ROS
 
 Since WSL is based on ubuntu, you can follow the official [ros installation guide for ubuntu](http://wiki.ros.org/lunar/Installation/Ubuntu) by the word.
@@ -84,6 +89,7 @@ Finally, update the `.bashrc` file in your home folder to source the overlay wor
 ## Run a simple test
 
 1. Start a new bash prompt and run `roscore`
+
    ![](/assets/images/RosOnWsl/roscore.PNG)
 2. Start a second bash prompt
 3. Create a new file `publish.py` with the contents
@@ -102,6 +108,7 @@ Finally, update the `.bashrc` file in your home folder to source the overlay wor
    ```
 
 4. Run the publisher `python publish.py`
+
    ![](/assets/images/RosOnWsl/publish.PNG)
 
 5. Start a third bash prompt
@@ -123,6 +130,7 @@ Finally, update the `.bashrc` file in your home folder to source the overlay wor
    listener()
    ```  
 7. Run the subscriber `python subscribe.py`
+
    ![](/assets/images/RosOnWsl/subscribe.PNG)
 
 ## Install Xming
