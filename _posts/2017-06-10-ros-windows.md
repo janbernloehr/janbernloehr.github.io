@@ -6,7 +6,7 @@ tags: [wsl, windows10, ros]
 ---
 {% include JB/setup %}
 
-The [Windows Subsystem for Linux (WSL)](https://msdn.microsoft.com/de-de/commandline/wsl/faq) is a compatibility layer which allows to run a whole bunch of linux binaries on natively Windows 10. With the advent of the Windows 10 Creators Update in March 2017, the WSL was heavily updated and now is able to run ROS v1. The only caveat is that in the currently released version of the ros_comm package there is a [bug](https://github.com/ros/ros_comm/pull/1050) which needs manual patching until the fix is included in an official release.
+The [Windows Subsystem for Linux (WSL)](https://msdn.microsoft.com/de-de/commandline/wsl/faq) is a compatibility layer which allows to run a whole bunch of linux binaries natively on Windows 10. With the advent of the Windows 10 Creators Update in March 2017, the WSL was heavily updated and now is able to run ROS lunar. There is just one caveat: In the currently released version (1.13) of [ros_comm](https://github.com/ros/ros_comm) there is a [bug](https://github.com/ros/ros_comm/pull/1050) which needs manual patching until the fix is included in an official release.
 
 In this blogpost I will show you how to install WSL, setup ROS, and how to apply the patch to ros_comm in an overlay workspace to get started.
 
@@ -22,7 +22,7 @@ If you need to update Windows, got to Windows Update and follow the instructions
 
 ## Install the WSL and Bash on Windows
 
-To install the Windows Subsystem for Linux and Bash on Ubuntu, follow [this](https://msdn.microsoft.com/de-de/commandline/wsl/install_guide) guide.
+To install the Windows Subsystem for Linux and Bash on Windows, follow [this](https://msdn.microsoft.com/de-de/commandline/wsl/install_guide) guide.
 
 In case you have used the WSL before applying the creators update, you may still have the trusty version (14.04) of Ubuntu for Windows installed. However, you need to upgrade to xenial (16.04).
 To check which version is actually installed, start an instance of bash and run `lsb_release -a`. The output should look like
@@ -36,7 +36,7 @@ Release:        16.04
 Codename:       xenial
 ```
 
-If it shows an older version, you have to uninstall and then reinstall bash on ubuntu from the windows command line as follows
+If it shows an older version, you have to uninstall and then reinstall bash on windows from the windows command line as follows
 
     lxrun /uninstall /full /y
     lxrun /install
