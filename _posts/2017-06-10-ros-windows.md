@@ -50,6 +50,13 @@ Since WSL is based on ubuntu, you can follow the official [ros installation guid
     sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
     sudo apt-get update
     sudo apt-get install ros-lunar-desktop-full
+    sudo rosdep init
+    rosdep update
+
+If you want to source ros lunar automatically for ever bash session, then
+
+    echo "source /opt/ros/lunar/setup.bash" >> ~/.bashrc
+    source ~/.bashrc
 
 ## Install wstool
 
@@ -63,16 +70,12 @@ Now we create an overlay workspace which just includes the patched version of th
 
 First, create the workspace in some place
 
-    mkdir -p ~/overlay_ws
-    cd ~/overlay_ws
-
     mkdir -p ~/overlay_wssrc
     cd ~/overlay_ws/src
 
 Next initialize the workspace and include ros_comm
 
     wstool init
-
     wstool set ros_comm --git git://github.com/ros/ros_comm.git
     wstool update
 
@@ -154,3 +157,7 @@ The popular [turtle_sim tutorial](http://wiki.ros.org/ROS/Tutorials/Understandin
    You can control the turtle using the arrow keys
 
    ![](/assets/images/RosOnWsl/turtle1.PNG)
+
+## OpenGL indirection
+
+Some places recommend to force indirect rendering using `export LIBGL_ALWAYS_INDIRECT=1` for better OpenGL performance on WSL. However, with the version of Xming I tested, it is not possible to launch `rviz` when this indirection is active, thus my recommendation is to not use OpenGL indirection for the time being.
