@@ -15,17 +15,17 @@ title: Academia >> Publications
 - [On the Convexity of the KdV Hamiltonian](http://dx.doi.org/10.1007/s00220-015-2563-x) with T. Kappeler, A. Maspero, and P. Topalov<br />
     Comm. Math. Phys., **346**(1), 191–236, (2016); preprint on [arxiv.org](https://arxiv.org/abs/1502.05857)
 
-- [The mKdV and NLS hierarchies revisited](http://arxiv.org/abs/1601.07580) with Y. Widmer<br />
+- [The mKdV and NLS hierarchies revisited](https://arxiv.org/abs/1601.07580) with Y. Widmer<br />
     preprint on [arxiv.org](https://arxiv.org/abs/1601.07580)
 
 - [On the wellposedness of the KdV/KdV2 equations and their frequency maps](http://dx.doi.org/10.1016/j.anihpc.2017.03.003) with T. Kappeler<br />
   Ann. Inst. Henri Poincaré, online, (2017); preprint on [arxiv.org](https://arxiv.org/abs/1605.06690)
 
-- [On the wellposedness of the defocusing mKdV equation below \\(L^2\\)](https://arxiv.org/abs/1606.07052) with T. Kappeler<br />
-   SIAM J.Math.Anal., to appear, preprint on [arxiv.org](https://arxiv.org/abs/1606.07052)
+- [On the wellposedness of the defocusing mKdV equation below \\(L^2\\)](http://dx.doi.org/10.1137/16M1096979) with T. Kappeler<br />
+   SIAM J.Math.Anal., **49**(3), 2191–2219, (2017); preprint on [arxiv.org](https://arxiv.org/abs/1606.07052)
 
-- [On the wellposedness of the KdV equation on the space of pseudomeasures](https://arxiv.org/abs/1610.00278) with T. Kappeler<br />
-   preprint on [arxiv.org](https://arxiv.org/abs/1610.00278)
+- [On the wellposedness of the KdV equation on the space of pseudomeasures](http://rdcu.be/tWzu) with T. Kappeler<br />
+   Sel. Math. New Ser., online, (2017); preprint on [arxiv.org](https://arxiv.org/abs/1610.00278)
 
 
 ### Theses
