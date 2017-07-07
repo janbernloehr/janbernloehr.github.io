@@ -30,8 +30,8 @@ title: Academia >> Publications
 
 ### Theses
 
-- [Features of the nonlinear Fourier transform for the dNLS equation](/Download/fs16/diss)<br />
-  University of Zurich (2016) <pdf>
+- [Features of the nonlinear Fourier transform for the dNLS equation](https://doi.org/10.5167/uzh-126931)<br />
+  University of Zurich (2016); preprint available [here](/Download/fs16/diss)
 
 - [Spectral triangles of Zakharov-Shabat operators in weighted Sobolev spaces](/Download/ws11/da-fin)<br />
-  Universität Stuttgart (2011) <pdf>
+  Universität Stuttgart (2011)
