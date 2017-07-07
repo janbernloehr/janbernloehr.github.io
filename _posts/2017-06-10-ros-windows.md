@@ -70,7 +70,7 @@ Now we create an overlay workspace which just includes the patched version of th
 
 First, create the workspace in some place
 
-    mkdir -p ~/overlay_wssrc
+    mkdir -p ~/overlay_ws/src
     cd ~/overlay_ws/src
 
 Next initialize the workspace and include ros_comm
