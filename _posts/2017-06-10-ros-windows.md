@@ -36,7 +36,7 @@ Release:        16.04
 Codename:       xenial
 ```
 
-If it shows an older version, you have to uninstall and then reinstall bash on windows from the windows command line as follows
+If it shows an older version, you have to uninstall and then reinstall bash on windows from the windows command line as follows **Warning: This will delete all of your existing data in WSL. Make a backup first**
 
     lxrun /uninstall /full /y
     lxrun /install
