@@ -160,4 +160,17 @@ The popular [turtle_sim tutorial](http://wiki.ros.org/ROS/Tutorials/Understandin
 
 ## OpenGL indirection
 
-Some places recommend to force indirect rendering using `export LIBGL_ALWAYS_INDIRECT=1` for better OpenGL performance on WSL. However, with the version of Xming I tested, it is not possible to launch `rviz` when this indirection is active, thus my recommendation is to not use OpenGL indirection for the time being.
+Some places recommend to force indirect rendering using `export LIBGL_ALWAYS_INDIRECT=1` for better OpenGL performance on WSL. However, with the version of Xming I tested, it is not possible to launch `rviz` when this indirection is active, thus my recommendation is to not use OpenGL indirection for the time being.#
+
+## D-Bus machine-id missing
+
+On some installations I have seen the error
+
+```
+D-Bus library appears to be incorrectly set up; failed to read machine uuid: UUID file '/etc/machine-id' should contain a hex string of length 32, not length 0, with no other text
+```
+
+To fix it, run 
+```
+sudo sh -c 'dbus-uuidgen > /etc/machine-id'
+```
