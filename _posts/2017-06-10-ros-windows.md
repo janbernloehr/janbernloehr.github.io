@@ -49,7 +49,7 @@ Since WSL is based on ubuntu, you can follow the official [ros installation guid
     sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
     sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
     sudo apt-get update
-    sudo apt-get install ros-lunar-desktop-full
+    sudo apt-get install -y ros-lunar-desktop-full
     sudo rosdep init
     rosdep update
 
@@ -62,7 +62,7 @@ If you want to source ros lunar automatically for ever bash session, then
 
 To create an overlay workspace, you also need to install the [wstool](http://wiki.ros.org/wstool).
 
-    sudo apt-get install python-wstool
+    sudo apt-get install -y python-wstool
 
 ## Create overlay worksape with ros_comm
 
