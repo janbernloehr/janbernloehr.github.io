@@ -172,5 +172,7 @@ D-Bus library appears to be incorrectly set up; failed to read machine uuid: UUI
 
 To fix it, run 
 ```
-sudo sh -c 'dbus-uuidgen > /etc/machine-id'
+sudo dbus-uuidgen --ensure
 ```
+
+Also restart any running roscore afterwards.
