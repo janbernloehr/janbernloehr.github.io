@@ -6,9 +6,9 @@ tags: [wsl, windows10, ros]
 ---
 {% include JB/setup %}
 
-The [Windows Subsystem for Linux (WSL)](https://msdn.microsoft.com/de-de/commandline/wsl/faq) is a compatibility layer which allows to run a whole bunch of linux binaries natively on Windows 10. With the advent of the Windows 10 Creators Update in March 2017, the WSL was heavily updated and now is able to run ROS lunar. There is just one caveat: In the currently released version (1.13) of [ros_comm](https://github.com/ros/ros_comm) there is a [bug](https://github.com/ros/ros_comm/pull/1050) which needs manual patching until the fix is included in an official release.
+The [Windows Subsystem for Linux (WSL)](https://msdn.microsoft.com/de-de/commandline/wsl/faq) is a compatibility layer which allows to run a whole bunch of linux binaries natively on Windows 10. With the advent of the Windows 10 Creators Update in March 2017, the WSL was heavily updated and now is able to run ROS lunar. ~~There is just one caveat: In the currently released version (1.13) of [ros_comm](https://github.com/ros/ros_comm) there is a [bug](https://github.com/ros/ros_comm/pull/1050) which needs manual patching until the fix is included in an official release.~~ Since release 1.13.1 of the [ros_comm](https://github.com/ros/ros_comm) package, a vanilla installation of ros runs fine on WSL and no further patching is needed.
 
-In this blogpost I will show you how to install WSL, setup ROS, and how to apply the patch to ros_comm in an overlay workspace to get started.
+In this blogpost I will show you how to install WSL and setup ROS to get started.
 
 ## Update to Windows 10 Creators update
 
@@ -56,37 +56,6 @@ Since WSL is based on ubuntu, you can follow the official [ros installation guid
 If you want to source ros lunar automatically for ever bash session, then
 
     echo "source /opt/ros/lunar/setup.bash" >> ~/.bashrc
-    source ~/.bashrc
-
-## Install wstool
-
-To create an overlay workspace, you also need to install the [wstool](http://wiki.ros.org/wstool).
-
-    sudo apt-get install -y python-wstool
-
-## Create overlay worksape with ros_comm
-
-Now we create an overlay workspace which just includes the patched version of the ros_comm package.
-
-First, create the workspace in some place
-
-    mkdir -p ~/overlay_ws/src
-    cd ~/overlay_ws/src
-
-Next initialize the workspace and include ros_comm
-
-    wstool init
-    wstool set ros_comm --git git://github.com/ros/ros_comm.git
-    wstool update
-
-Build the workspace
-
-    cd ~/overlay_ws
-    catkin_make
-
-Finally, update the `.bashrc` file in your home folder to source the overlay workspace
-
-    echo "source ~/overlay_ws/devel/setup.bash" >> ~/.bashrc
     source ~/.bashrc
 
 ## Run a simple test
@@ -152,9 +121,10 @@ Finally launch the Xming application from the start menu.
 The popular [turtle_sim tutorial](http://wiki.ros.org/ROS/Tutorials/UnderstandingTopics) works fine WSL as well.
 
 1. Make sure you have an X Server installed, configured and running as described above.
-2. Start a new bash prompt and run `rosrun turtlesim turtlesim_node`.
-3. Start a second bash promt and run `rosrun turtlesim turtle_teleop_key`.
-   You can control the turtle using the arrow keys
+2. Start a new bash prompt and run `roscore`.
+3. Start a second bash prompt and run `rosrun turtlesim turtle_teleop_key`.
+4. Start a third bash prompt and run `rosrun turtlesim turtlesim_node`.
+   You can control the turtle by using the arrow keys by going back to the second prompt.
 
    ![](/assets/images/RosOnWsl/turtle1.PNG)
 
