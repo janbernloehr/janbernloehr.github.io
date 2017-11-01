@@ -6,9 +6,9 @@ tags: [wsl, windows10, ros]
 ---
 {% include JB/setup %}
 
-The [Windows Subsystem for Linux (WSL)](https://msdn.microsoft.com/de-de/commandline/wsl/faq) is a compatibility layer which allows to run a whole bunch of linux binaries natively on Windows 10. With the advent of the Windows 10 Creators Update in March 2017, the WSL was heavily updated and now is able to run ROS lunar. There is just one caveat: In the currently released version (1.13) of [ros_comm](https://github.com/ros/ros_comm) there is a [bug](https://github.com/ros/ros_comm/pull/1050) which needs manual patching until the fix is included in an official release.
+The [Windows Subsystem for Linux (WSL)](https://msdn.microsoft.com/de-de/commandline/wsl/faq) is a compatibility layer which allows to run a whole bunch of linux binaries natively on Windows 10. With the advent of the Windows 10 Creators Update in March 2017, the WSL was heavily updated and now is able to run ROS lunar. ~~There is just one caveat: In the currently released version (1.13) of [ros_comm](https://github.com/ros/ros_comm) there is a [bug](https://github.com/ros/ros_comm/pull/1050) which needs manual patching until the fix is included in an official release.~~ Since release 1.13.1 of the [ros_comm](https://github.com/ros/ros_comm) package, a vanilla installation of ros runs fine on WSL and no further patching is needed.
 
-In this blogpost I will show you how to install WSL, setup ROS, and how to apply the patch to ros_comm in an overlay workspace to get started.
+In this blogpost I will show you how to install WSL and setup ROS to get started.
 
 ## Update to Windows 10 Creators update
 
@@ -36,7 +36,7 @@ Release:        16.04
 Codename:       xenial
 ```
 
-If it shows an older version, you have to uninstall and then reinstall bash on windows from the windows command line as follows
+If it shows an older version, you have to uninstall and then reinstall bash on windows from the windows command line as follows **Warning: This will delete all of your existing data in WSL. Make a backup first**
 
     lxrun /uninstall /full /y
     lxrun /install
@@ -49,44 +49,13 @@ Since WSL is based on ubuntu, you can follow the official [ros installation guid
     sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
     sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
     sudo apt-get update
-    sudo apt-get install ros-lunar-desktop-full
+    sudo apt-get install -y ros-lunar-desktop-full
     sudo rosdep init
     rosdep update
 
 If you want to source ros lunar automatically for ever bash session, then
 
     echo "source /opt/ros/lunar/setup.bash" >> ~/.bashrc
-    source ~/.bashrc
-
-## Install wstool
-
-To create an overlay workspace, you also need to install the [wstool](http://wiki.ros.org/wstool).
-
-    sudo apt-get install python-wstool
-
-## Create overlay worksape with ros_comm
-
-Now we create an overlay workspace which just includes the patched version of the ros_comm package.
-
-First, create the workspace in some place
-
-    mkdir -p ~/overlay_ws/src
-    cd ~/overlay_ws/src
-
-Next initialize the workspace and include ros_comm
-
-    wstool init
-    wstool set ros_comm --git git://github.com/ros/ros_comm.git
-    wstool update
-
-Build the workspace
-
-    cd ~/overlay_ws
-    catkin_make
-
-Finally, update the `.bashrc` file in your home folder to source the overlay workspace
-
-    echo "source ~/overlay_ws/devel/setup.bash" >> ~/.bashrc
     source ~/.bashrc
 
 ## Run a simple test
@@ -152,12 +121,28 @@ Finally launch the Xming application from the start menu.
 The popular [turtle_sim tutorial](http://wiki.ros.org/ROS/Tutorials/UnderstandingTopics) works fine WSL as well.
 
 1. Make sure you have an X Server installed, configured and running as described above.
-2. Start a new bash prompt and run `rosrun turtlesim turtlesim_node`.
-3. Start a second bash promt and run `rosrun turtlesim turtle_teleop_key`.
-   You can control the turtle using the arrow keys
+2. Start a new bash prompt and run `roscore`.
+3. Start a second bash prompt and run `rosrun turtlesim turtle_teleop_key`.
+4. Start a third bash prompt and run `rosrun turtlesim turtlesim_node`.
+   You can control the turtle by using the arrow keys by going back to the second prompt.
 
    ![](/assets/images/RosOnWsl/turtle1.PNG)
 
 ## OpenGL indirection
 
-Some places recommend to force indirect rendering using `export LIBGL_ALWAYS_INDIRECT=1` for better OpenGL performance on WSL. However, with the version of Xming I tested, it is not possible to launch `rviz` when this indirection is active, thus my recommendation is to not use OpenGL indirection for the time being.
+Some places recommend to force indirect rendering using `export LIBGL_ALWAYS_INDIRECT=1` for better OpenGL performance on WSL. However, with the version of Xming I tested, it is not possible to launch `rviz` when this indirection is active, thus my recommendation is to not use OpenGL indirection for the time being.#
+
+## D-Bus machine-id missing
+
+On some installations I have seen the error
+
+```
+D-Bus library appears to be incorrectly set up; failed to read machine uuid: UUID file '/etc/machine-id' should contain a hex string of length 32, not length 0, with no other text
+```
+
+To fix it, run 
+```
+sudo dbus-uuidgen --ensure
+```
+
+Also restart any running roscore afterwards.
