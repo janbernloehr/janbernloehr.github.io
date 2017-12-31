@@ -19,7 +19,7 @@ title: Academia >> Publications
     preprint on [arxiv.org](https://arxiv.org/abs/1601.07580)
 
 - [On the wellposedness of the KdV/KdV2 equations and their frequency maps](https://dx.doi.org/10.1016/j.anihpc.2017.03.003) with T. Kappeler<br />
-  Ann. Inst. Henri Poincaré, online, (2017); preprint on [arxiv.org](https://arxiv.org/abs/1605.06690)
+  Ann. Inst. Henri Poincaré, **35**(1), 101-160, (2018); preprint on [arxiv.org](https://arxiv.org/abs/1605.06690)
 
 - [On the wellposedness of the defocusing mKdV equation below \\(L^2\\)](https://dx.doi.org/10.1137/16M1096979) with T. Kappeler<br />
    SIAM J.Math.Anal., **49**(3), 2191–2219, (2017); preprint on [arxiv.org](https://arxiv.org/abs/1606.07052)
