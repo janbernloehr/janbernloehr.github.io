@@ -25,7 +25,7 @@ title: Academia >> Publications
    SIAM J.Math.Anal., **49**(3), 2191–2219, (2017); preprint on [arxiv.org](https://arxiv.org/abs/1606.07052)
 
 - [On the wellposedness of the KdV equation on the space of pseudomeasures](https://dx.doi.org/10.1007/s00029-017-0347-1) with T. Kappeler<br />
-   Sel. Math. New Ser., online, (2017); [free version](http://rdcu.be/tWzu); preprint on [arxiv.org](https://arxiv.org/abs/1610.00278)
+   Sel. Math. New Ser., **24**(2), 1479-1526, (2018); [free version](http://rdcu.be/tWzu); preprint on [arxiv.org](https://arxiv.org/abs/1610.00278)
 
 
 ### Theses
