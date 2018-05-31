@@ -6,7 +6,7 @@ tags: [.net, wpf]
 ---
 {% include JB/setup %}
 
-UPDATE: As WPF evolvs everything becomes easier. An updated version (winfx beta 2) of the article can be found [here](/forums/blogs/janm/archive/2006/06/19).
+UPDATE: As WPF evolvs everything becomes easier. An updated version (winfx beta 2) of the article can be found [here](/2006/06/19/How-to-create-a-Microsoft-Max-style-window-in-WPF).
 
 Some of you may have wondered who the creators of [Microsoft Max](http://www.microsoft.com/max/) did the Chrome.
 
