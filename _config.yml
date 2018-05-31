@@ -26,7 +26,7 @@ author :
 #
 production_url : http://janbernloehr.de
 
-gems: ["jekyll-sitemap"]
+plugins: ["jekyll-sitemap"]
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
