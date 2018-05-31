@@ -14,6 +14,11 @@ footer {
   background-color: #eeeeee;
 }
 
+pre.highlight {
+  background: #eee;
+  padding: 6px;
+}
+
 /* posts index */
 
 .post>h3.title {
