@@ -6,6 +6,8 @@ tags: [wsl, windows10, ros]
 ---
 {% include JB/setup %}
 
+**Please find an updated version of this posting for WSL 2 [here]({% post_url 2021-02-28-ros-windows-update %})**
+
 The [Windows Subsystem for Linux (WSL)](https://msdn.microsoft.com/de-de/commandline/wsl/faq) is a compatibility layer which allows to run a whole bunch of linux binaries natively on Windows 10. With the advent of the Windows 10 Creators Update in March 2017, the WSL was heavily updated and now is able to run ROS lunar and melodic.
 
 In this blogpost I will show you how to install WSL and setup ROS to get started.
