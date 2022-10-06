@@ -1,8 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.7.0)
-      public_suffix (>= 2.0.2, < 5.0)
+    addressable (2.8.1)
+      public_suffix (>= 2.0.2, < 6.0)
     colorator (1.1.0)
     concurrent-ruby (1.1.8)
     em-websocket (0.5.2)
@@ -48,7 +48,7 @@ GEM
     mercenary (0.4.0)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
-    public_suffix (4.0.6)
+    public_suffix (5.0.0)
     pygments.rb (2.2.0)
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
@@ -63,7 +63,6 @@ GEM
     terminal-table (2.0.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
     unicode-display_width (1.7.0)
-    wdm (0.1.1)
 
 PLATFORMS
   ruby
@@ -74,7 +73,6 @@ DEPENDENCIES
   jekyll-sitemap
   kramdown-parser-gfm
   pygments.rb
-  wdm (>= 0.1.0)
 
 BUNDLED WITH
    2.2.16
