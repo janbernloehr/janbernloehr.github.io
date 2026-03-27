@@ -1,0 +1,76 @@
+name: Update self-hosted assets
+
+on:
+  push:
+    branches-ignore:
+      - master
+    paths:
+      - package.json
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-assets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Read versions from package.json
+        id: versions
+        run: |
+          echo "bootstrap=$(node -p "require('./package.json').dependencies.bootstrap")" >> $GITHUB_OUTPUT
+          echo "mathjax=$(node -p "require('./package.json').dependencies.mathjax")" >> $GITHUB_OUTPUT
+          echo "inter=$(node -p "require('./package.json').dependencies['@fontsource/inter']")" >> $GITHUB_OUTPUT
+          echo "mulish=$(node -p "require('./package.json').dependencies['@fontsource/mulish']")" >> $GITHUB_OUTPUT
+
+      - name: Update Bootstrap
+        run: |
+          npm pack bootstrap@${{ steps.versions.outputs.bootstrap }}
+          tar -xzf bootstrap-*.tgz
+          cp package/dist/css/bootstrap.min.css assets/themes/bootstrap-5/css/bootstrap.min.css
+          cp package/dist/js/bootstrap.bundle.min.js assets/js/bootstrap.bundle.min.js
+          rm -rf package bootstrap-*.tgz
+
+      - name: Update MathJax
+        run: |
+          npm pack mathjax@${{ steps.versions.outputs.mathjax }}
+          tar -xzf mathjax-*.tgz
+          cp package/es5/tex-mml-chtml.js assets/js/mathjax-tex-mml-chtml.js
+          rm -rf package mathjax-*.tgz
+
+      - name: Update Inter font
+        run: |
+          npm pack @fontsource/inter@${{ steps.versions.outputs.inter }}
+          tar -xzf fontsource-inter-*.tgz
+          cp package/files/inter-latin-300-normal.woff2 assets/fonts/
+          cp package/files/inter-latin-400-normal.woff2 assets/fonts/
+          cp package/files/inter-latin-500-normal.woff2 assets/fonts/
+          cp package/files/inter-latin-600-normal.woff2 assets/fonts/
+          cp package/files/inter-latin-700-normal.woff2 assets/fonts/
+          rm -rf package fontsource-inter-*.tgz
+
+      - name: Update Mulish font
+        run: |
+          npm pack @fontsource/mulish@${{ steps.versions.outputs.mulish }}
+          tar -xzf fontsource-mulish-*.tgz
+          cp package/files/mulish-latin-200-normal.woff2 assets/fonts/
+          cp package/files/mulish-latin-300-normal.woff2 assets/fonts/
+          cp package/files/mulish-latin-400-normal.woff2 assets/fonts/
+          cp package/files/mulish-latin-700-normal.woff2 assets/fonts/
+          rm -rf package fontsource-mulish-*.tgz
+
+      - name: Commit updated assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/
+          git diff --staged --quiet || git commit -m "Update self-hosted assets to match package.json"
+          git push
