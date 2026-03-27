@@ -1,0 +1,11 @@
+{
+  "name": "janbernloehr-github-io",
+  "private": true,
+  "description": "Tracks versions of self-hosted frontend assets",
+  "dependencies": {
+    "@fontsource/inter": "5.2.8",
+    "@fontsource/mulish": "5.2.8",
+    "bootstrap": "5.3.8",
+    "mathjax": "3.2.2"
+  }
+}
