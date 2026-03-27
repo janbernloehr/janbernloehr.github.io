@@ -74,7 +74,7 @@ Once the retention period expires, Personal Data shall be deleted. Therefore, th
 
 ### The purposes of processing
 
-The Data concerning the User is collected to allow the Owner to provide its Services, as well as for the following purposes: Traffic optimization and distribution and Hosting and backend infrastructure.
+The Data concerning the User is collected to allow the Owner to provide its Services, as well as for the following purposes: Hosting and backend infrastructure.
 
 Users can find further detailed information about such purposes of processing and about the specific Personal Data used for each purpose in the respective sections of this document.
 
@@ -94,23 +94,6 @@ GitHub Pages is a hosting service provided by GitHub, Inc.
 Personal Data collected: various types of Data as specified in the privacy policy of the service.
 
 Place of processing: United States – [Privacy Policy](https://help.github.com/articles/github-privacy-policy). Privacy Shield participant.
-
-#### Traffic optimization and distribution
-
-This type of service allows this Website to distribute their content using servers located across different countries and to optimize their performance.
-
-Which Personal Data are processed depends on the characteristics and the way these services are implemented. Their function is to filter communications between this Website and the User's browser.
-
-Considering the widespread distribution of this system, it is difficult to determine the locations to which the contents that may contain Personal Information User are transferred.
-
-##### CloudFlare (Cloudflare)
-CloudFlare is a traffic optimization and distribution service provided by CloudFlare Inc.
-
-The way CloudFlare is integrated means that it filters all the traffic through this Website, i.e., communication between this Website and the User's browser, while also allowing analytical data from this Website to be collected.
-
-Personal Data collected: Cookies and various types of Data as specified in the privacy policy of the service.
-
-Place of processing: United States – [Privacy Policy](https://www.cloudflare.com/security-policy/).
 
 <hr />
 
