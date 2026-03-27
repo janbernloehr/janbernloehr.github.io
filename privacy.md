@@ -74,7 +74,7 @@ Once the retention period expires, Personal Data shall be deleted. Therefore, th
 
 ### The purposes of processing
 
-The Data concerning the User is collected to allow the Owner to provide its Services, as well as for the following purposes: Content commenting, Traffic optimization and distribution and Hosting and backend infrastructure.
+The Data concerning the User is collected to allow the Owner to provide its Services, as well as for the following purposes: Traffic optimization and distribution and Hosting and backend infrastructure.
 
 Users can find further detailed information about such purposes of processing and about the specific Personal Data used for each purpose in the respective sections of this document.
 
@@ -83,21 +83,6 @@ Users can find further detailed information about such purposes of processing an
 ### Detailed information on the processing of Personal Data
 
 Personal Data is collected for the following purposes and using the following services:
-
-#### Content commenting
-
-Content commenting services allow Users to make and publish their comments on the contents of this Website.
-
-Depending on the settings chosen by the Owner, Users may also leave anonymous comments. If there is an email address among the Personal Data provided by the User, it may be used to send notifications of comments on the same content. Users are responsible for the content of their own comments.
-
-If a content commenting service provided by third parties is installed, it may still collect web traffic data for the pages where the comment service is installed, even when Users do not use the content commenting service.
-
-##### Disqus (Disqus)
-Disqus is a content commenting service provided by Big Heads Labs Inc.
-
-Personal Data collected: Cookies, Usage Data and various types of Data as specified in the privacy policy of the service.
-
-Place of processing: United States – [Privacy Policy – Opt out](https://help.disqus.com/customer/portal/articles/466259-privacy-policy).
 
 #### Hosting and backend infrastructure
 
