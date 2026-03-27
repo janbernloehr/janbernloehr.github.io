@@ -1,5 +1,8 @@
 /*! Whootstrap `Fresca` Bootstrap 4 theme */
-@import url(https://fonts.googleapis.com/css?family=Muli:200,300,400,700);
+@font-face { font-family: 'Muli'; font-style: normal; font-display: swap; font-weight: 200; src: url('/assets/fonts/mulish-latin-200-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Muli'; font-style: normal; font-display: swap; font-weight: 300; src: url('/assets/fonts/mulish-latin-300-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Muli'; font-style: normal; font-display: swap; font-weight: 400; src: url('/assets/fonts/mulish-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Muli'; font-style: normal; font-display: swap; font-weight: 700; src: url('/assets/fonts/mulish-latin-700-normal.woff2') format('woff2'); }
 /*!
  * Bootstrap v4.1.1 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
