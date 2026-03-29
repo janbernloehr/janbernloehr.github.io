@@ -10,12 +10,11 @@ Jan Bernlöhr<br />
 Salamanderplatz 3<br />
 70806 Kornwestheim
 
-#### Vertreten durch
-Jan Bernlöhr
-
 #### Kontakt
-Telefon: 07154-8079956<br />
 E-Mail: jan@bernloehrs.de
+
+#### Streitschlichtung
+Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: [https://ec.europa.eu/consumers/odr/](https://ec.europa.eu/consumers/odr/). Zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle bin ich nicht verpflichtet und nicht bereit.
 
 ### Haftungsausschluss: 
 
