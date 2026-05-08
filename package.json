@@ -6,6 +6,6 @@
     "@fontsource/inter": "5.2.8",
     "@fontsource/mulish": "5.2.8",
     "bootstrap": "5.3.8",
-    "mathjax": "3.2.2"
+    "mathjax": "4.1.2"
   }
 }
